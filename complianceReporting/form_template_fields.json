@@ -1,0 +1,961 @@
+{
+  "T0_R1_C1": {
+    "table": 0,
+    "row": 1,
+    "column": 1,
+    "row_label": "Project Name:",
+    "column_label": ""
+  },
+  "T0_R2_C1": {
+    "table": 0,
+    "row": 2,
+    "column": 1,
+    "row_label": "Project Address:",
+    "column_label": ""
+  },
+  "T0_R3_C1": {
+    "table": 0,
+    "row": 3,
+    "column": 1,
+    "row_label": "Applicant Name:",
+    "column_label": ""
+  },
+  "T0_R4_C1": {
+    "table": 0,
+    "row": 4,
+    "column": 1,
+    "row_label": "Applicant Address:",
+    "column_label": ""
+  },
+  "T10_R1_C1": {
+    "table": 10,
+    "row": 1,
+    "column": 1,
+    "row_label": "Software Title:",
+    "column_label": ""
+  },
+  "T10_R1_C3": {
+    "table": 10,
+    "row": 1,
+    "column": 3,
+    "row_label": "Software Title:",
+    "column_label": ""
+  },
+  "T11_R1_C0": {
+    "table": 11,
+    "row": 1,
+    "column": 0,
+    "row_label": "",
+    "column_label": "Reference House:"
+  },
+  "T11_R1_C2": {
+    "table": 11,
+    "row": 1,
+    "column": 2,
+    "row_label": "",
+    "column_label": "Proposed House:"
+  },
+  "T12_R0_C1": {
+    "table": 12,
+    "row": 0,
+    "column": 1,
+    "row_label": "\u2610 (if pursuing Energy Tier \u2265 2) 9.36 Submittal Calculator attached, demonstrating Energy Tier of",
+    "column_label": "{{T12_R0_C1}}"
+  },
+  "T13_R10_C1": {
+    "table": 13,
+    "row": 10,
+    "column": 1,
+    "row_label": "Date:",
+    "column_label": ""
+  },
+  "T13_R10_C3": {
+    "table": 13,
+    "row": 10,
+    "column": 3,
+    "row_label": "Date:",
+    "column_label": ""
+  },
+  "T13_R1_C1": {
+    "table": 13,
+    "row": 1,
+    "column": 1,
+    "row_label": "Name:",
+    "column_label": ""
+  },
+  "T13_R1_C3": {
+    "table": 13,
+    "row": 1,
+    "column": 3,
+    "row_label": "Name:",
+    "column_label": ""
+  },
+  "T13_R2_C1": {
+    "table": 13,
+    "row": 2,
+    "column": 1,
+    "row_label": "Phone:",
+    "column_label": ""
+  },
+  "T13_R2_C3": {
+    "table": 13,
+    "row": 2,
+    "column": 3,
+    "row_label": "Phone:",
+    "column_label": ""
+  },
+  "T13_R3_C1": {
+    "table": 13,
+    "row": 3,
+    "column": 1,
+    "row_label": "Accreditation or Evaluator/ Advisor/Rater License #:",
+    "column_label": ""
+  },
+  "T13_R5_C1": {
+    "table": 13,
+    "row": 5,
+    "column": 1,
+    "row_label": "Date:",
+    "column_label": ""
+  },
+  "T13_R5_C3": {
+    "table": 13,
+    "row": 5,
+    "column": 3,
+    "row_label": "Date:",
+    "column_label": ""
+  },
+  "T13_R7_C1": {
+    "table": 13,
+    "row": 7,
+    "column": 1,
+    "row_label": "Name:",
+    "column_label": ""
+  },
+  "T13_R7_C3": {
+    "table": 13,
+    "row": 7,
+    "column": 3,
+    "row_label": "Name:",
+    "column_label": ""
+  },
+  "T13_R8_C1": {
+    "table": 13,
+    "row": 8,
+    "column": 1,
+    "row_label": "Phone:",
+    "column_label": ""
+  },
+  "T13_R8_C3": {
+    "table": 13,
+    "row": 8,
+    "column": 3,
+    "row_label": "Phone:",
+    "column_label": ""
+  },
+  "T14_R10_C5": {
+    "table": 14,
+    "row": 10,
+    "column": 5,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R11_C4": {
+    "table": 14,
+    "row": 11,
+    "column": 4,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R12_C4": {
+    "table": 14,
+    "row": 12,
+    "column": 4,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R13_C4": {
+    "table": 14,
+    "row": 13,
+    "column": 4,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R14_C4": {
+    "table": 14,
+    "row": 14,
+    "column": 4,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R15_C6": {
+    "table": 14,
+    "row": 15,
+    "column": 6,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R16_C6": {
+    "table": 14,
+    "row": 16,
+    "column": 6,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R20_C5": {
+    "table": 14,
+    "row": 20,
+    "column": 5,
+    "row_label": "Fenestration & doors",
+    "column_label": ""
+  },
+  "T14_R21_C5": {
+    "table": 14,
+    "row": 21,
+    "column": 5,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R22_C4": {
+    "table": 14,
+    "row": 22,
+    "column": 4,
+    "row_label": "Skylights (Max. U-value)",
+    "column_label": ""
+  },
+  "T14_R23_C2": {
+    "table": 14,
+    "row": 23,
+    "column": 2,
+    "row_label": "One door exception (Max. U-value)",
+    "column_label": ""
+  },
+  "T14_R24_C2": {
+    "table": 14,
+    "row": 24,
+    "column": 2,
+    "row_label": "Access hatches (Min. RSIeff)",
+    "column_label": ""
+  },
+  "T14_R27_C5": {
+    "table": 14,
+    "row": 27,
+    "column": 5,
+    "row_label": "Furnace",
+    "column_label": ""
+  },
+  "T14_R28_C5": {
+    "table": 14,
+    "row": 28,
+    "column": 5,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R29_C5": {
+    "table": 14,
+    "row": 29,
+    "column": 5,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R2_C7": {
+    "table": 14,
+    "row": 2,
+    "column": 7,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R30_C5": {
+    "table": 14,
+    "row": 30,
+    "column": 5,
+    "row_label": "Boiler",
+    "column_label": ""
+  },
+  "T14_R31_C5": {
+    "table": 14,
+    "row": 31,
+    "column": 5,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R32_C5": {
+    "table": 14,
+    "row": 32,
+    "column": 5,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R33_C4": {
+    "table": 14,
+    "row": 33,
+    "column": 4,
+    "row_label": "Air source heat pump \u2013 split",
+    "column_label": ""
+  },
+  "T14_R34_C4": {
+    "table": 14,
+    "row": 34,
+    "column": 4,
+    "row_label": "Combined space- and water-heating systems",
+    "column_label": ""
+  },
+  "T14_R35_C5": {
+    "table": 14,
+    "row": 35,
+    "column": 5,
+    "row_label": "Heat Recovery Ventilation",
+    "column_label": ""
+  },
+  "T14_R36_C5": {
+    "table": 14,
+    "row": 36,
+    "column": 5,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R37_C1": {
+    "table": 14,
+    "row": 37,
+    "column": 1,
+    "row_label": "(Other)",
+    "column_label": ""
+  },
+  "T14_R37_C2": {
+    "table": 14,
+    "row": 37,
+    "column": 2,
+    "row_label": "(Other)",
+    "column_label": ""
+  },
+  "T14_R37_C3": {
+    "table": 14,
+    "row": 37,
+    "column": 3,
+    "row_label": "(Other)",
+    "column_label": ""
+  },
+  "T14_R37_C4": {
+    "table": 14,
+    "row": 37,
+    "column": 4,
+    "row_label": "(Other)",
+    "column_label": ""
+  },
+  "T14_R3_C6": {
+    "table": 14,
+    "row": 3,
+    "column": 6,
+    "row_label": "Above-ground",
+    "column_label": ""
+  },
+  "T14_R40_C5": {
+    "table": 14,
+    "row": 40,
+    "column": 5,
+    "row_label": "Tank Storage",
+    "column_label": ""
+  },
+  "T14_R41_C5": {
+    "table": 14,
+    "row": 41,
+    "column": 5,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R42_C5": {
+    "table": 14,
+    "row": 42,
+    "column": 5,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R43_C5": {
+    "table": 14,
+    "row": 43,
+    "column": 5,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R44_C5": {
+    "table": 14,
+    "row": 44,
+    "column": 5,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R45_C5": {
+    "table": 14,
+    "row": 45,
+    "column": 5,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R46_C5": {
+    "table": 14,
+    "row": 46,
+    "column": 5,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R47_C4": {
+    "table": 14,
+    "row": 47,
+    "column": 4,
+    "row_label": "Tankless, gas-fired (\u2264 58.6 kW)",
+    "column_label": ""
+  },
+  "T14_R48_C4": {
+    "table": 14,
+    "row": 48,
+    "column": 4,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R49_C4": {
+    "table": 14,
+    "row": 49,
+    "column": 4,
+    "row_label": "Heat pump water heaters",
+    "column_label": ""
+  },
+  "T14_R4_C6": {
+    "table": 14,
+    "row": 4,
+    "column": 6,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R50_C1": {
+    "table": 14,
+    "row": 50,
+    "column": 1,
+    "row_label": "(Other)",
+    "column_label": ""
+  },
+  "T14_R50_C2": {
+    "table": 14,
+    "row": 50,
+    "column": 2,
+    "row_label": "(Other)",
+    "column_label": ""
+  },
+  "T14_R50_C3": {
+    "table": 14,
+    "row": 50,
+    "column": 3,
+    "row_label": "(Other)",
+    "column_label": ""
+  },
+  "T14_R50_C4": {
+    "table": 14,
+    "row": 50,
+    "column": 4,
+    "row_label": "(Other)",
+    "column_label": ""
+  },
+  "T14_R5_C4": {
+    "table": 14,
+    "row": 5,
+    "column": 4,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R6_C6": {
+    "table": 14,
+    "row": 6,
+    "column": 6,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R7_C6": {
+    "table": 14,
+    "row": 7,
+    "column": 6,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R8_C4": {
+    "table": 14,
+    "row": 8,
+    "column": 4,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T14_R9_C7": {
+    "table": 14,
+    "row": 9,
+    "column": 7,
+    "row_label": "Below-Grade or in Contact with Ground",
+    "column_label": ""
+  },
+  "T16_R0_C1": {
+    "table": 16,
+    "row": 0,
+    "column": 1,
+    "row_label": "(if pursuing Energy Tier \u2265 2) Energy Tier Achieved:",
+    "column_label": "{{T16_R0_C1}}"
+  },
+  "T17_R1_C1": {
+    "table": 17,
+    "row": 1,
+    "column": 1,
+    "row_label": "Name:",
+    "column_label": ""
+  },
+  "T17_R1_C3": {
+    "table": 17,
+    "row": 1,
+    "column": 3,
+    "row_label": "Name:",
+    "column_label": ""
+  },
+  "T17_R2_C1": {
+    "table": 17,
+    "row": 2,
+    "column": 1,
+    "row_label": "Phone:",
+    "column_label": ""
+  },
+  "T17_R2_C3": {
+    "table": 17,
+    "row": 2,
+    "column": 3,
+    "row_label": "Phone:",
+    "column_label": ""
+  },
+  "T17_R4_C1": {
+    "table": 17,
+    "row": 4,
+    "column": 1,
+    "row_label": "Date:",
+    "column_label": ""
+  },
+  "T17_R4_C3": {
+    "table": 17,
+    "row": 4,
+    "column": 3,
+    "row_label": "Date:",
+    "column_label": ""
+  },
+  "T1_R3_C0": {
+    "table": 1,
+    "row": 3,
+    "column": 0,
+    "row_label": "",
+    "column_label": "Climate zone (based on heating degree days in Celsius Degree-Days, per AHJ or Appendix C Table C2)"
+  },
+  "T2_R0_C0": {
+    "table": 2,
+    "row": 0,
+    "column": 0,
+    "row_label": "",
+    "column_label": "{{T2_R0_C0}}"
+  },
+  "T3_R1_C0": {
+    "table": 3,
+    "row": 1,
+    "column": 0,
+    "row_label": "",
+    "column_label": "Fenestration & door area/"
+  },
+  "T3_R1_C2": {
+    "table": 3,
+    "row": 1,
+    "column": 2,
+    "row_label": "",
+    "column_label": "FDWR%"
+  },
+  "T3_R1_C4": {
+    "table": 3,
+    "row": 1,
+    "column": 4,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R10_C2": {
+    "table": 5,
+    "row": 10,
+    "column": 2,
+    "row_label": "",
+    "column_label": "Proposed Model"
+  },
+  "T5_R10_C3": {
+    "table": 5,
+    "row": 10,
+    "column": 3,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R11_C2": {
+    "table": 5,
+    "row": 11,
+    "column": 2,
+    "row_label": "",
+    "column_label": "Proposed Model"
+  },
+  "T5_R11_C3": {
+    "table": 5,
+    "row": 11,
+    "column": 3,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R13_C1": {
+    "table": 5,
+    "row": 13,
+    "column": 1,
+    "row_label": "Front orientation of house (N, NE, E, SE, S, SW, W, NW):",
+    "column_label": "Reference Model"
+  },
+  "T5_R14_C2": {
+    "table": 5,
+    "row": 14,
+    "column": 2,
+    "row_label": "Windows",
+    "column_label": "Proposed Model"
+  },
+  "T5_R14_C3": {
+    "table": 5,
+    "row": 14,
+    "column": 3,
+    "row_label": "Windows",
+    "column_label": ""
+  },
+  "T5_R15_C3": {
+    "table": 5,
+    "row": 15,
+    "column": 3,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R16_C2": {
+    "table": 5,
+    "row": 16,
+    "column": 2,
+    "row_label": "Skylights",
+    "column_label": "Proposed Model"
+  },
+  "T5_R16_C3": {
+    "table": 5,
+    "row": 16,
+    "column": 3,
+    "row_label": "Skylights",
+    "column_label": ""
+  },
+  "T5_R17_C3": {
+    "table": 5,
+    "row": 17,
+    "column": 3,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R18_C1": {
+    "table": 5,
+    "row": 18,
+    "column": 1,
+    "row_label": "Doors",
+    "column_label": "Reference Model"
+  },
+  "T5_R18_C2": {
+    "table": 5,
+    "row": 18,
+    "column": 2,
+    "row_label": "Doors",
+    "column_label": "Proposed Model"
+  },
+  "T5_R19_C1": {
+    "table": 5,
+    "row": 19,
+    "column": 1,
+    "row_label": "Fenestration & door area to gross wall ratio, FDWR (%)",
+    "column_label": "Reference Model"
+  },
+  "T5_R19_C2": {
+    "table": 5,
+    "row": 19,
+    "column": 2,
+    "row_label": "Fenestration & door area to gross wall ratio, FDWR (%)",
+    "column_label": "Proposed Model"
+  },
+  "T5_R25_C1": {
+    "table": 5,
+    "row": 25,
+    "column": 1,
+    "row_label": "Heating System(s)",
+    "column_label": "Reference Model"
+  },
+  "T5_R25_C2": {
+    "table": 5,
+    "row": 25,
+    "column": 2,
+    "row_label": "Heating System(s)",
+    "column_label": "Proposed Model"
+  },
+  "T5_R26_C2": {
+    "table": 5,
+    "row": 26,
+    "column": 2,
+    "row_label": "Cooling System",
+    "column_label": "Proposed Model"
+  },
+  "T5_R26_C3": {
+    "table": 5,
+    "row": 26,
+    "column": 3,
+    "row_label": "Cooling System",
+    "column_label": ""
+  },
+  "T5_R27_C2": {
+    "table": 5,
+    "row": 27,
+    "column": 2,
+    "row_label": "",
+    "column_label": "Proposed Model"
+  },
+  "T5_R27_C3": {
+    "table": 5,
+    "row": 27,
+    "column": 3,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R28_C3": {
+    "table": 5,
+    "row": 28,
+    "column": 3,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R28_C4": {
+    "table": 5,
+    "row": 28,
+    "column": 4,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R29_C3": {
+    "table": 5,
+    "row": 29,
+    "column": 3,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R29_C4": {
+    "table": 5,
+    "row": 29,
+    "column": 4,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R2_C2": {
+    "table": 5,
+    "row": 2,
+    "column": 2,
+    "row_label": "Above-ground",
+    "column_label": "Proposed Model"
+  },
+  "T5_R2_C3": {
+    "table": 5,
+    "row": 2,
+    "column": 3,
+    "row_label": "Above-ground",
+    "column_label": ""
+  },
+  "T5_R30_C1": {
+    "table": 5,
+    "row": 30,
+    "column": 1,
+    "row_label": "Supplementary Heating System(s)3",
+    "column_label": "Reference Model"
+  },
+  "T5_R30_C2": {
+    "table": 5,
+    "row": 30,
+    "column": 2,
+    "row_label": "Supplementary Heating System(s)3",
+    "column_label": "Proposed Model"
+  },
+  "T5_R31_C2": {
+    "table": 5,
+    "row": 31,
+    "column": 2,
+    "row_label": "Ventilation System",
+    "column_label": "Proposed Model"
+  },
+  "T5_R33_C4": {
+    "table": 5,
+    "row": 33,
+    "column": 4,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R34_C4": {
+    "table": 5,
+    "row": 34,
+    "column": 4,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R35_C4": {
+    "table": 5,
+    "row": 35,
+    "column": 4,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R36_C4": {
+    "table": 5,
+    "row": 36,
+    "column": 4,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R37_C1": {
+    "table": 5,
+    "row": 37,
+    "column": 1,
+    "row_label": "Service Water Heating System(s)",
+    "column_label": "Reference Model"
+  },
+  "T5_R37_C2": {
+    "table": 5,
+    "row": 37,
+    "column": 2,
+    "row_label": "Service Water Heating System(s)",
+    "column_label": "Proposed Model"
+  },
+  "T5_R3_C2": {
+    "table": 5,
+    "row": 3,
+    "column": 2,
+    "row_label": "",
+    "column_label": "Proposed Model"
+  },
+  "T5_R3_C3": {
+    "table": 5,
+    "row": 3,
+    "column": 3,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R4_C2": {
+    "table": 5,
+    "row": 4,
+    "column": 2,
+    "row_label": "",
+    "column_label": "Proposed Model"
+  },
+  "T5_R4_C3": {
+    "table": 5,
+    "row": 4,
+    "column": 3,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R5_C2": {
+    "table": 5,
+    "row": 5,
+    "column": 2,
+    "row_label": "",
+    "column_label": "Proposed Model"
+  },
+  "T5_R5_C3": {
+    "table": 5,
+    "row": 5,
+    "column": 3,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R6_C2": {
+    "table": 5,
+    "row": 6,
+    "column": 2,
+    "row_label": "Below-Grade or in Contact with Ground",
+    "column_label": "Proposed Model"
+  },
+  "T5_R6_C3": {
+    "table": 5,
+    "row": 6,
+    "column": 3,
+    "row_label": "Below-Grade or in Contact with Ground",
+    "column_label": ""
+  },
+  "T5_R7_C3": {
+    "table": 5,
+    "row": 7,
+    "column": 3,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R7_C4": {
+    "table": 5,
+    "row": 7,
+    "column": 4,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R8_C3": {
+    "table": 5,
+    "row": 8,
+    "column": 3,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R8_C4": {
+    "table": 5,
+    "row": 8,
+    "column": 4,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T5_R9_C2": {
+    "table": 5,
+    "row": 9,
+    "column": 2,
+    "row_label": "",
+    "column_label": "Proposed Model"
+  },
+  "T5_R9_C3": {
+    "table": 5,
+    "row": 9,
+    "column": 3,
+    "row_label": "",
+    "column_label": ""
+  },
+  "T6_R1_C0": {
+    "table": 6,
+    "row": 1,
+    "column": 0,
+    "row_label": "",
+    "column_label": "Max. test result target:"
+  },
+  "T7_R0_C1": {
+    "table": 7,
+    "row": 0,
+    "column": 1,
+    "row_label": "2.32 W/L/s =",
+    "column_label": "{{T7_R0_C1}}"
+  },
+  "T8_R0_C1": {
+    "table": 8,
+    "row": 0,
+    "column": 1,
+    "row_label": "%",
+    "column_label": "{{T8_R0_C1}}"
+  },
+  "T9_R0_C0": {
+    "table": 9,
+    "row": 0,
+    "column": 0,
+    "row_label": "",
+    "column_label": "{{T9_R0_C0}}"
+  },
+  "T9_R0_C2": {
+    "table": 9,
+    "row": 0,
+    "column": 2,
+    "row_label": "",
+    "column_label": "{{T9_R0_C2}}"
+  }
+}

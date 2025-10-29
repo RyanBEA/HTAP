@@ -1,0 +1,8000 @@
+{
+  "summary": {
+    "originalTableCount": 9,
+    "recreatedTableCount": 15,
+    "issueCount": 105
+  },
+  "originalTables": [
+    {
+      "tableIndex": 1,
+      "columnCount": 3,
+      "rowCount": 5,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "The (name of jurisdiction) Requirements for Divisi"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Project Name:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Building Permit Number (Completed Internally)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Project Address:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Applicant Name:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Applicant Address:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 2,
+      "columnCount": 6,
+      "rowCount": 4,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Climate zone (based on heating degree days in Cels"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Zone 4 (< 3000)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Zone 5 (3000 to 3999)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Zone 6 (4000 to 4999)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Zone 7A (5000 to 5999)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Zone 7B (6000 to 6999)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Zone 8 (7000 to 7999)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Occupancy type"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Floor area"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Fenestration and door area to gross wall ratio (FD"
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 3,
+      "columnCount": 7,
+      "rowCount": 9,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": "restart",
+              "text": "Indicate Compliance Path"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Energy Performance Tier"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Building Envelope Trade-Off?"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Forms to Complete"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "D1"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "D2"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "9.36 Submittal Calculator"
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Prescriptive (Subsections 9.36.2-9.36.4, 9.36.8)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "1"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "No"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "√"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Yes"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "√"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "√ (BE Trade-off tab)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "2-5"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "-"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "√"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "√ (Prescriptive Tier tab)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 5,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Performance (Subsection 9.36.5, 9.36.7)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "1"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "-"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "√"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 6,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "2-5"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "-"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "√"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "√ (Performance Tier tab)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 7,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "Additional information to be submitted for review"
+            }
+          ]
+        },
+        {
+          "rowIndex": 8,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Insulation and air barrier details in project draw"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Window & door schedule  RSI assembly calculations "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 4,
+      "columnCount": 9,
+      "rowCount": 40,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "Input Parameters"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Reference Model"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Proposed Model"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "Opaque Assemblies"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Effective Thermal Resistance (RSI)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Above-ground"
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Ceilings below attics"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Cathedral ceilings and flat roofs"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Walls"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 5,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Floors over unheated spaces"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 6,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Below-Grade or in Contact with Ground"
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Foundation walls"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 7,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": "restart",
+              "text": "Unheated floors"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "below frost line"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 8,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "above frost line"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 9,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Heated and unheated floors on permafrost"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 10,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Heated floors"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 11,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Slabs-on-grade with an integral footing"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 12,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "Fenestration, Doors, Skylights"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "U-factor, Energy Rating, RSIeff"
+            }
+          ]
+        },
+        {
+          "rowIndex": 13,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "Front orientation of house (N, NE, E, SE, S, SW, W"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 14,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": "restart",
+              "text": "Windows"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "U-factor or ER"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 15,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Solar Heat Gain Coefficient"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "0.26"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 16,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": "restart",
+              "text": "Skylights"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "U-factor or ER"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 17,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Solar Heat Gain Coefficient"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "0.26"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 18,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "Doors"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 19,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "Fenestration & door area to gross wall ratio, FDWR"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 20,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "Airtightness"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Air Changes per Hour (ACH @ 50 Pa)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 21,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "Construction complies with Section 9.25"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "2.5"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "3.2"
+            }
+          ]
+        },
+        {
+          "rowIndex": 22,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "Air barrier system constructed to Subsection 9.25."
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "2.5"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "2.5"
+            }
+          ]
+        },
+        {
+          "rowIndex": 23,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "Airtightness tested (per Sentence 9.36.6.3.(1))"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "2.5 (detached house)  3.0 (attached house)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 24,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "HVAC, Service Hot Water"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Fuel & Equipment Type, Efficiencies"
+            }
+          ]
+        },
+        {
+          "rowIndex": 25,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "Heating System(s)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 26,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": "restart",
+              "text": "Cooling System"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Capacity (kW)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 27,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "SEER"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 28,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": "restart",
+              "text": "Air Source Heat Pump?"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "HSPF V"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 29,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Cutoff Temperature"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 30,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "Supplementary Heating System(s)3"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 31,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": "restart",
+              "text": "Ventilation System"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Principal Ventilation Rate (L/s)"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 32,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Runtime (hrs/day)"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "8"
+            }
+          ]
+        },
+        {
+          "rowIndex": 33,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": "restart",
+              "text": "Fan Power (W)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "@ 0°C"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 34,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "@ -25°C"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 35,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": "restart",
+              "text": "Heat Recovery, % SRE"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "@ 0°C"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "none"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 36,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "@ -25°C"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 37,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "Service Water Heating System(s)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 38,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": "restart",
+              "text": "Drain Water Heat Recovery"
+            },
+            {
+              "gridSpan": 5,
+              "vMerge": null,
+              "text": "Recovery efficiency, flow configuration"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "none"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "equal flow  unequal flow"
+            }
+          ]
+        },
+        {
+          "rowIndex": 39,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 5,
+              "vMerge": null,
+              "text": "# of showers connected (of total)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 5,
+      "columnCount": 4,
+      "rowCount": 5,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Performance Software Calculations"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Software Title:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Version:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Is software HOT2000v11 or ANSI/ASHRAE 140 complian"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Yes  No"
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Annual Energy Consumption (GJ/yr):"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Full house energy report (or equivalent) generated"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 6,
+      "columnCount": 8,
+      "rowCount": 11,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 8,
+              "vMerge": null,
+              "text": "Performance Energy Modeling Professional"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Name:"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Company:"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Phone:"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Email:"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Accreditation or Evaluator/ Advisor/Rater License "
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 8,
+              "vMerge": null,
+              "text": "I hereby certify that the calculations submitted w"
+            }
+          ]
+        },
+        {
+          "rowIndex": 5,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Date:"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Signature:"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 6,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 8,
+              "vMerge": null,
+              "text": "Designer(s)[name(s) & accreditation/licensing, of "
+            }
+          ]
+        },
+        {
+          "rowIndex": 7,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Name:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Accreditation or licensing #:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 8,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Phone:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Email:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 9,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 8,
+              "vMerge": null,
+              "text": "Declaration of designer to have reviewed and take "
+            }
+          ]
+        },
+        {
+          "rowIndex": 10,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Date:"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Signature:"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 7,
+      "columnCount": 19,
+      "rowCount": 51,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 19,
+              "vMerge": null,
+              "text": "Effective Thermal Resistance of Opaque Assemblies "
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 6,
+              "vMerge": "restart",
+              "text": "Assembly"
+            },
+            {
+              "gridSpan": 12,
+              "vMerge": null,
+              "text": "Climate Zone"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Proposed (min. effective RSI)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 8,
+          "cells": [
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "4"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "5"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "6"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "7A"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "7B"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "8"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": "restart",
+              "text": "Above-ground"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": "restart",
+              "text": "Ceilings below attics"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "w/out HRV"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "6.91"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "8.67"
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "10.43"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "w/ HRV"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "6.91"
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "8.67"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "10.43"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 5,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Cathedral ceilings, flat roofs"
+            },
+            {
+              "gridSpan": 5,
+              "vMerge": null,
+              "text": "4.67"
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "5.02"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 6,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": "restart",
+              "text": "Walls"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "w/out HRV"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "2.78"
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "3.08"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "3.85"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 7,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "w/ HRV"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "2.78"
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "2.97"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "3.08"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 8,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Floors over unheated spaces"
+            },
+            {
+              "gridSpan": 5,
+              "vMerge": null,
+              "text": "4.67"
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "5.02"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 9,
+          "cellCount": 8,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": "restart",
+              "text": "Below-Grade or in Contact with Ground"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": "restart",
+              "text": "Foundation walls"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "w/out HRV"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "1.99"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "2.98"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "3.46"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "3.97"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 10,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "w/ HRV"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "1.99"
+            },
+            {
+              "gridSpan": 11,
+              "vMerge": null,
+              "text": "2.98"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 11,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": "restart",
+              "text": "Unheated floors"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "below frost line"
+            },
+            {
+              "gridSpan": 12,
+              "vMerge": null,
+              "text": "Uninsulated"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 12,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "above frost line"
+            },
+            {
+              "gridSpan": 12,
+              "vMerge": null,
+              "text": "1.96"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 13,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Floors on permafrost"
+            },
+            {
+              "gridSpan": 8,
+              "vMerge": null,
+              "text": "n/a"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "4.44"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 14,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Heated floors"
+            },
+            {
+              "gridSpan": 5,
+              "vMerge": null,
+              "text": "2.32"
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "2.84"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 15,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": "restart",
+              "text": "Slabs-on-grade w/ integr. footing"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "w/out HRV"
+            },
+            {
+              "gridSpan": 5,
+              "vMerge": null,
+              "text": "1.96"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "3.72"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "4.59"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 16,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "w/ HRV"
+            },
+            {
+              "gridSpan": 5,
+              "vMerge": null,
+              "text": "1.96"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "2.84"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "3.72"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 17,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 19,
+              "vMerge": null,
+              "text": "Thermal Characteristics of Fenestration, Doors and"
+            }
+          ]
+        },
+        {
+          "rowIndex": 18,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 6,
+              "vMerge": "restart",
+              "text": "Assembly"
+            },
+            {
+              "gridSpan": 12,
+              "vMerge": null,
+              "text": "Climate Zone"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Proposed (max. U or min. ER)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 19,
+          "cellCount": 8,
+          "cells": [
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "4"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "5"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "6"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "7A"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "7B"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "8"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 20,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": "restart",
+              "text": "Fenestration & doors"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Max. U-value"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "1.84"
+            },
+            {
+              "gridSpan": 5,
+              "vMerge": null,
+              "text": "1.61"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "1.44"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 21,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Min. Energy Rating"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "21"
+            },
+            {
+              "gridSpan": 5,
+              "vMerge": null,
+              "text": "25"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "29"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 22,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Skylights (Max. U-value)"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "2.92"
+            },
+            {
+              "gridSpan": 5,
+              "vMerge": null,
+              "text": "2.75"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "2.41"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 23,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "One door exception (Max. U-value)"
+            },
+            {
+              "gridSpan": 12,
+              "vMerge": null,
+              "text": "2.6"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 24,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Access hatches (Min. RSIeff)"
+            },
+            {
+              "gridSpan": 12,
+              "vMerge": null,
+              "text": "2.6"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 25,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 19,
+              "vMerge": null,
+              "text": "HVAC Equipment Efficiency Requirements"
+            }
+          ]
+        },
+        {
+          "rowIndex": 26,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Equipment"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Capacity kW"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Standard"
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Min. Efficiency"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Proposed (fuel & equipment type, efficiency)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 27,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Furnace"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Gas-fired"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": "restart",
+              "text": "≤ 66"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": "restart",
+              "text": "CSA P.2"
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "AFUE ≥ 95%"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 28,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Oil-fired"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "AFUE ≥ 85%"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 29,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Electric"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "-"
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "See footnote 5"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 30,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Boiler"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Gas-fired"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": "restart",
+              "text": "< 88"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": "restart",
+              "text": "CSA P.2"
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "AFUE ≥ 90%"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 31,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Oil-fired"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "AFUE ≥ 86%"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 32,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Electric"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "-"
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "See footnote"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 33,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Air source heat pump – split"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "< 19"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "CSA C656"
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "HSPF V ≥ 7.1"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 34,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Combined space- and water-heating systems"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "≤ 87.9 (boiler), or  ≤ 73.2 (service water heater)"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "CSA-P.9"
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "TPF ≥ 0.80"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 35,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": "restart",
+              "text": "Heat Recovery Ventilation"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": "restart",
+              "text": "-"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": "restart",
+              "text": "CSA-C439"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "@0°C"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "60%SRE"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 36,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "@-25°C"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "55%SRE"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 37,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "(Other)"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 38,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 19,
+              "vMerge": null,
+              "text": "Service Water Heater Efficiency Requirements"
+            }
+          ]
+        },
+        {
+          "rowIndex": 39,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Equipment"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Capacity"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Standard"
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "Min. Efficiency"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Proposed (fuel & equipment type, efficiency)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 40,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": "restart",
+              "text": "Tank Storage"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": "restart",
+              "text": "Electric (≤ 12 kW)"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": "restart",
+              "text": "50-270L"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": "restart",
+              "text": "CSA-C191"
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "SL≤ 35+0.20V (top in.)"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 41,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "SL ≤ 40+0.20V (bottom in.)"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 42,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": "restart",
+              "text": "270-454L"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "SL≤0.472V-38.5 (top in.)"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 43,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "SL ≤ 0.472V-33.5 (bottom in.)"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 44,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": "restart",
+              "text": "Gas-fired (≤ 22 kW)"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "1st hr <68 L"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": "restart",
+              "text": "CSA-P.3"
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "UEF ≥ 0.3456 – 0.00053V"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 45,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "1st hr 68-192 L"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "UEF ≥ 0.5982 – 0.00050V"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 46,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "1st hr 193-283 L"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "UEF ≥ 0.6483 – 0.00045V"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 47,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": "restart",
+              "text": "Tankless, gas-fired (≤ 58.6 kW)"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "< 6.4 L/min"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": "restart",
+              "text": "CSA-P.3"
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "UEF ≥ 0.86"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 48,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "≥ 6.4 L/min"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "UEF ≥ 0.87"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 49,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Heat pump water heaters"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "≤24 A and ≤250 V"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "CSA-C745"
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": "EF ≥ 2.1"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 50,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "(Other)"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 7,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 8,
+      "columnCount": 1,
+      "rowCount": 2,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Tiered Energy Compliance – Prescriptive Path"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 9,
+      "columnCount": 6,
+      "rowCount": 5,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Designer(s)[name(s) & accreditation/licensing of p"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Name:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Accreditation or licensing #:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Phone:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Email:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Declaration of designer to have reviewed and take "
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Date:"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Signature:"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "recreatedTables": [
+    {
+      "tableIndex": 1,
+      "columnCount": 3,
+      "rowCount": 5,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "The (name of jurisdiction) Requirements for Divisi"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Project Name:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Building Permit Number (Completed Internally)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Project Address:"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Applicant Name:"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Applicant Address:"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 2,
+      "columnCount": 6,
+      "rowCount": 2,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Climate zone (based on heating degree days in Cels"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ Zone 4\n(< 3000)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ Zone 5\n(3000 to 3999)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ Zone 6\n(4000 to 4999)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ Zone 7A\n(5000 to 5999)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ Zone 7B\n(6000 to 6999)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ Zone 8\n(7000 to 7999)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 3,
+      "columnCount": 3,
+      "rowCount": 2,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Occupancy type"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Floor area"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Fenestration and door area to gross wall ratio (FD"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "____________ m²"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Fenestration & door area/ m² = Gross wall area = m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 4,
+      "columnCount": 7,
+      "rowCount": 7,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Indicate Compliance Path"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Energy\nPerformance Tier"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Building\nEnvelope\nTrade-Off?"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Forms to Complete"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "D1"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "D2"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "9.36 Submittal Calculator"
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "☐"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Prescriptive\n(Subsections 9.36.2-9.36.4, 9.36.8)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ 1"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ No"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "√"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ Yes"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "√"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "√ (BE Trade-off tab)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ 2-5"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "-"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "√"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "√ (Prescriptive Tier tab)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 5,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "☐"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Performance\n(Subsection 9.36.5, 9.36.7)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ 1"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "-"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "√"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 6,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ 2-5"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "-"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "√"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "√ (Performance Tier tab)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 5,
+      "columnCount": 2,
+      "rowCount": 2,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Additional information to be submitted for review"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ Insulation and air barrier details in project dr"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ Window & door schedule ☐ RSI assembly calculatio"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 6,
+      "columnCount": 5,
+      "rowCount": 43,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Input Parameters"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Reference Model"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Proposed Model"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 5,
+              "vMerge": null,
+              "text": "Opaque Assemblies"
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Effective Thermal Resistance (RSI)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Above-ground"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Ceilings below attics"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 5,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Cathedral ceilings and flat roofs"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 6,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Walls"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 7,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Floors over unheated spaces"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 8,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Below-Grade or in Contact with Ground"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 9,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Foundation walls"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 10,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Unheated floors"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "below frost line"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 11,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "above frost line"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 12,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Heated and unheated floors on permafrost"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 13,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Heated floors"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 14,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Slabs-on-grade with an integral footing"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 15,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 5,
+              "vMerge": null,
+              "text": "Fenestration, Doors, Skylights"
+            }
+          ]
+        },
+        {
+          "rowIndex": 16,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "U-factor, Energy Rating, RSIeff"
+            }
+          ]
+        },
+        {
+          "rowIndex": 17,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 5,
+              "vMerge": null,
+              "text": "Front orientation of house (N, NE, E, SE, S, SW, W"
+            }
+          ]
+        },
+        {
+          "rowIndex": 18,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Windows"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "U-factor or ER"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 19,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Solar Heat Gain Coefficient"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "0.26"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 20,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Skylights"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "U-factor or ER"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 21,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Solar Heat Gain Coefficient"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "0.26"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 22,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Doors"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 23,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Fenestration & door area to gross wall ratio, FDWR"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 24,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 5,
+              "vMerge": null,
+              "text": "Airtightness"
+            }
+          ]
+        },
+        {
+          "rowIndex": 25,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Air Changes per Hour (ACH @ 50 Pa)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 26,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "☐ Construction complies with Section 9.25"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "2.5"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "3.2"
+            }
+          ]
+        },
+        {
+          "rowIndex": 27,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "☐ Air barrier system constructed to Subsection 9.2"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "2.5"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "2.5"
+            }
+          ]
+        },
+        {
+          "rowIndex": 28,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "☐ Airtightness tested (per Sentence 9.36.6.3.(1))"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ 2.5 (detached house) ☐ 3.0 (attached house)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Max. test result target:"
+            }
+          ]
+        },
+        {
+          "rowIndex": 29,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 5,
+              "vMerge": null,
+              "text": "HVAC, Service Hot Water"
+            }
+          ]
+        },
+        {
+          "rowIndex": 30,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Fuel & Equipment Type, Efficiencies"
+            }
+          ]
+        },
+        {
+          "rowIndex": 31,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Heating System(s)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 32,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Cooling System"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Capacity (kW)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 33,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "SEER"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 34,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "☐ Air Source Heat Pump? HSPF V Cutoff Temperature"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 35,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Supplementary Heating System(s)3"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 36,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Ventilation System"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Principal Ventilation Rate (L/s)4"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 37,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Runtime (hrs/day)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "8"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 38,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Fan Power (W)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "@ 0°C\n@ -25°C"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "2.32 W/L/s = ______ W"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 39,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Heat Recovery, % SRE"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "@ 0°C\n@ -25°C"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "none"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 40,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Service Water Heating System(s)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 41,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Drain Water Heat Recovery"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Recovery efficiency, flow configuration"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "none"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "___% RE ☐equal flow  ☐unequal flow"
+            }
+          ]
+        },
+        {
+          "rowIndex": 42,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "# of showers connected (of total)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "___ of ___"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 7,
+      "columnCount": 2,
+      "rowCount": 5,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Performance Software Calculations"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Software Title:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Version:"
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Is software HOT2000v11 or ANSI/ASHRAE 140 complian"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ Yes    ☐ No"
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Annual Energy Consumption (GJ/yr):"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Reference House: ______ > Proposed House: ______"
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "☐ Full house energy report (or equivalent) generat"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 8,
+      "columnCount": 4,
+      "rowCount": 6,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Performance Energy Modeling Professional"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Name:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Company:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Phone:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Email:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 2,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Accreditation or Evaluator/ Advisor/Rater License "
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "I hereby certify that the calculations submitted w"
+            }
+          ]
+        },
+        {
+          "rowIndex": 5,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Date:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Signature:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 9,
+      "columnCount": 4,
+      "rowCount": 5,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Designer(s) [name(s) & accreditation/licensing, of"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Name:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Accreditation or licensing #:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Phone:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Email:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Declaration of designer to have reviewed and take "
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Date:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Signature:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 10,
+      "columnCount": 10,
+      "rowCount": 17,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 10,
+              "vMerge": null,
+              "text": "Effective Thermal Resistance of Opaque Assemblies "
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "Assembly"
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Climate Zone"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Proposed\n(min. effective RSI)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 10,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "4"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "5"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "6"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "7A"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "7B"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "8"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Above-ground"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Ceilings below attics"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ w/out HRV"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "6.91"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "8.67"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "10.43"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ w/ HRV"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "6.91"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "8.67"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "10.43"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 5,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Cathedral ceilings, flat roofs"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "4.67"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "5.02"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 6,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Walls"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ w/out HRV"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "2.78"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "3.08"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "3.85"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 7,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ w/ HRV"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "2.78"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "2.97"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "3.08"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 8,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Floors over unheated spaces"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "4.67"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "5.02"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 9,
+          "cellCount": 9,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Below-Grade or in Contact with Ground"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Foundation walls"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ w/out HRV"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "1.99"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "2.98"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "3.46"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "3.97"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 10,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ w/ HRV"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "1.99"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "2.98"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 11,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Unheated floors"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "below frost line"
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Uninsulated"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 12,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "above frost line"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "1.96"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 13,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Floors on permafrost"
+            },
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "n/a"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "4.44"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 14,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Heated floors"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "2.32"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "2.84"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 15,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Slabs-on-grade w/ integr. footing"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ w/out HRV"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "1.96"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "3.72"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "4.59"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 16,
+          "cellCount": 7,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "☐ w/ HRV"
+            },
+            {
+              "gridSpan": 3,
+              "vMerge": null,
+              "text": "1.96"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "2.84"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "3.72"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 11,
+      "columnCount": 8,
+      "rowCount": 8,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 8,
+              "vMerge": null,
+              "text": "Thermal Characteristics of Fenestration, Doors and"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Assembly"
+            },
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Climate Zone"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Proposed\n(max. U or min. ER)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 8,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "4"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "5"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "6"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "7A"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "7B"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "8"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Fenestration & doors"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Max. U-value"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "1.84"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "1.61"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "1.44"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Min. Energy Rating"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "21"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "25"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "29"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 5,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Skylights (Max. U-value)"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "2.92"
+            },
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "2.75"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "2.41"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 6,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "One door exception (Max. U-value)"
+            },
+            {
+              "gridSpan": 5,
+              "vMerge": null,
+              "text": "2.6"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 7,
+          "cellCount": 3,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Access hatches (Min. RSIeff)"
+            },
+            {
+              "gridSpan": 5,
+              "vMerge": null,
+              "text": "2.6"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 12,
+      "columnCount": 6,
+      "rowCount": 12,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "HVAC Equipment Efficiency Requirements"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Equipment"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Capacity kW"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Standard"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Min. Efficiency"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Proposed\n(fuel & equipment type, efficiency)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Furnace"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Gas-fired"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "≤ 66"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "CSA P.2"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "AFUE ≥ 95%5"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Oil-fired"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "AFUE ≥ 85%"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Electric"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "≤ 66"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "-"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "See footnote 5"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 5,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Boiler"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Gas-fired"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "< 88"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "CSA P.2"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "AFUE ≥ 90%"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 6,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Oil-fired"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "AFUE ≥ 86%"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 7,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Electric"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "< 88"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "-"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "See footnote6"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 8,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Air source heat pump – split"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "< 19"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "CSA C656"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "HSPF V ≥ 7.1"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 9,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Combined space- and water-heating systems"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "≤ 87.9 (boiler), or\n≤ 73.2 (service water heater)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "CSA-P.9"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "TPF ≥ 0.80"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 10,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Heat Recovery Ventilation"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "-"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "CSA-C439"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "@0°C 60 %SRE @-25°C 55 %SRE7"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 11,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "(Other)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 13,
+      "columnCount": 6,
+      "rowCount": 13,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 6,
+              "vMerge": null,
+              "text": "Service Water Heater Efficiency Requirements"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Equipment"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Capacity"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Standard"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Min. Efficiency"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Proposed\n(fuel & equipment type, efficiency)"
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Tank Storage"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Electric\n(≤ 12 kW)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "50-270L"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "CSA-C191"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "SL ≤ 35+0.20V (top in.)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "SL ≤ 40+0.20V (bottom in.)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "270-454L"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "SL ≤ 0.472V-38.5 (top in.)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 5,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "SL ≤ 0.472V-33.5 (bottom in.)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 6,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "Gas-fired (≤ 22 kW)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "1st hr <68 L"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "CSA-P.3"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "UEF ≥ 0.3456 – 0.00053V"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 7,
+          "cellCount": 6,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "1st hr 68-192 L"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "UEF ≥ 0.5982 – 0.00050V"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 8,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "1st hr 193-283 L"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "UEF ≥ 0.6483 – 0.00045V"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 9,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Tankless, gas-fired (≤ 58.6 kW)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "< 6.4 L/min"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": "CSA-P.3"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "UEF ≥ 0.86"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "restart",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 10,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "≥ 6.4 L/min"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "UEF ≥ 0.87"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": "continue",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 11,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "Heat pump water heaters"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "≤24 A and ≤250 V"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "CSA-C745"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "EF ≥ 2.1"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 12,
+          "cellCount": 5,
+          "cells": [
+            {
+              "gridSpan": 2,
+              "vMerge": null,
+              "text": "(Other)"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 14,
+      "columnCount": 1,
+      "rowCount": 2,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Tiered Energy Compliance – Prescriptive Path"
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "(if pursuing Energy Tier ≥ 2) Energy Tier Achieved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tableIndex": 15,
+      "columnCount": 4,
+      "rowCount": 5,
+      "rows": [
+        {
+          "rowIndex": 0,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Designer(s) [name(s) & accreditation/licensing of "
+            }
+          ]
+        },
+        {
+          "rowIndex": 1,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Name:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Accreditation or licensing #:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 2,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Phone:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Email:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        },
+        {
+          "rowIndex": 3,
+          "cellCount": 1,
+          "cells": [
+            {
+              "gridSpan": 4,
+              "vMerge": null,
+              "text": "Declaration of designer to have reviewed and take "
+            }
+          ]
+        },
+        {
+          "rowIndex": 4,
+          "cellCount": 4,
+          "cells": [
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Date:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": "Signature:"
+            },
+            {
+              "gridSpan": 1,
+              "vMerge": null,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "type": "TABLE_COUNT_MISMATCH",
+      "severity": "HIGH",
+      "message": "Table count mismatch: Original has 9, Recreated has 15"
+    },
+    {
+      "type": "VMERGE_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 1,
+      "row": 2,
+      "cell": 3,
+      "message": "Table 1, Row 2, Cell 3: vMerge mismatch - Original: restart, Recreated: null"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 1,
+      "row": 3,
+      "message": "Table 1, Row 3: Cell count mismatch - Original: 3, Recreated: 2"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 1,
+      "row": 3,
+      "cell": 2,
+      "message": "Table 1, Row 3, Cell 2: GridSpan mismatch - Original: 1, Recreated: 2",
+      "originalText": "",
+      "recreatedText": ""
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 1,
+      "row": 4,
+      "message": "Table 1, Row 4: Cell count mismatch - Original: 3, Recreated: 2"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 1,
+      "row": 4,
+      "cell": 2,
+      "message": "Table 1, Row 4, Cell 2: GridSpan mismatch - Original: 1, Recreated: 2",
+      "originalText": "",
+      "recreatedText": ""
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 1,
+      "row": 5,
+      "message": "Table 1, Row 5: Cell count mismatch - Original: 3, Recreated: 2"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 1,
+      "row": 5,
+      "cell": 2,
+      "message": "Table 1, Row 5, Cell 2: GridSpan mismatch - Original: 1, Recreated: 2",
+      "originalText": "",
+      "recreatedText": ""
+    },
+    {
+      "type": "ROW_COUNT_MISMATCH",
+      "severity": "HIGH",
+      "table": 2,
+      "message": "Table 2: Row count mismatch - Original: 4, Recreated: 2"
+    },
+    {
+      "type": "COLUMN_COUNT_MISMATCH",
+      "severity": "HIGH",
+      "table": 3,
+      "message": "Table 3: Column count mismatch - Original: 7, Recreated: 3"
+    },
+    {
+      "type": "ROW_COUNT_MISMATCH",
+      "severity": "HIGH",
+      "table": 3,
+      "message": "Table 3: Row count mismatch - Original: 9, Recreated: 2"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 3,
+      "row": 1,
+      "message": "Table 3, Row 1: Cell count mismatch - Original: 4, Recreated: 3"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 3,
+      "row": 1,
+      "cell": 1,
+      "message": "Table 3, Row 1, Cell 1: GridSpan mismatch - Original: 2, Recreated: 1",
+      "originalText": "Indicate Compliance Path",
+      "recreatedText": "Occupancy type"
+    },
+    {
+      "type": "VMERGE_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 3,
+      "row": 1,
+      "cell": 1,
+      "message": "Table 3, Row 1, Cell 1: vMerge mismatch - Original: restart, Recreated: null"
+    },
+    {
+      "type": "VMERGE_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 3,
+      "row": 1,
+      "cell": 2,
+      "message": "Table 3, Row 1, Cell 2: vMerge mismatch - Original: restart, Recreated: null"
+    },
+    {
+      "type": "VMERGE_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 3,
+      "row": 1,
+      "cell": 3,
+      "message": "Table 3, Row 1, Cell 3: vMerge mismatch - Original: restart, Recreated: null"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 3,
+      "row": 2,
+      "message": "Table 3, Row 2: Cell count mismatch - Original: 6, Recreated: 3"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 3,
+      "row": 2,
+      "cell": 1,
+      "message": "Table 3, Row 2, Cell 1: GridSpan mismatch - Original: 2, Recreated: 1",
+      "originalText": "",
+      "recreatedText": ""
+    },
+    {
+      "type": "COLUMN_COUNT_MISMATCH",
+      "severity": "HIGH",
+      "table": 4,
+      "message": "Table 4: Column count mismatch - Original: 9, Recreated: 7"
+    },
+    {
+      "type": "ROW_COUNT_MISMATCH",
+      "severity": "HIGH",
+      "table": 4,
+      "message": "Table 4: Row count mismatch - Original: 40, Recreated: 7"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 1,
+      "message": "Table 4, Row 1: Cell count mismatch - Original: 3, Recreated: 4"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 1,
+      "cell": 1,
+      "message": "Table 4, Row 1, Cell 1: GridSpan mismatch - Original: 7, Recreated: 2",
+      "originalText": "Input Parameters",
+      "recreatedText": "Indicate Compliance Path"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 2,
+      "message": "Table 4, Row 2: Cell count mismatch - Original: 2, Recreated: 7"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 2,
+      "cell": 1,
+      "message": "Table 4, Row 2, Cell 1: GridSpan mismatch - Original: 7, Recreated: 1",
+      "originalText": "Opaque Assemblies",
+      "recreatedText": ""
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 2,
+      "cell": 2,
+      "message": "Table 4, Row 2, Cell 2: GridSpan mismatch - Original: 2, Recreated: 1",
+      "originalText": "Effective Thermal Resistance (RSI)",
+      "recreatedText": ""
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 3,
+      "message": "Table 4, Row 3: Cell count mismatch - Original: 4, Recreated: 7"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 3,
+      "cell": 2,
+      "message": "Table 4, Row 3, Cell 2: GridSpan mismatch - Original: 6, Recreated: 1",
+      "originalText": "Ceilings below attics",
+      "recreatedText": "Prescriptive\n(Subsections 9.36.2-9.36.4, 9.36.8)"
+    },
+    {
+      "type": "VMERGE_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 3,
+      "cell": 2,
+      "message": "Table 4, Row 3, Cell 2: vMerge mismatch - Original: null, Recreated: restart"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 4,
+      "message": "Table 4, Row 4: Cell count mismatch - Original: 4, Recreated: 7"
+    },
+    {
+      "type": "VMERGE_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 4,
+      "cell": 1,
+      "message": "Table 4, Row 4, Cell 1: vMerge mismatch - Original: null, Recreated: continue"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 4,
+      "cell": 2,
+      "message": "Table 4, Row 4, Cell 2: GridSpan mismatch - Original: 6, Recreated: 1",
+      "originalText": "Cathedral ceilings and flat roofs",
+      "recreatedText": ""
+    },
+    {
+      "type": "VMERGE_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 4,
+      "cell": 2,
+      "message": "Table 4, Row 4, Cell 2: vMerge mismatch - Original: null, Recreated: continue"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 5,
+      "message": "Table 4, Row 5: Cell count mismatch - Original: 4, Recreated: 7"
+    },
+    {
+      "type": "VMERGE_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 5,
+      "cell": 1,
+      "message": "Table 4, Row 5, Cell 1: vMerge mismatch - Original: null, Recreated: continue"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 5,
+      "cell": 2,
+      "message": "Table 4, Row 5, Cell 2: GridSpan mismatch - Original: 6, Recreated: 1",
+      "originalText": "Walls",
+      "recreatedText": ""
+    },
+    {
+      "type": "VMERGE_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 5,
+      "cell": 2,
+      "message": "Table 4, Row 5, Cell 2: vMerge mismatch - Original: null, Recreated: continue"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 6,
+      "message": "Table 4, Row 6: Cell count mismatch - Original: 4, Recreated: 7"
+    },
+    {
+      "type": "VMERGE_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 6,
+      "cell": 1,
+      "message": "Table 4, Row 6, Cell 1: vMerge mismatch - Original: null, Recreated: restart"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 6,
+      "cell": 2,
+      "message": "Table 4, Row 6, Cell 2: GridSpan mismatch - Original: 6, Recreated: 1",
+      "originalText": "Floors over unheated spaces",
+      "recreatedText": "Performance\n(Subsection 9.36.5, 9.36.7)"
+    },
+    {
+      "type": "VMERGE_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 6,
+      "cell": 2,
+      "message": "Table 4, Row 6, Cell 2: vMerge mismatch - Original: null, Recreated: restart"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 7,
+      "message": "Table 4, Row 7: Cell count mismatch - Original: 4, Recreated: 7"
+    },
+    {
+      "type": "VMERGE_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 7,
+      "cell": 1,
+      "message": "Table 4, Row 7, Cell 1: vMerge mismatch - Original: restart, Recreated: continue"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 7,
+      "cell": 2,
+      "message": "Table 4, Row 7, Cell 2: GridSpan mismatch - Original: 6, Recreated: 1",
+      "originalText": "Foundation walls",
+      "recreatedText": ""
+    },
+    {
+      "type": "VMERGE_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 4,
+      "row": 7,
+      "cell": 2,
+      "message": "Table 4, Row 7, Cell 2: vMerge mismatch - Original: null, Recreated: continue"
+    },
+    {
+      "type": "COLUMN_COUNT_MISMATCH",
+      "severity": "HIGH",
+      "table": 5,
+      "message": "Table 5: Column count mismatch - Original: 4, Recreated: 2"
+    },
+    {
+      "type": "ROW_COUNT_MISMATCH",
+      "severity": "HIGH",
+      "table": 5,
+      "message": "Table 5: Row count mismatch - Original: 5, Recreated: 2"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 5,
+      "row": 1,
+      "cell": 1,
+      "message": "Table 5, Row 1, Cell 1: GridSpan mismatch - Original: 4, Recreated: 2",
+      "originalText": "Performance Software Calculations",
+      "recreatedText": "Additional information to be submitted for review"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 5,
+      "row": 2,
+      "message": "Table 5, Row 2: Cell count mismatch - Original: 4, Recreated: 2"
+    },
+    {
+      "type": "COLUMN_COUNT_MISMATCH",
+      "severity": "HIGH",
+      "table": 6,
+      "message": "Table 6: Column count mismatch - Original: 8, Recreated: 5"
+    },
+    {
+      "type": "ROW_COUNT_MISMATCH",
+      "severity": "HIGH",
+      "table": 6,
+      "message": "Table 6: Row count mismatch - Original: 11, Recreated: 43"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 1,
+      "message": "Table 6, Row 1: Cell count mismatch - Original: 1, Recreated: 3"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 1,
+      "cell": 1,
+      "message": "Table 6, Row 1, Cell 1: GridSpan mismatch - Original: 8, Recreated: 3",
+      "originalText": "Performance Energy Modeling Professional",
+      "recreatedText": "Input Parameters"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 2,
+      "message": "Table 6, Row 2: Cell count mismatch - Original: 4, Recreated: 1"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 2,
+      "cell": 1,
+      "message": "Table 6, Row 2, Cell 1: GridSpan mismatch - Original: 2, Recreated: 5",
+      "originalText": "Name:",
+      "recreatedText": "Opaque Assemblies"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 3,
+      "message": "Table 6, Row 3: Cell count mismatch - Original: 4, Recreated: 2"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 3,
+      "cell": 1,
+      "message": "Table 6, Row 3, Cell 1: GridSpan mismatch - Original: 2, Recreated: 3",
+      "originalText": "Phone:",
+      "recreatedText": ""
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 4,
+      "message": "Table 6, Row 4: Cell count mismatch - Original: 2, Recreated: 3"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 4,
+      "cell": 1,
+      "message": "Table 6, Row 4, Cell 1: GridSpan mismatch - Original: 4, Recreated: 3",
+      "originalText": "Accreditation or Evaluator/ Advisor/Rater License ",
+      "recreatedText": "Above-ground"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 4,
+      "cell": 2,
+      "message": "Table 6, Row 4, Cell 2: GridSpan mismatch - Original: 4, Recreated: 1",
+      "originalText": "",
+      "recreatedText": ""
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 5,
+      "message": "Table 6, Row 5: Cell count mismatch - Original: 1, Recreated: 3"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 5,
+      "cell": 1,
+      "message": "Table 6, Row 5, Cell 1: GridSpan mismatch - Original: 8, Recreated: 3",
+      "originalText": "I hereby certify that the calculations submitted w",
+      "recreatedText": "Ceilings below attics"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 6,
+      "message": "Table 6, Row 6: Cell count mismatch - Original: 4, Recreated: 3"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 6,
+      "cell": 1,
+      "message": "Table 6, Row 6, Cell 1: GridSpan mismatch - Original: 1, Recreated: 3",
+      "originalText": "Date:",
+      "recreatedText": "Cathedral ceilings and flat roofs"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 6,
+      "cell": 2,
+      "message": "Table 6, Row 6, Cell 2: GridSpan mismatch - Original: 2, Recreated: 1",
+      "originalText": "",
+      "recreatedText": ""
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 6,
+      "cell": 3,
+      "message": "Table 6, Row 6, Cell 3: GridSpan mismatch - Original: 2, Recreated: 1",
+      "originalText": "Signature:",
+      "recreatedText": ""
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 7,
+      "message": "Table 6, Row 7: Cell count mismatch - Original: 1, Recreated: 3"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 7,
+      "cell": 1,
+      "message": "Table 6, Row 7, Cell 1: GridSpan mismatch - Original: 8, Recreated: 3",
+      "originalText": "Designer(s)[name(s) & accreditation/licensing, of ",
+      "recreatedText": "Walls"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 8,
+      "message": "Table 6, Row 8: Cell count mismatch - Original: 4, Recreated: 3"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 8,
+      "cell": 1,
+      "message": "Table 6, Row 8, Cell 1: GridSpan mismatch - Original: 2, Recreated: 3",
+      "originalText": "Name:",
+      "recreatedText": "Floors over unheated spaces"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 8,
+      "cell": 3,
+      "message": "Table 6, Row 8, Cell 3: GridSpan mismatch - Original: 4, Recreated: 1",
+      "originalText": "Accreditation or licensing #:",
+      "recreatedText": ""
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 9,
+      "message": "Table 6, Row 9: Cell count mismatch - Original: 4, Recreated: 3"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 9,
+      "cell": 1,
+      "message": "Table 6, Row 9, Cell 1: GridSpan mismatch - Original: 2, Recreated: 3",
+      "originalText": "Phone:",
+      "recreatedText": "Below-Grade or in Contact with Ground"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 9,
+      "cell": 3,
+      "message": "Table 6, Row 9, Cell 3: GridSpan mismatch - Original: 4, Recreated: 1",
+      "originalText": "Email:",
+      "recreatedText": ""
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 10,
+      "message": "Table 6, Row 10: Cell count mismatch - Original: 1, Recreated: 3"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 10,
+      "cell": 1,
+      "message": "Table 6, Row 10, Cell 1: GridSpan mismatch - Original: 8, Recreated: 3",
+      "originalText": "Declaration of designer to have reviewed and take ",
+      "recreatedText": "Foundation walls"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 11,
+      "cell": 3,
+      "message": "Table 6, Row 11, Cell 3: GridSpan mismatch - Original: 2, Recreated: 1",
+      "originalText": "Signature:",
+      "recreatedText": ""
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 6,
+      "row": 11,
+      "cell": 4,
+      "message": "Table 6, Row 11, Cell 4: GridSpan mismatch - Original: 3, Recreated: 1",
+      "originalText": "",
+      "recreatedText": ""
+    },
+    {
+      "type": "COLUMN_COUNT_MISMATCH",
+      "severity": "HIGH",
+      "table": 7,
+      "message": "Table 7: Column count mismatch - Original: 19, Recreated: 2"
+    },
+    {
+      "type": "ROW_COUNT_MISMATCH",
+      "severity": "HIGH",
+      "table": 7,
+      "message": "Table 7: Row count mismatch - Original: 51, Recreated: 5"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 7,
+      "row": 1,
+      "cell": 1,
+      "message": "Table 7, Row 1, Cell 1: GridSpan mismatch - Original: 19, Recreated: 2",
+      "originalText": "Effective Thermal Resistance of Opaque Assemblies ",
+      "recreatedText": "Performance Software Calculations"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 7,
+      "row": 2,
+      "message": "Table 7, Row 2: Cell count mismatch - Original: 3, Recreated: 2"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 7,
+      "row": 2,
+      "cell": 1,
+      "message": "Table 7, Row 2, Cell 1: GridSpan mismatch - Original: 6, Recreated: 1",
+      "originalText": "Assembly",
+      "recreatedText": "Software Title:"
+    },
+    {
+      "type": "VMERGE_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 7,
+      "row": 2,
+      "cell": 1,
+      "message": "Table 7, Row 2, Cell 1: vMerge mismatch - Original: restart, Recreated: null"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 7,
+      "row": 2,
+      "cell": 2,
+      "message": "Table 7, Row 2, Cell 2: GridSpan mismatch - Original: 12, Recreated: 1",
+      "originalText": "Climate Zone",
+      "recreatedText": "Version:"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 7,
+      "row": 3,
+      "message": "Table 7, Row 3: Cell count mismatch - Original: 8, Recreated: 2"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 7,
+      "row": 3,
+      "cell": 1,
+      "message": "Table 7, Row 3, Cell 1: GridSpan mismatch - Original: 6, Recreated: 1",
+      "originalText": "",
+      "recreatedText": "Is software HOT2000v11 or ANSI/ASHRAE 140 complian"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 7,
+      "row": 4,
+      "message": "Table 7, Row 4: Cell count mismatch - Original: 7, Recreated: 2"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 7,
+      "row": 4,
+      "cell": 1,
+      "message": "Table 7, Row 4, Cell 1: GridSpan mismatch - Original: 2, Recreated: 1",
+      "originalText": "Above-ground",
+      "recreatedText": "Annual Energy Consumption (GJ/yr):"
+    },
+    {
+      "type": "VMERGE_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 7,
+      "row": 4,
+      "cell": 1,
+      "message": "Table 7, Row 4, Cell 1: vMerge mismatch - Original: restart, Recreated: null"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 7,
+      "row": 4,
+      "cell": 2,
+      "message": "Table 7, Row 4, Cell 2: GridSpan mismatch - Original: 3, Recreated: 1",
+      "originalText": "Ceilings below attics",
+      "recreatedText": "Reference House: ______ > Proposed House: ______"
+    },
+    {
+      "type": "VMERGE_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 7,
+      "row": 4,
+      "cell": 2,
+      "message": "Table 7, Row 4, Cell 2: vMerge mismatch - Original: restart, Recreated: null"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 7,
+      "row": 5,
+      "message": "Table 7, Row 5: Cell count mismatch - Original: 7, Recreated: 1"
+    },
+    {
+      "type": "COLUMN_COUNT_MISMATCH",
+      "severity": "HIGH",
+      "table": 8,
+      "message": "Table 8: Column count mismatch - Original: 1, Recreated: 4"
+    },
+    {
+      "type": "ROW_COUNT_MISMATCH",
+      "severity": "HIGH",
+      "table": 8,
+      "message": "Table 8: Row count mismatch - Original: 2, Recreated: 6"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 8,
+      "row": 1,
+      "cell": 1,
+      "message": "Table 8, Row 1, Cell 1: GridSpan mismatch - Original: 1, Recreated: 4",
+      "originalText": "Tiered Energy Compliance – Prescriptive Path",
+      "recreatedText": "Performance Energy Modeling Professional"
+    },
+    {
+      "type": "CELL_COUNT_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 8,
+      "row": 2,
+      "message": "Table 8, Row 2: Cell count mismatch - Original: 1, Recreated: 4"
+    },
+    {
+      "type": "COLUMN_COUNT_MISMATCH",
+      "severity": "HIGH",
+      "table": 9,
+      "message": "Table 9: Column count mismatch - Original: 6, Recreated: 4"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 9,
+      "row": 1,
+      "cell": 1,
+      "message": "Table 9, Row 1, Cell 1: GridSpan mismatch - Original: 6, Recreated: 4",
+      "originalText": "Designer(s)[name(s) & accreditation/licensing of p",
+      "recreatedText": "Designer(s) [name(s) & accreditation/licensing, of"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 9,
+      "row": 2,
+      "cell": 1,
+      "message": "Table 9, Row 2, Cell 1: GridSpan mismatch - Original: 2, Recreated: 1",
+      "originalText": "Name:",
+      "recreatedText": "Name:"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 9,
+      "row": 2,
+      "cell": 3,
+      "message": "Table 9, Row 2, Cell 3: GridSpan mismatch - Original: 2, Recreated: 1",
+      "originalText": "Accreditation or licensing #:",
+      "recreatedText": "Accreditation or licensing #:"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 9,
+      "row": 3,
+      "cell": 1,
+      "message": "Table 9, Row 3, Cell 1: GridSpan mismatch - Original: 2, Recreated: 1",
+      "originalText": "Phone:",
+      "recreatedText": "Phone:"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 9,
+      "row": 3,
+      "cell": 3,
+      "message": "Table 9, Row 3, Cell 3: GridSpan mismatch - Original: 2, Recreated: 1",
+      "originalText": "Email:",
+      "recreatedText": "Email:"
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 9,
+      "row": 4,
+      "cell": 1,
+      "message": "Table 9, Row 4, Cell 1: GridSpan mismatch - Original: 6, Recreated: 4",
+      "originalText": "Declaration of designer to have reviewed and take ",
+      "recreatedText": "Declaration of designer to have reviewed and take "
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 9,
+      "row": 5,
+      "cell": 2,
+      "message": "Table 9, Row 5, Cell 2: GridSpan mismatch - Original: 2, Recreated: 1",
+      "originalText": "",
+      "recreatedText": ""
+    },
+    {
+      "type": "GRIDSPAN_MISMATCH",
+      "severity": "MEDIUM",
+      "table": 9,
+      "row": 5,
+      "cell": 4,
+      "message": "Table 9, Row 5, Cell 4: GridSpan mismatch - Original: 2, Recreated: 1",
+      "originalText": "",
+      "recreatedText": ""
+    }
+  ]
+}

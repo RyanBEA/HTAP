@@ -22,3 +22,20 @@ htap-prm_log.txt
 htap.config
 HTAP-prm.resume
 doc/examples/HTAP-prm.resume
+
+# Node.js
+node_modules/
+package-lock.json
+
+# Compliance Reporting temporary files
+complianceReporting/**/node_modules/
+complianceReporting/**/*_unpacked/
+complianceReporting/**/test_*.docx
+complianceReporting/**/form_recreated*.docx
+complianceReporting/v2/PROGRESS_SUMMARY.md
+complianceReporting/v2/COMPLETION_REPORT.md
+
+# Temporary files
+tmp/
+.playwright-mcp/
+opt.txt

@@ -46,6 +46,12 @@ HTAP (Housing Technology Assessment Platform) is a Ruby-based energy modeling to
 - Archive expected outputs for regression testing
 - Use verbose logging for troubleshooting substitution logic
 
+## Additional Tools
+- **complianceReporting/** - NBC 2020 Energy Compliance Form generation (Node.js/docx)
+  - See [doc/complianceReporting.md](doc/complianceReporting.md) for details
+  - Programmatic .docx generation with complex table structures
+  - Validation through XML structure comparison
+
 ## Dependencies
 - Ruby 2.7+
 - HOT2000 CLI v11.3+ at `C:\H2K-CLI-Min`
