@@ -55,6 +55,8 @@ class ValueTransformer:
             return self._calculation(value, transform_config)
         elif transform_type == 'round':
             return self._round(value, transform_config)
+        elif transform_type == 'average':
+            return self._average(value, transform_config)
         else:
             # Unknown type, return value as-is
             return str(value)
@@ -120,6 +122,31 @@ class ValueTransformer:
 
         decimals = config.get('decimals', 0)
         return f"{numeric_value:.{decimals}f}"
+
+    def _average(self, values, config):
+        """Calculate average of numeric values."""
+        # Handle single value
+        if not isinstance(values, list):
+            values = [values]
+
+        # Filter out empty values and convert to floats
+        numeric_values = []
+        for v in values:
+            try:
+                if v is not None and v != '':
+                    numeric_values.append(float(v))
+            except (ValueError, TypeError):
+                continue
+
+        # Calculate average
+        if not numeric_values:
+            return ''
+
+        avg = sum(numeric_values) / len(numeric_values)
+
+        # Apply optional rounding
+        decimals = config.get('decimals', 2)
+        return f"{avg:.{decimals}f}"
 
     def apply_format(self, value, format_string):
         """

@@ -91,6 +91,12 @@ class H2KToNBCProcessor:
                 attr = mapping.get('xpath_attr')
                 value = extractor.extract_by_xpath(xpath, attr)
 
+            # XPath extraction for all matching elements (returns list)
+            elif 'xpath_all' in mapping:
+                xpath = mapping['xpath_all']
+                attr = mapping.get('xpath_attr')
+                value = extractor.extract_all_by_xpath(xpath, attr)
+
             # Multiple XPath extraction (concatenation)
             elif 'xpath_list' in mapping:
                 xpath_list = mapping['xpath_list']

@@ -26,6 +26,9 @@ class H2KExtractor:
         self.tree = ET.parse(self.h2k_path)
         self.root = self.tree.getroot()
 
+        # H2K files typically don't use XML namespaces
+        self.namespaces = {}
+
     def extract_by_xpath(self, xpath, attribute=None):
         """
         Extract a single value using XPath expression.
