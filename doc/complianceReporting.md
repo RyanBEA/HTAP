@@ -47,10 +47,11 @@ This design allows non-programmers to add new field mappings by editing JSON con
 - Coordinates extraction, transformation, and form filling
 - Handles static values, formulas, and complex mappings
 
-**h2k_to_nbc_mapping.json** (44 KB, version 2.5)
+**h2k_to_nbc_mapping.json** (47 KB, version 2.6)
 - Configuration file with 137 field mappings
 - 69 real data extractions from H2K files
 - 68 placeholder mappings (extract from `.//Application/Name` for manual completion)
+- Type-filtered parallel path RSI formulas for ceiling types (attic vs cathedral/flat)
 - Metadata tracking: version, date, fields mapped
 
 **config_loader.py** (137 lines)
@@ -72,10 +73,11 @@ This design allows non-programmers to add new field mappings by editing JSON con
   - `round2`, `round1`: Decimal rounding
   - `text`: Passthrough for strings
 
-**formula_processor.py** (200 lines)
-- Formula calculation engine
+**formula_processor.py** (220 lines)
+- Formula calculation engine with parallel path RSI support
+- Type-filtered component selection (e.g., filter ceilings by Attic/gable vs Cathedral)
 - Complex mapping processor for multi-component strings
-- Examples: FDWR calculation, ventilation power, equipment descriptions
+- Examples: FDWR calculation, parallel path RSI averaging, ventilation power, equipment descriptions
 
 ### Form Template Structure
 
@@ -115,9 +117,10 @@ Examples:
 ```json
 {
   "metadata": {
-    "version": "2.5",
+    "version": "2.6",
     "description": "Comprehensive H2K to NBC 2020 compliance form field mapping configuration",
     "last_updated": "2025-10-30",
+    "notes": "Added type-filtered parallel path RSI formulas for ceiling types (attic vs cathedral/flat). Fixed Table 5 row mappings per NBC requirements.",
     "fields_mapped": 137,
     "fields_total": 137
   }
@@ -193,30 +196,71 @@ Examples:
 
 ### 3. Formulas
 
-Example: FDWR (Fenestration and Door to Wall Ratio) calculation
+#### Standard Formula Example: FDWR Calculation
 
 ```json
 {
   "formulas": {
-    "fdwr_reference": {
-      "description": "Calculate FDWR for reference model",
-      "source": "reference",
+    "fdwr_calculation": {
+      "description": "Calculate FDWR (Fenestration and Door to Wall Ratio)",
       "inputs": {
-        "window_se": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/SouthEast",
-        "window_sw": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/SouthWest",
-        "door_main": ".//AllResults/Results/Other/GrossArea/MainFloors/Doors/MainDoor",
-        "wall_main": ".//AllResults/Results/Other/GrossArea/MainFloors"
+        "window_area": ".//AllResults/Results/Other/GrossArea/MainFloors",
+        "door_area": ".//AllResults/Results/Other/GrossArea/MainFloors",
+        "wall_area": ".//AllResults/Results/Other/GrossArea/MainFloors"
       },
       "input_attrs": {
-        "window_se": "grossArea",
-        "wall_main": "mainWalls"
+        "window_area": "windows",
+        "door_area": "doors",
+        "wall_area": "mainWalls"
       },
-      "calculation": "((window_se + window_sw + ... + door_main + door_other) / wall_main) * 100",
+      "calculation": "((window_area + door_area) / wall_area) * 100",
       "format": "%.1f"
     }
   }
 }
 ```
+
+#### Parallel Path RSI Formula Example
+
+Calculates area-weighted average RSI using the parallel path method: **Average RSI = (Total Area) / Σ(Area_i / RSI_i)**
+
+```json
+{
+  "formulas": {
+    "parallel_path_rsi_walls": {
+      "description": "Calculate area-weighted average RSI for walls using parallel path method",
+      "type": "parallel_path_rsi",
+      "elements_xpath": ".//House/Components/Wall",
+      "rvalue_xpath": "./Construction/Type",
+      "rvalue_attr": "rValue",
+      "area_height_xpath": "./Measurements",
+      "area_height_attr": "height",
+      "area_perimeter_xpath": "./Measurements",
+      "area_perimeter_attr": "perimeter",
+      "format": "%.2f"
+    },
+    "parallel_path_rsi_ceilings_attic": {
+      "description": "Calculate average RSI for attic ceilings only",
+      "type": "parallel_path_rsi",
+      "elements_xpath": ".//House/Components/Ceiling",
+      "type_filter": ["Attic/gable", "Attic/hip"],
+      "type_xpath": "./Construction/Type/English",
+      "rvalue_xpath": "./Construction/CeilingType",
+      "rvalue_attr": "rValue",
+      "area_xpath": "./Measurements",
+      "area_attr": "area",
+      "format": "%.2f"
+    }
+  }
+}
+```
+
+**Parallel Path Formula Features:**
+- **Type filtering**: Filter components by Construction/Type/English (e.g., ceiling types: "Attic/gable", "Cathedral", "Flat")
+- **Area calculation methods**:
+  - Direct area: `area_xpath` + `area_attr` (for ceilings, floors)
+  - Calculated area: height × perimeter (for walls)
+- **Per NRCan guidance**: https://natural-resources.canada.ca/energy-efficiency/energy-star/tables-calculating-effective-thermal-resistance-opaque-assemblies
 
 ### 4. Complex Mappings
 
@@ -306,15 +350,17 @@ Example: Heating system description
 - FDWR percentage for reference and proposed models
 
 **Table 5 - Building Envelope** (Selected fields)
-- Front orientation (T5_R2_C1, T5_R2_C2)
-- FDWR percentage (T5_R2_C3)
-- Ceiling RSI (T5_R3_C2, T5_R3_C3)
-- Walls above grade RSI (T5_R4_C2, T5_R4_C3)
-- Exposed floor RSI (T5_R6_C2, T5_R6_C3)
+- Front orientation (T5_R13_C1)
+- FDWR percentage (T5_R19_C1, T5_R19_C2)
+- **Ceilings below attics RSI** (T5_R2_C2, T5_R2_C3) - Type-filtered for Attic/gable and Attic/hip
+- **Cathedral ceilings and flat roofs RSI** (T5_R3_C2, T5_R3_C3) - Type-filtered for Cathedral and Flat
+- **Walls above grade RSI** (T5_R4_C2, T5_R4_C3) - Parallel path method
+- Below-grade walls RSI (T5_R6_C2, T5_R6_C3)
+- Heated/unheated floors on permafrost (T5_R9_C2, T5_R9_C3) - Placeholder for manual completion
 - Window U-value (T5_R14_C2, T5_R14_C3)
-- Airtightness (T5_R19_C2, T5_R19_C3)
+- Airtightness (T5_R18_C1, T5_R18_C2)
 - Heating system descriptions (T5_R25_C1, T5_R25_C2)
-- Ventilation system (T5_R33_C1, T5_R33_C2)
+- Ventilation system (T5_R31_C2)
 - DHW system (T5_R37_C1, T5_R37_C2)
 
 **Table 6 - Airtightness Target** (1 field)

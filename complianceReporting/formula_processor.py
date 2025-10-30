@@ -35,6 +35,13 @@ class FormulaProcessor:
             return ''
 
         try:
+            # Check if this is a parallel path RSI calculation
+            if formula.get('type') == 'parallel_path_rsi':
+                result = self._calculate_parallel_path_rsi(formula)
+                format_str = formula.get('format', '%.2f')
+                return self._format_result(result, format_str)
+
+            # Standard formula calculation
             # Extract input values
             inputs = self._extract_formula_inputs(formula)
 
@@ -121,6 +128,106 @@ class FormulaProcessor:
         except Exception as e:
             print(f"Error formatting result {result} with format '{format_str}': {e}")
             return str(result)
+
+    def _calculate_parallel_path_rsi(self, formula):
+        """
+        Calculate area-weighted average RSI using parallel path method.
+        Formula: Average RSI = (Total Area) / Σ(Area_i / RSI_i)
+
+        Args:
+            formula: Formula definition with parallel path RSI parameters
+
+        Returns:
+            Calculated average RSI value
+        """
+        # Extract all elements (e.g., Wall components)
+        elements_xpath = formula.get('elements_xpath')
+        elements = self.extractor.root.findall(elements_xpath, self.extractor.namespaces)
+
+        if not elements:
+            print(f"Warning: No elements found for xpath '{elements_xpath}'")
+            return 0.0
+
+        # Get type filter if specified
+        type_filter = formula.get('type_filter', None)
+        type_xpath = formula.get('type_xpath', './Construction/Type/English')
+
+        # Normalize type_filter to list
+        if type_filter and not isinstance(type_filter, list):
+            type_filter = [type_filter]
+
+        # Extract RSI and area for each element
+        total_area = 0.0
+        sum_area_over_rsi = 0.0
+
+        for element in elements:
+            # Apply type filter if specified
+            if type_filter:
+                type_elem = element.find(type_xpath, self.extractor.namespaces)
+                if type_elem is None or type_elem.text not in type_filter:
+                    continue
+            # Extract R-value
+            rvalue_xpath = formula.get('rvalue_xpath', './Construction/Type')
+            rvalue_attr = formula.get('rvalue_attr', 'rValue')
+            rvalue_elem = element.find(rvalue_xpath, self.extractor.namespaces)
+
+            if rvalue_elem is None:
+                continue
+
+            try:
+                rvalue = float(rvalue_elem.get(rvalue_attr, 0))
+            except (ValueError, TypeError):
+                continue
+
+            if rvalue <= 0:
+                continue
+
+            # Extract area
+            # Check if we have direct area or need to calculate from height * perimeter
+            if 'area_xpath' in formula:
+                # Direct area (for ceilings, floors)
+                area_xpath = formula.get('area_xpath', './Measurements')
+                area_attr = formula.get('area_attr', 'area')
+
+                area_elem = element.find(area_xpath, self.extractor.namespaces)
+                if area_elem is None:
+                    continue
+
+                try:
+                    area = float(area_elem.get(area_attr, 0))
+                except (ValueError, TypeError):
+                    continue
+            else:
+                # Calculate area from height * perimeter (for walls)
+                area_height_xpath = formula.get('area_height_xpath', './Measurements')
+                area_height_attr = formula.get('area_height_attr', 'height')
+                area_perimeter_xpath = formula.get('area_perimeter_xpath', './Measurements')
+                area_perimeter_attr = formula.get('area_perimeter_attr', 'perimeter')
+
+                measurements_elem = element.find(area_height_xpath, self.extractor.namespaces)
+                if measurements_elem is None:
+                    continue
+
+                try:
+                    height = float(measurements_elem.get(area_height_attr, 0))
+                    perimeter = float(measurements_elem.get(area_perimeter_attr, 0))
+                    area = height * perimeter
+                except (ValueError, TypeError):
+                    continue
+
+            if area <= 0:
+                continue
+
+            # Accumulate for parallel path calculation
+            total_area += area
+            sum_area_over_rsi += (area / rvalue)
+
+        # Calculate parallel path average
+        if sum_area_over_rsi > 0:
+            average_rsi = total_area / sum_area_over_rsi
+            return average_rsi
+        else:
+            return 0.0
 
     def calculate_fdwr(self):
         """

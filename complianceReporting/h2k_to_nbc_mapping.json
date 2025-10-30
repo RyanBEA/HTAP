@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "version": "2.5",
+    "version": "2.6",
     "description": "Comprehensive H2K to NBC 2020 compliance form field mapping configuration",
     "last_updated": "2025-10-30",
-    "notes": "All fields mapped - placeholders extract from .//Application/Name",
+    "notes": "Added type-filtered parallel path RSI formulas for ceiling types (attic vs cathedral/flat). Fixed Table 5 row mappings per NBC requirements.",
     "fields_mapped": 137,
     "fields_total": 137
   },
@@ -38,7 +38,7 @@
       "nbc_field": "T0_R3_C1",
       "description": "Applicant Name",
       "source": "proposed",
-      "xpath": ".//ProgramInformation/Client/Name/First",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text",
       "default": ""
     },
@@ -89,29 +89,23 @@
     },
     {
       "nbc_field": "T5_R2_C2",
-      "description": "Above-ground walls RSI (Reference)",
+      "description": "Ceilings below attics RSI (Reference) - Attic/gable and Attic/hip types",
       "source": "reference",
-      "xpath": ".//House/Components/Wall/Construction/Type",
-      "xpath_attr": "rValue",
-      "transform": "round2",
+      "formula": "parallel_path_rsi_ceilings_attic",
       "default": ""
     },
     {
       "nbc_field": "T5_R3_C2",
-      "description": "Ceiling RSI (Reference)",
+      "description": "Cathedral ceilings and flat roofs RSI (Reference)",
       "source": "reference",
-      "xpath": ".//House/Components/Ceiling/Construction/CeilingType",
-      "xpath_attr": "rValue",
-      "transform": "round2",
+      "formula": "parallel_path_rsi_ceilings_cathedral_flat",
       "default": ""
     },
     {
       "nbc_field": "T5_R4_C2",
-      "description": "Exposed floor RSI (Reference)",
+      "description": "Above-grade walls RSI (Reference)",
       "source": "reference",
-      "xpath": ".//House/Components/Floor/Construction/Type",
-      "xpath_attr": "rValue",
-      "transform": "round2",
+      "formula": "parallel_path_rsi_walls",
       "default": ""
     },
     {
@@ -125,11 +119,9 @@
     },
     {
       "nbc_field": "T5_R9_C2",
-      "description": "Basement floor RSI (Reference)",
+      "description": "Heated and unheated floors on permafrost RSI (Reference)",
       "source": "reference",
-      "xpath": ".//House/Components/Basement/Floor/Construction/FloorsAbove",
-      "xpath_attr": "rValue",
-      "transform": "round2",
+      "xpath": ".//Application/Name",
       "default": ""
     },
     {
@@ -366,9 +358,7 @@
       "nbc_field": "T14_R4_C6",
       "description": "Exposed floor RSI (Proposed)",
       "source": "proposed",
-      "xpath": ".//House/Components/Floor/Construction/Type",
-      "xpath_attr": "nominalInsulation",
-      "transform": "round2",
+      "formula": "parallel_path_rsi_floors",
       "default": ""
     },
     {
@@ -563,38 +553,30 @@
     },
     {
       "nbc_field": "T5_R2_C3",
-      "description": "Above-ground walls RSI (Proposed)",
+      "description": "Ceilings below attics RSI (Proposed) - Attic/gable and Attic/hip types",
       "source": "proposed",
-      "xpath": ".//House/Components/Wall/Construction/Type",
-      "xpath_attr": "rValue",
-      "transform": "round2",
+      "formula": "parallel_path_rsi_ceilings_attic",
       "default": ""
     },
     {
       "nbc_field": "T5_R3_C3",
-      "description": "Ceiling RSI (Proposed)",
+      "description": "Cathedral ceilings and flat roofs RSI (Proposed)",
       "source": "proposed",
-      "xpath": ".//House/Components/Ceiling/Construction/CeilingType",
-      "xpath_attr": "rValue",
-      "transform": "round2",
+      "formula": "parallel_path_rsi_ceilings_cathedral_flat",
       "default": ""
     },
     {
       "nbc_field": "T5_R4_C3",
-      "description": "Exposed floor RSI (Proposed)",
+      "description": "Above-grade walls RSI (Proposed)",
       "source": "proposed",
-      "xpath": ".//House/Components/Floor/Construction/Type",
-      "xpath_attr": "rValue",
-      "transform": "round2",
+      "formula": "parallel_path_rsi_walls",
       "default": ""
     },
     {
       "nbc_field": "T5_R9_C3",
-      "description": "Basement floor RSI (Proposed)",
+      "description": "Heated and unheated floors on permafrost RSI (Proposed)",
       "source": "proposed",
-      "xpath": ".//House/Components/Basement/Floor/Construction/FloorsAbove",
-      "xpath_attr": "rValue",
-      "transform": "round2",
+      "xpath": ".//Application/Name",
       "default": ""
     },
     {
@@ -611,7 +593,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -619,7 +601,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -627,7 +609,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -635,7 +617,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -643,7 +625,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -651,7 +633,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -659,7 +641,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -667,7 +649,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -675,7 +657,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -683,7 +665,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -691,7 +673,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -699,7 +681,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -707,7 +689,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -715,7 +697,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -723,7 +705,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -731,7 +713,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -739,7 +721,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -747,7 +729,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -755,7 +737,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -763,7 +745,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -771,7 +753,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -779,7 +761,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -787,7 +769,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -795,7 +777,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -803,7 +785,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -811,7 +793,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -819,7 +801,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -827,7 +809,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -835,7 +817,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -843,7 +825,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -851,7 +833,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -859,7 +841,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -867,7 +849,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -875,7 +857,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -883,7 +865,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -891,7 +873,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -899,7 +881,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -907,7 +889,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -915,7 +897,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -923,7 +905,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -931,7 +913,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -939,7 +921,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -947,7 +929,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -955,7 +937,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -963,7 +945,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -971,7 +953,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -979,7 +961,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -987,7 +969,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -995,7 +977,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1003,7 +985,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1011,7 +993,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1019,7 +1001,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1027,7 +1009,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1035,7 +1017,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1043,7 +1025,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1051,7 +1033,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1059,7 +1041,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1067,7 +1049,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1075,7 +1057,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1083,7 +1065,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1091,7 +1073,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1099,7 +1081,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1107,7 +1089,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1115,7 +1097,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1123,7 +1105,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1131,7 +1113,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1139,7 +1121,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     },
     {
@@ -1147,7 +1129,7 @@
       "description": "PLACEHOLDER - manual mapping required",
       "default": "NA",
       "source": "proposed",
-      "xpath": ".//Application/Name",
+      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
       "transform": "text"
     }
   ],
@@ -1226,6 +1208,62 @@
       },
       "calculation": "fan_power / flow_rate if flow_rate > 0 else 0",
       "format": "%.2f"
+    },
+    "parallel_path_rsi_walls": {
+      "description": "Calculate area-weighted average RSI for walls using parallel path method",
+      "type": "parallel_path_rsi",
+      "elements_xpath": ".//House/Components/Wall",
+      "rvalue_xpath": "./Construction/Type",
+      "rvalue_attr": "rValue",
+      "area_height_xpath": "./Measurements",
+      "area_height_attr": "height",
+      "area_perimeter_xpath": "./Measurements",
+      "area_perimeter_attr": "perimeter",
+      "format": "%.2f"
+    },
+    "parallel_path_rsi_ceilings": {
+      "description": "Calculate area-weighted average RSI for ceilings using parallel path method",
+      "type": "parallel_path_rsi",
+      "elements_xpath": ".//House/Components/Ceiling",
+      "rvalue_xpath": "./Construction/CeilingType",
+      "rvalue_attr": "rValue",
+      "area_xpath": "./Measurements",
+      "area_attr": "area",
+      "format": "%.2f"
+    },
+    "parallel_path_rsi_ceilings_attic": {
+      "description": "Calculate area-weighted average RSI for attic ceilings (Attic/gable, Attic/hip) using parallel path method",
+      "type": "parallel_path_rsi",
+      "elements_xpath": ".//House/Components/Ceiling",
+      "type_filter": ["Attic/gable", "Attic/hip"],
+      "type_xpath": "./Construction/Type/English",
+      "rvalue_xpath": "./Construction/CeilingType",
+      "rvalue_attr": "rValue",
+      "area_xpath": "./Measurements",
+      "area_attr": "area",
+      "format": "%.2f"
+    },
+    "parallel_path_rsi_ceilings_cathedral_flat": {
+      "description": "Calculate area-weighted average RSI for cathedral ceilings and flat roofs using parallel path method",
+      "type": "parallel_path_rsi",
+      "elements_xpath": ".//House/Components/Ceiling",
+      "type_filter": ["Flat", "Cathedral"],
+      "type_xpath": "./Construction/Type/English",
+      "rvalue_xpath": "./Construction/CeilingType",
+      "rvalue_attr": "rValue",
+      "area_xpath": "./Measurements",
+      "area_attr": "area",
+      "format": "%.2f"
+    },
+    "parallel_path_rsi_floors": {
+      "description": "Calculate area-weighted average RSI for exposed floors using parallel path method",
+      "type": "parallel_path_rsi",
+      "elements_xpath": ".//House/Components/Floor",
+      "rvalue_xpath": "./Construction/Type",
+      "rvalue_attr": "rValue",
+      "area_xpath": "./Measurements",
+      "area_attr": "area",
+      "format": "%.2f"
     }
   },
   "transformations": {
@@ -1295,6 +1333,11 @@
     "round2": {
       "type": "round",
       "description": "Round to 2 decimal places",
+      "decimals": 2
+    },
+    "average_round2": {
+      "type": "average",
+      "description": "Calculate average and round to 2 decimal places",
       "decimals": 2
     },
     "wood_stove_check": {
@@ -1419,7 +1462,7 @@
       "description": "Format software name and version",
       "components": [
         {
-          "xpath": ".//Application/Name",
+          "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
           "default": "HOT2000"
         },
         {
