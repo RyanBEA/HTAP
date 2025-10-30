@@ -47,11 +47,12 @@ This design allows non-programmers to add new field mappings by editing JSON con
 - Coordinates extraction, transformation, and form filling
 - Handles static values, formulas, and complex mappings
 
-**h2k_to_nbc_mapping.json** (47 KB, version 2.6)
+**h2k_to_nbc_mapping.json** (49 KB, version 2.7)
 - Configuration file with 137 field mappings
-- 69 real data extractions from H2K files
-- 68 placeholder mappings (extract from `.//Application/Name` for manual completion)
+- 73 real data extractions from H2K files
+- 64 placeholder mappings (extract from `.//Application/Name` for manual completion)
 - Type-filtered parallel path RSI formulas for ceiling types (attic vs cathedral/flat)
+- Attribute-filtered formulas for unheated basement floors (above/below frost line)
 - Metadata tracking: version, date, fields mapped
 
 **config_loader.py** (137 lines)
@@ -73,9 +74,11 @@ This design allows non-programmers to add new field mappings by editing JSON con
   - `round2`, `round1`: Decimal rounding
   - `text`: Passthrough for strings
 
-**formula_processor.py** (220 lines)
+**formula_processor.py** (240 lines)
 - Formula calculation engine with parallel path RSI support
 - Type-filtered component selection (e.g., filter ceilings by Attic/gable vs Cathedral)
+- Attribute-filtered component selection (e.g., filter basement floors by heatedFloor="false" and isBelowFrostline="true")
+- Handles missing rValue elements (treats as uninsulated, returns 0)
 - Complex mapping processor for multi-component strings
 - Examples: FDWR calculation, parallel path RSI averaging, ventilation power, equipment descriptions
 
@@ -117,10 +120,10 @@ Examples:
 ```json
 {
   "metadata": {
-    "version": "2.6",
+    "version": "2.7",
     "description": "Comprehensive H2K to NBC 2020 compliance form field mapping configuration",
     "last_updated": "2025-10-30",
-    "notes": "Added type-filtered parallel path RSI formulas for ceiling types (attic vs cathedral/flat). Fixed Table 5 row mappings per NBC requirements.",
+    "notes": "Added attribute-filtered parallel path RSI formulas for unheated basement floors (above/below frost line). Supports missing AddedToSlab elements.",
     "fields_mapped": 137,
     "fields_total": 137
   }
@@ -257,10 +260,45 @@ Calculates area-weighted average RSI using the parallel path method: **Average R
 
 **Parallel Path Formula Features:**
 - **Type filtering**: Filter components by Construction/Type/English (e.g., ceiling types: "Attic/gable", "Cathedral", "Flat")
+- **Attribute filtering**: Filter components by XML attributes (e.g., basement floor heatedFloor="false", isBelowFrostline="true")
 - **Area calculation methods**:
   - Direct area: `area_xpath` + `area_attr` (for ceilings, floors)
   - Calculated area: height × perimeter (for walls)
+- **Missing rValue handling**: `allow_missing_rvalue=true` treats missing AddedToSlab elements as uninsulated (returns 0)
 - **Per NRCan guidance**: https://natural-resources.canada.ca/energy-efficiency/energy-star/tables-calculating-effective-thermal-resistance-opaque-assemblies
+
+#### Attribute-Filtered Formula Example
+
+For unheated basement floors below frost line:
+
+```json
+{
+  "formulas": {
+    "parallel_path_rsi_basement_floors_unheated_below_frost": {
+      "description": "Calculate RSI for unheated basement floors below frost line",
+      "type": "parallel_path_rsi",
+      "elements_xpath": ".//Basement/Floor",
+      "attribute_filter": {
+        "heatedFloor": "false",
+        "isBelowFrostline": "true"
+      },
+      "attribute_filter_xpath": "./Construction",
+      "rvalue_xpath": "./Construction/AddedToSlab",
+      "rvalue_attr": "rValue",
+      "allow_missing_rvalue": true,
+      "area_xpath": "./Measurements",
+      "area_attr": "area",
+      "format": "%.2f"
+    }
+  }
+}
+```
+
+**Attribute Filter Behavior:**
+- Filters elements by checking attributes on the element found at `attribute_filter_xpath`
+- All attribute conditions must match (AND logic)
+- If `allow_missing_rvalue=true`: missing AddedToSlab or rValue=0 returns 0.00 (uninsulated)
+- If `allow_missing_rvalue=false`: missing elements are skipped
 
 ### 4. Complex Mappings
 
@@ -356,6 +394,8 @@ Example: Heating system description
 - **Cathedral ceilings and flat roofs RSI** (T5_R3_C2, T5_R3_C3) - Type-filtered for Cathedral and Flat
 - **Walls above grade RSI** (T5_R4_C2, T5_R4_C3) - Parallel path method
 - Below-grade walls RSI (T5_R6_C2, T5_R6_C3)
+- **Unheated floors below frost line RSI** (T5_R7_C3, T5_R7_C4) - Attribute-filtered, AddedToSlab insulation
+- **Unheated floors above frost line RSI** (T5_R8_C3, T5_R8_C4) - Attribute-filtered, AddedToSlab insulation
 - Heated/unheated floors on permafrost (T5_R9_C2, T5_R9_C3) - Placeholder for manual completion
 - Window U-value (T5_R14_C2, T5_R14_C3)
 - Airtightness (T5_R18_C1, T5_R18_C2)

@@ -156,6 +156,10 @@ class FormulaProcessor:
         if type_filter and not isinstance(type_filter, list):
             type_filter = [type_filter]
 
+        # Get attribute filter if specified
+        attribute_filter = formula.get('attribute_filter', None)
+        attribute_filter_xpath = formula.get('attribute_filter_xpath', None)
+
         # Extract RSI and area for each element
         total_area = 0.0
         sum_area_over_rsi = 0.0
@@ -166,21 +170,52 @@ class FormulaProcessor:
                 type_elem = element.find(type_xpath, self.extractor.namespaces)
                 if type_elem is None or type_elem.text not in type_filter:
                     continue
+
+            # Apply attribute filter if specified
+            if attribute_filter and attribute_filter_xpath:
+                filter_elem = element.find(attribute_filter_xpath, self.extractor.namespaces) if attribute_filter_xpath != '.' else element
+                if filter_elem is None:
+                    continue
+
+                # Check all attribute conditions
+                match = True
+                for attr_name, attr_value in attribute_filter.items():
+                    elem_attr_value = filter_elem.get(attr_name)
+                    if elem_attr_value != attr_value:
+                        match = False
+                        break
+
+                if not match:
+                    continue
             # Extract R-value
             rvalue_xpath = formula.get('rvalue_xpath', './Construction/Type')
             rvalue_attr = formula.get('rvalue_attr', 'rValue')
+            allow_missing_rvalue = formula.get('allow_missing_rvalue', False)
             rvalue_elem = element.find(rvalue_xpath, self.extractor.namespaces)
 
+            # Handle missing rValue element
             if rvalue_elem is None:
-                continue
+                if allow_missing_rvalue:
+                    # Treat missing element as rValue=0 (no insulation)
+                    # Return 0 immediately since any uninsulated floor makes overall RSI = 0
+                    return 0.0
+                else:
+                    continue
 
             try:
                 rvalue = float(rvalue_elem.get(rvalue_attr, 0))
             except (ValueError, TypeError):
+                if allow_missing_rvalue:
+                    return 0.0
                 continue
 
+            # If rValue is 0, the floor is uninsulated
             if rvalue <= 0:
-                continue
+                if allow_missing_rvalue:
+                    # Any uninsulated floor makes overall RSI = 0
+                    return 0.0
+                else:
+                    continue
 
             # Extract area
             # Check if we have direct area or need to calculate from height * perimeter

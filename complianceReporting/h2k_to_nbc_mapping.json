@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "version": "2.6",
+    "version": "2.7",
     "description": "Comprehensive H2K to NBC 2020 compliance form field mapping configuration",
     "last_updated": "2025-10-30",
-    "notes": "Added type-filtered parallel path RSI formulas for ceiling types (attic vs cathedral/flat). Fixed Table 5 row mappings per NBC requirements.",
+    "notes": "Added attribute-filtered parallel path RSI formulas for unheated basement floors (above/below frost line). Supports missing AddedToSlab elements.",
     "fields_mapped": 137,
     "fields_total": 137
   },
@@ -112,8 +112,8 @@
       "nbc_field": "T5_R6_C3",
       "description": "Below-grade walls RSI (Proposed)",
       "source": "proposed",
-      "xpath": ".//House/Components/Basement/Wall/Construction/InteriorAddedInsulation",
-      "xpath_attr": "nominalInsulation",
+      "xpath": ".//House/Components/Basement/Wall/Construction/InteriorAddedInsulation/Composite/Section",
+      "xpath_attr": "rsi",
       "transform": "round2",
       "default": ""
     },
@@ -583,8 +583,8 @@
       "nbc_field": "T5_R6_C2",
       "description": "Below-grade walls RSI (Reference)",
       "source": "reference",
-      "xpath": ".//House/Components/Basement/Wall/Construction/InteriorAddedInsulation",
-      "xpath_attr": "nominalInsulation",
+      "xpath": ".//House/Components/Basement/Wall/Construction/InteriorAddedInsulation/Composite/Section",
+      "xpath_attr": "rsi",
       "transform": "round2",
       "default": ""
     },
@@ -1078,35 +1078,31 @@
     },
     {
       "nbc_field": "T5_R7_C3",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
-      "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "description": "Unheated floors below frost line RSI (Reference) - AddedToSlab insulation",
+      "source": "reference",
+      "formula": "parallel_path_rsi_basement_floors_unheated_below_frost",
+      "default": ""
     },
     {
       "nbc_field": "T5_R7_C4",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
+      "description": "Unheated floors below frost line RSI (Proposed) - AddedToSlab insulation",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "formula": "parallel_path_rsi_basement_floors_unheated_below_frost",
+      "default": ""
     },
     {
       "nbc_field": "T5_R8_C3",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
-      "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "description": "Unheated floors above frost line RSI (Reference) - AddedToSlab insulation",
+      "source": "reference",
+      "formula": "parallel_path_rsi_basement_floors_unheated_above_frost",
+      "default": ""
     },
     {
       "nbc_field": "T5_R8_C4",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
+      "description": "Unheated floors above frost line RSI (Proposed) - AddedToSlab insulation",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "formula": "parallel_path_rsi_basement_floors_unheated_above_frost",
+      "default": ""
     },
     {
       "nbc_field": "T8_R0_C1",
@@ -1261,6 +1257,38 @@
       "elements_xpath": ".//House/Components/Floor",
       "rvalue_xpath": "./Construction/Type",
       "rvalue_attr": "rValue",
+      "area_xpath": "./Measurements",
+      "area_attr": "area",
+      "format": "%.2f"
+    },
+    "parallel_path_rsi_basement_floors_unheated_below_frost": {
+      "description": "Calculate RSI for unheated basement floors below frost line (AddedToSlab insulation)",
+      "type": "parallel_path_rsi",
+      "elements_xpath": ".//Basement/Floor",
+      "attribute_filter": {
+        "heatedFloor": "false",
+        "isBelowFrostline": "true"
+      },
+      "attribute_filter_xpath": "./Construction",
+      "rvalue_xpath": "./Construction/AddedToSlab",
+      "rvalue_attr": "rValue",
+      "allow_missing_rvalue": true,
+      "area_xpath": "./Measurements",
+      "area_attr": "area",
+      "format": "%.2f"
+    },
+    "parallel_path_rsi_basement_floors_unheated_above_frost": {
+      "description": "Calculate RSI for unheated basement floors above frost line (AddedToSlab insulation)",
+      "type": "parallel_path_rsi",
+      "elements_xpath": ".//Basement/Floor",
+      "attribute_filter": {
+        "heatedFloor": "false",
+        "isBelowFrostline": "false"
+      },
+      "attribute_filter_xpath": "./Construction",
+      "rvalue_xpath": "./Construction/AddedToSlab",
+      "rvalue_attr": "rValue",
+      "allow_missing_rvalue": true,
       "area_xpath": "./Measurements",
       "area_attr": "area",
       "format": "%.2f"
