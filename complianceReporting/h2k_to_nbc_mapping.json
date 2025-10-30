@@ -1,0 +1,1439 @@
+{
+  "metadata": {
+    "version": "2.5",
+    "description": "Comprehensive H2K to NBC 2020 compliance form field mapping configuration",
+    "last_updated": "2025-10-30",
+    "notes": "All fields mapped - placeholders extract from .//Application/Name",
+    "fields_mapped": 137,
+    "fields_total": 137
+  },
+  "data_sources": {
+    "reference_model": "reference.h2k",
+    "proposed_model": "proposed.h2k"
+  },
+  "field_mappings": [
+    {
+      "nbc_field": "T0_R1_C1",
+      "description": "Project Name",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/File/Identification",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T0_R2_C1",
+      "description": "Project Address",
+      "source": "proposed",
+      "xpath_list": [
+        ".//ProgramInformation/Client/StreetAddress/Street",
+        ".//ProgramInformation/Client/StreetAddress/City",
+        ".//ProgramInformation/Client/StreetAddress/Province",
+        ".//ProgramInformation/Client/StreetAddress/PostalCode"
+      ],
+      "transform": "concatenate",
+      "separator": ", ",
+      "default": ""
+    },
+    {
+      "nbc_field": "T0_R3_C1",
+      "description": "Applicant Name",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/Client/Name/First",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T0_R4_C1",
+      "description": "Applicant Address",
+      "source": "proposed",
+      "xpath_list": [
+        ".//ProgramInformation/Client/MailingAddress/Street",
+        ".//ProgramInformation/Client/MailingAddress/City",
+        ".//ProgramInformation/Client/MailingAddress/Province",
+        ".//ProgramInformation/Client/MailingAddress/PostalCode"
+      ],
+      "transform": "concatenate",
+      "separator": ", ",
+      "default": ""
+    },
+    {
+      "nbc_field": "T1_R3_C0",
+      "description": "Climate Zone",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/Weather",
+      "xpath_attr": "heatingDegreeDay",
+      "transform": "climate_zone",
+      "default": ""
+    },
+    {
+      "nbc_field": "T2_R0_C0",
+      "description": "Design Conditions",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/Weather/Location/English",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T3_R1_C0",
+      "description": "Fenestration & door area (total mÂ²)",
+      "source": "proposed",
+      "formula": "total_window_door_area",
+      "default": ""
+    },
+    {
+      "nbc_field": "T3_R1_C2",
+      "description": "FDWR% (for comparison)",
+      "source": "proposed",
+      "formula": "fdwr_calculation",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R2_C2",
+      "description": "Above-ground walls RSI (Reference)",
+      "source": "reference",
+      "xpath": ".//House/Components/Wall/Construction/Type",
+      "xpath_attr": "rValue",
+      "transform": "round2",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R3_C2",
+      "description": "Ceiling RSI (Reference)",
+      "source": "reference",
+      "xpath": ".//House/Components/Ceiling/Construction/CeilingType",
+      "xpath_attr": "rValue",
+      "transform": "round2",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R4_C2",
+      "description": "Exposed floor RSI (Reference)",
+      "source": "reference",
+      "xpath": ".//House/Components/Floor/Construction/Type",
+      "xpath_attr": "rValue",
+      "transform": "round2",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R6_C3",
+      "description": "Below-grade walls RSI (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Components/Basement/Wall/Construction/InteriorAddedInsulation",
+      "xpath_attr": "nominalInsulation",
+      "transform": "round2",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R9_C2",
+      "description": "Basement floor RSI (Reference)",
+      "source": "reference",
+      "xpath": ".//House/Components/Basement/Floor/Construction/FloorsAbove",
+      "xpath_attr": "rValue",
+      "transform": "round2",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R13_C1",
+      "description": "Front orientation of house (Reference)",
+      "source": "reference",
+      "xpath": ".//House/Specifications/FacingDirection/English",
+      "transform": "orientation_abbr",
+      "default": "S"
+    },
+    {
+      "nbc_field": "T5_R14_C2",
+      "description": "Window U-value (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Components/Wall/Components/Window/Construction/Type",
+      "xpath_attr": "rValue",
+      "transform": "r_to_u",
+      "format": "%.2f",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R14_C3",
+      "description": "Window SHGC (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Components/Wall/Components/Window",
+      "xpath_attr": "shgc",
+      "transform": "round2",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R18_C1",
+      "description": "Door U-value (Reference)",
+      "source": "reference",
+      "xpath": ".//House/Components/Basement/Components/Door/Construction/Type",
+      "xpath_attr": "value",
+      "transform": "r_to_u",
+      "format": "%.2f",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R18_C2",
+      "description": "Door U-value (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Components/Basement/Components/Door/Construction/Type",
+      "xpath_attr": "value",
+      "transform": "r_to_u",
+      "format": "%.2f",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R19_C1",
+      "description": "FDWR % (Reference)",
+      "source": "reference",
+      "formula": "fdwr_calculation",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R19_C2",
+      "description": "FDWR % (Proposed)",
+      "source": "proposed",
+      "formula": "fdwr_calculation",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R25_C1",
+      "description": "Heating System(s) (Reference)",
+      "source": "reference",
+      "complex_mapping": "heating_system",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R25_C2",
+      "description": "Heating System(s) (Proposed)",
+      "source": "proposed",
+      "complex_mapping": "heating_system_with_hp",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R26_C2",
+      "description": "Cooling System (Proposed)",
+      "source": "proposed",
+      "complex_mapping": "cooling_system",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R30_C1",
+      "description": "Supplementary Heating System(s) (Reference)",
+      "source": "reference",
+      "xpath": ".//House/HeatingCooling/MultipleSystems/Summary",
+      "xpath_attr": "woodAppliances",
+      "transform": "wood_stove_check",
+      "default": "None"
+    },
+    {
+      "nbc_field": "T5_R30_C2",
+      "description": "Supplementary Heating System(s) (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/HeatingCooling/MultipleSystems/Summary",
+      "xpath_attr": "woodAppliances",
+      "transform": "wood_stove_check",
+      "default": "None"
+    },
+    {
+      "nbc_field": "T5_R31_C2",
+      "description": "Ventilation System (Proposed)",
+      "source": "proposed",
+      "complex_mapping": "hrv_system",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R37_C1",
+      "description": "Service Water Heating System(s) (Reference)",
+      "source": "reference",
+      "complex_mapping": "dhw_system",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R37_C2",
+      "description": "Service Water Heating System(s) (Proposed)",
+      "source": "proposed",
+      "complex_mapping": "dhw_system",
+      "default": ""
+    },
+    {
+      "nbc_field": "T6_R1_C0",
+      "description": "Airtightness target (ACH @ 50 Pa)",
+      "source": "proposed",
+      "xpath": ".//House/NaturalAirInfiltration/Specifications/BlowerTest",
+      "xpath_attr": "airChangeRate",
+      "transform": "round1",
+      "default": ""
+    },
+    {
+      "nbc_field": "T10_R1_C1",
+      "description": "Software Title (Reference)",
+      "source": "reference",
+      "complex_mapping": "software_version",
+      "default": "HOT2000"
+    },
+    {
+      "nbc_field": "T10_R1_C3",
+      "description": "Software Title (Proposed)",
+      "source": "proposed",
+      "complex_mapping": "software_version",
+      "default": "HOT2000"
+    },
+    {
+      "nbc_field": "T11_R1_C0",
+      "description": "Annual energy consumption (Reference) in GJ",
+      "source": "reference",
+      "xpath": ".//AllResults/Results/Annual/Consumption",
+      "xpath_attr": "total",
+      "transform": "round1",
+      "default": ""
+    },
+    {
+      "nbc_field": "T11_R1_C2",
+      "description": "Annual energy consumption (Proposed) in GJ",
+      "source": "proposed",
+      "xpath": ".//AllResults/Results/Annual/Consumption",
+      "xpath_attr": "total",
+      "transform": "round1",
+      "default": ""
+    },
+    {
+      "nbc_field": "T13_R1_C1",
+      "description": "Energy Advisor Name",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/File/EnteredBy",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T13_R2_C1",
+      "description": "Energy Advisor Phone",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/File/CompanyTelephone",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T13_R5_C1",
+      "description": "Energy Advisor Date",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/File",
+      "xpath_attr": "evaluationDate",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T13_R7_C1",
+      "description": "Designer Name",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/File/BuilderName",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T13_R8_C1",
+      "description": "Designer Phone",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/Client/Telephone",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T13_R10_C1",
+      "description": "Designer Date",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/File",
+      "xpath_attr": "evaluationDate",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T14_R2_C7",
+      "description": "Ceiling RSI (Reference House Specifications)",
+      "source": "proposed",
+      "xpath": ".//House/Components/Ceiling/Construction/CeilingType",
+      "xpath_attr": "nominalInsulation",
+      "transform": "round2",
+      "default": ""
+    },
+    {
+      "nbc_field": "T14_R3_C6",
+      "description": "Above-ground wall RSI (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Components/Wall/Construction/Type",
+      "xpath_attr": "nominalInsulation",
+      "transform": "round2",
+      "default": ""
+    },
+    {
+      "nbc_field": "T14_R4_C6",
+      "description": "Exposed floor RSI (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Components/Floor/Construction/Type",
+      "xpath_attr": "nominalInsulation",
+      "transform": "round2",
+      "default": ""
+    },
+    {
+      "nbc_field": "T14_R6_C6",
+      "description": "Slab edge RSI (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Components/Slab/Construction",
+      "xpath_attr": "rValue",
+      "transform": "round2",
+      "default": "N/A"
+    },
+    {
+      "nbc_field": "T14_R9_C7",
+      "description": "Below-grade wall RSI (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Components/Basement/Wall/Construction/InteriorAddedInsulation",
+      "xpath_attr": "nominalInsulation",
+      "transform": "round2",
+      "default": ""
+    },
+    {
+      "nbc_field": "T14_R20_C5",
+      "description": "Window U-value (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Components/Wall/Components/Window/Construction/Type",
+      "xpath_attr": "rValue",
+      "transform": "r_to_u",
+      "format": "%.2f",
+      "default": ""
+    },
+    {
+      "nbc_field": "T14_R21_C5",
+      "description": "Window SHGC (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Components/Wall/Components/Window",
+      "xpath_attr": "shgc",
+      "transform": "round2",
+      "default": ""
+    },
+    {
+      "nbc_field": "T14_R23_C2",
+      "description": "Door U-value (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Components/Basement/Components/Door/Construction/Type",
+      "xpath_attr": "value",
+      "transform": "r_to_u",
+      "format": "%.2f",
+      "default": ""
+    },
+    {
+      "nbc_field": "T14_R27_C5",
+      "description": "Furnace efficiency % (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/HeatingCooling/Type1/Furnace/Specifications",
+      "xpath_attr": "efficiency",
+      "transform": "round1",
+      "default": ""
+    },
+    {
+      "nbc_field": "T14_R35_C5",
+      "description": "HRV efficiency % (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Ventilation/WholeHouseVentilatorList/Hrv",
+      "xpath_attr": "efficiency1",
+      "transform": "round1",
+      "default": ""
+    },
+    {
+      "nbc_field": "T14_R36_C5",
+      "description": "HRV efficiency at -25Â°C % (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Ventilation/WholeHouseVentilatorList/Hrv",
+      "xpath_attr": "efficiency2",
+      "transform": "round1",
+      "default": ""
+    },
+    {
+      "nbc_field": "T14_R40_C5",
+      "description": "DHW Energy Factor (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Components/HotWater/Primary/EnergyFactor",
+      "xpath_attr": "value",
+      "transform": "round2",
+      "default": ""
+    },
+    {
+      "nbc_field": "T17_R1_C1",
+      "description": "Builder/Designer Name",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/File/BuilderName",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T17_R2_C1",
+      "description": "Builder/Designer Phone",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/Client/Telephone",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T17_R4_C1",
+      "description": "Builder/Designer Date",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/File",
+      "xpath_attr": "evaluationDate",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T7_R0_C1",
+      "description": "Ventilation fan power (W/L/s)",
+      "source": "proposed",
+      "formula": "ventilation_power",
+      "default": ""
+    },
+    {
+      "nbc_field": "T13_R1_C3",
+      "description": "Modeler Name (duplicate column)",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/File/EnteredBy",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T13_R2_C3",
+      "description": "Modeler Phone (duplicate column)",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/File/CompanyTelephone",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T13_R5_C3",
+      "description": "Date (duplicate column)",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/File",
+      "xpath_attr": "evaluationDate",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T13_R7_C3",
+      "description": "Builder Name (duplicate column)",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/File/BuilderName",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T13_R8_C3",
+      "description": "Builder Phone (duplicate column)",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/File/CompanyTelephone",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T13_R10_C3",
+      "description": "Builder Date (duplicate column)",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/File",
+      "xpath_attr": "evaluationDate",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T17_R1_C3",
+      "description": "Builder Name (Table 17 duplicate)",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/File/BuilderName",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T17_R2_C3",
+      "description": "Builder Phone (Table 17 duplicate)",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/File/CompanyTelephone",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T17_R4_C3",
+      "description": "Builder Date (Table 17 duplicate)",
+      "source": "proposed",
+      "xpath": ".//ProgramInformation/File",
+      "xpath_attr": "evaluationDate",
+      "transform": "text",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R2_C3",
+      "description": "Above-ground walls RSI (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Components/Wall/Construction/Type",
+      "xpath_attr": "rValue",
+      "transform": "round2",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R3_C3",
+      "description": "Ceiling RSI (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Components/Ceiling/Construction/CeilingType",
+      "xpath_attr": "rValue",
+      "transform": "round2",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R4_C3",
+      "description": "Exposed floor RSI (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Components/Floor/Construction/Type",
+      "xpath_attr": "rValue",
+      "transform": "round2",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R9_C3",
+      "description": "Basement floor RSI (Proposed)",
+      "source": "proposed",
+      "xpath": ".//House/Components/Basement/Floor/Construction/FloorsAbove",
+      "xpath_attr": "rValue",
+      "transform": "round2",
+      "default": ""
+    },
+    {
+      "nbc_field": "T5_R6_C2",
+      "description": "Below-grade walls RSI (Reference)",
+      "source": "reference",
+      "xpath": ".//House/Components/Basement/Wall/Construction/InteriorAddedInsulation",
+      "xpath_attr": "nominalInsulation",
+      "transform": "round2",
+      "default": ""
+    },
+    {
+      "nbc_field": "T12_R0_C1",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T13_R3_C1",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R10_C5",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R11_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R12_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R13_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R14_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R15_C6",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R16_C6",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R22_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R24_C2",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R28_C5",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R29_C5",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R30_C5",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R31_C5",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R32_C5",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R33_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R34_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R37_C1",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R37_C2",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R37_C3",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R37_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R41_C5",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R42_C5",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R43_C5",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R44_C5",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R45_C5",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R46_C5",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R47_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R48_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R49_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R50_C1",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R50_C2",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R50_C3",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R50_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R5_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R7_C6",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T14_R8_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T16_R0_C1",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T3_R1_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R10_C2",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R10_C3",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R11_C2",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R11_C3",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R15_C3",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R16_C2",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R16_C3",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R17_C3",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R26_C3",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R27_C2",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R27_C3",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R28_C3",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R28_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R29_C3",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R29_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R33_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R34_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R35_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R36_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R5_C2",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R5_C3",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R7_C3",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R7_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R8_C3",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T5_R8_C4",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T8_R0_C1",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T9_R0_C0",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    },
+    {
+      "nbc_field": "T9_R0_C2",
+      "description": "PLACEHOLDER - manual mapping required",
+      "default": "NA",
+      "source": "proposed",
+      "xpath": ".//Application/Name",
+      "transform": "text"
+    }
+  ],
+  "formulas": {
+    "fdwr_calculation": {
+      "description": "Calculate fenestration and door to wall ratio as percentage",
+      "inputs": {
+        "window_se": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/SouthEast",
+        "window_ne": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/NorthEast",
+        "window_nw": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/NorthWest",
+        "window_sw": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/SouthWest",
+        "window_s": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/South",
+        "window_n": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/North",
+        "window_e": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/East",
+        "window_w": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/West",
+        "door_main": ".//AllResults/Results/Other/GrossArea/MainFloors/Door",
+        "door_basement": ".//AllResults/Results/Other/GrossArea/Basement/Door",
+        "wall_main": ".//AllResults/Results/Other/GrossArea/MainFloors",
+        "wall_basement_above": ".//AllResults/Results/Other/GrossArea/Basement"
+      },
+      "input_attrs": {
+        "window_se": "grossArea",
+        "window_ne": "grossArea",
+        "window_nw": "grossArea",
+        "window_sw": "grossArea",
+        "window_s": "grossArea",
+        "window_n": "grossArea",
+        "window_e": "grossArea",
+        "window_w": "grossArea",
+        "door_main": "grossArea",
+        "door_basement": "grossArea",
+        "wall_main": "mainWalls",
+        "wall_basement_above": "aboveGrade"
+      },
+      "calculation": "((window_se + window_ne + window_nw + window_sw + window_s + window_n + window_e + window_w + door_main + door_basement) / (wall_main + wall_basement_above)) * 100 if (wall_main + wall_basement_above) > 0 else 0",
+      "format": "%.1f"
+    },
+    "total_window_door_area": {
+      "description": "Calculate total fenestration and door area in mÂ²",
+      "inputs": {
+        "window_se": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/SouthEast",
+        "window_ne": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/NorthEast",
+        "window_nw": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/NorthWest",
+        "window_sw": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/SouthWest",
+        "window_s": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/South",
+        "window_n": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/North",
+        "window_e": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/East",
+        "window_w": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/West",
+        "door_main": ".//AllResults/Results/Other/GrossArea/MainFloors/Door",
+        "door_basement": ".//AllResults/Results/Other/GrossArea/Basement/Door"
+      },
+      "input_attrs": {
+        "window_se": "grossArea",
+        "window_ne": "grossArea",
+        "window_nw": "grossArea",
+        "window_sw": "grossArea",
+        "window_s": "grossArea",
+        "window_n": "grossArea",
+        "window_e": "grossArea",
+        "window_w": "grossArea",
+        "door_main": "grossArea",
+        "door_basement": "grossArea"
+      },
+      "calculation": "window_se + window_ne + window_nw + window_sw + window_s + window_n + window_e + window_w + door_main + door_basement",
+      "format": "%.1f"
+    },
+    "ventilation_power": {
+      "description": "Calculate ventilation fan power in W/L/s",
+      "inputs": {
+        "fan_power": ".//House/Ventilation/WholeHouseVentilatorList/Hrv",
+        "flow_rate": ".//House/Ventilation/WholeHouseVentilatorList/Hrv"
+      },
+      "input_attrs": {
+        "fan_power": "fanPower1",
+        "flow_rate": "supplyFlowrate"
+      },
+      "calculation": "fan_power / flow_rate if flow_rate > 0 else 0",
+      "format": "%.2f"
+    }
+  },
+  "transformations": {
+    "text": {
+      "type": "passthrough",
+      "description": "Return text value as-is"
+    },
+    "concatenate": {
+      "type": "join",
+      "description": "Join multiple values with separator"
+    },
+    "climate_zone": {
+      "type": "lookup",
+      "description": "Convert heating degree days to climate zone",
+      "ranges": [
+        {
+          "min": 0,
+          "max": 2999,
+          "value": "Zone 4 (<3000 HDD)"
+        },
+        {
+          "min": 3000,
+          "max": 3999,
+          "value": "Zone 5 (3000-3999 HDD)"
+        },
+        {
+          "min": 4000,
+          "max": 4999,
+          "value": "Zone 6 (4000-4999 HDD)"
+        },
+        {
+          "min": 5000,
+          "max": 5999,
+          "value": "Zone 7A (5000-5999 HDD)"
+        },
+        {
+          "min": 6000,
+          "max": 99999,
+          "value": "Zone 7B/8 (â‰¥6000 HDD)"
+        }
+      ]
+    },
+    "orientation_abbr": {
+      "type": "map",
+      "description": "Convert orientation to abbreviation",
+      "mapping": {
+        "North": "N",
+        "Northeast": "NE",
+        "East": "E",
+        "Southeast": "SE",
+        "South": "S",
+        "Southwest": "SW",
+        "West": "W",
+        "Northwest": "NW"
+      }
+    },
+    "r_to_u": {
+      "type": "calculation",
+      "description": "Convert R-value to U-value (U = 1/R)",
+      "formula": "1 / value if value > 0 else 0"
+    },
+    "round1": {
+      "type": "round",
+      "description": "Round to 1 decimal place",
+      "decimals": 1
+    },
+    "round2": {
+      "type": "round",
+      "description": "Round to 2 decimal places",
+      "decimals": 2
+    },
+    "wood_stove_check": {
+      "type": "map",
+      "description": "Convert wood stove count to text",
+      "mapping": {
+        "0": "None",
+        "1": "Wood stove"
+      }
+    }
+  },
+  "complex_mappings": {
+    "heating_system": {
+      "description": "Format heating system description",
+      "components": [
+        {
+          "xpath": ".//House/HeatingCooling/Type1/Furnace/Equipment/EnergySource/English",
+          "default": "Unknown"
+        },
+        {
+          "xpath": ".//House/HeatingCooling/Type1/Furnace/Equipment/EquipmentType/English",
+          "default": "furnace"
+        },
+        {
+          "xpath": ".//House/HeatingCooling/Type1/Furnace/Specifications",
+          "attr": "efficiency",
+          "default": "0"
+        }
+      ],
+      "format": "{0} {1}, {2}% AFUE"
+    },
+    "heating_system_with_hp": {
+      "description": "Format heating system with optional heat pump",
+      "components": [
+        {
+          "xpath": ".//House/HeatingCooling/Type1/Furnace/Equipment/EnergySource/English",
+          "default": "Unknown"
+        },
+        {
+          "xpath": ".//House/HeatingCooling/Type1/Furnace/Equipment/EquipmentType/English",
+          "default": "furnace"
+        },
+        {
+          "xpath": ".//House/HeatingCooling/Type1/Furnace/Specifications",
+          "attr": "efficiency",
+          "default": "0"
+        },
+        {
+          "xpath": ".//House/HeatingCooling/Type2/AirHeatPump/Equipment/Type/English",
+          "default": "",
+          "optional": true
+        },
+        {
+          "xpath": ".//House/HeatingCooling/Type2/AirHeatPump/Specifications/HeatingEfficiency",
+          "attr": "value",
+          "default": "",
+          "optional": true
+        }
+      ],
+      "format": "{0} {1}, {2}% AFUE; {3} HSPF {4}",
+      "format_simple": "{0} {1}, {2}% AFUE"
+    },
+    "cooling_system": {
+      "description": "Format cooling system description",
+      "components": [
+        {
+          "xpath": ".//House/HeatingCooling/Type2/AirHeatPump/Equipment/Type/English",
+          "default": "None"
+        },
+        {
+          "xpath": ".//House/HeatingCooling/Type2/AirHeatPump/Specifications/CoolingEfficiency",
+          "attr": "value",
+          "default": ""
+        }
+      ],
+      "format": "{0}, SEER {1}"
+    },
+    "dhw_system": {
+      "description": "Format domestic hot water system",
+      "components": [
+        {
+          "xpath": ".//House/Components/HotWater/Primary/EnergySource/English",
+          "default": "Unknown"
+        },
+        {
+          "xpath": ".//House/Components/HotWater/Primary/TankType/English",
+          "default": "tank"
+        },
+        {
+          "xpath": ".//House/Components/HotWater/Primary/EnergyFactor",
+          "attr": "value",
+          "default": "0"
+        }
+      ],
+      "format": "{0} {1}, EF {2}"
+    },
+    "hrv_system": {
+      "description": "Format HRV/ERV system description",
+      "components": [
+        {
+          "xpath": ".//House/Ventilation/WholeHouseVentilatorList/Hrv/EquipmentInformation/Manufacturer",
+          "default": ""
+        },
+        {
+          "xpath": ".//House/Ventilation/WholeHouseVentilatorList/Hrv/EquipmentInformation/Model",
+          "default": ""
+        },
+        {
+          "xpath": ".//House/Ventilation/WholeHouseVentilatorList/Hrv",
+          "attr": "efficiency1",
+          "default": "0"
+        },
+        {
+          "xpath": ".//House/Ventilation/WholeHouseVentilatorList/Hrv",
+          "attr": "efficiency2",
+          "default": "0"
+        }
+      ],
+      "format": "{0} {1}, {2}%/{3}% efficiency"
+    },
+    "software_version": {
+      "description": "Format software name and version",
+      "components": [
+        {
+          "xpath": ".//Application/Name",
+          "default": "HOT2000"
+        },
+        {
+          "xpath": ".//Application/Version",
+          "attr": "major",
+          "default": "11"
+        },
+        {
+          "xpath": ".//Application/Version",
+          "attr": "minor",
+          "default": "8"
+        }
+      ],
+      "format": "{0} v{1}.{2}"
+    }
+  }
+}

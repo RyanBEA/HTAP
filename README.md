@@ -52,10 +52,12 @@ features under development for future versions of HTAP.
 
 ## Documentation ##
 
- - [Introduction to HTAP](./doc/Introduction%20to%20HTAP.docx): a summary of 
+ - [Introduction to HTAP](./doc/Introduction%20to%20HTAP.docx): a summary of
    HTAP features and use
- - [HTAP-input-and-output.md](./doc/HTAP-input-and-output.md): Documentation 
+ - [HTAP-input-and-output.md](./doc/HTAP-input-and-output.md): Documentation
    for HTAP input & output
+ - [complianceReporting.md](./doc/complianceReporting.md): NBC 2020 Energy
+   Compliance Form generation from H2K files
 
 ## Contributors ##
 
