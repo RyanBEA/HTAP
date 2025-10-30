@@ -1,0 +1,66 @@
+! Definitions file for HTAP-PRM RUN
+
+! Run-Mode: Parameters that affect how htap-prm is configured.
+RunParameters_START
+  run-mode                           = parametric
+  archetype-dir                      = C:/HTAP/arch
+  unit-costs-db                      = C:/HTAP/HTAPUnitCosts.json
+  options-file                       = C:/HTAP/HTAP-options.json
+RunParameters_END
+
+
+! Parameters controlling archetypes, locations, reference rulests. (these will always be
+! run in mesh, even if an optimization mode is added in the future.
+RunScope_START
+
+  archetypes                        = *.h2k
+  locations                         = HALIFAX
+  rulesets                          = as-found
+
+RunScope_END
+
+! Parameters controlling the design of the building
+Upgrades_START
+
+
+   Opt-ResultHouseCode  = General
+   Opt-Specifications   = NBC_Specs_Normal
+
+   Opt-ACH         = ACH_NBC
+
+   Opt-Windows     = NBC-zone6-window
+   Opt-Skylights   = NA
+   Opt-DoorWindows = NBC-zone6-Doorwindow
+   Opt-Doors       = NBC-zone6-door
+
+   Opt-AboveGradeWall = NBC_Wall_zone5_HRV
+   Opt-FloorHeaderIntIns = NBC_RSI2.97_int
+
+   Opt-FoundationWallExtIns     =  NA
+   Opt-FoundationWallIntIns     =  NBC_936_2.98RSI
+   Opt-FoundationSlabBelowGrade =  NBC_936_uninsulated_EffR0
+!   Opt-FoundationSlabBelowGrade =  NBC_936_1.96RSI
+   Opt-FoundationSlabOnGrade    =  NBC_936_1.96RSI
+!   Opt-H2KFoundationSlabCrawl   =  NBC_SCB_zone6_HRV
+   Opt-ExposedFloor     = NBC_936_4.67RSI
+
+   Opt-AtticCeilings    = NBC_Ceiling_zone6
+   Opt-CathCeilings     = NBC_CathCeiling_RSI4.67
+   Opt-FlatCeilings     = NBC_FlatCeiling_RSI4.67
+
+   Opt-VentSystem       = NA
+   Opt-DHWSystem        = NBC-HotWater_gas
+!   Opt-DHWSystem        = NBC-HotWater_elec
+   Opt-Heating-Cooling  = NBC-gas-furnace
+!   Opt-Heating-Cooling  = NBC-elec-heat
+!   Opt-Heating-Cooling  = NBC-CCASHP
+
+   Opt-DWHR             = NA
+   Opt-H2K-PV           = NA
+   Opt-Baseloads        = NBC-Baseloads
+   Opt-WindowDistribution = Reference-9.36
+   Opt-VentSystem          = NBC_HRV
+   Opt-Temperatures     = NBC_Temps
+
+
+Upgrades_END

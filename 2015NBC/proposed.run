@@ -1,0 +1,32 @@
+! Definitions file for HTAP-PRM RUN
+
+! Run-Mode: Parameters that affect how htap-prm is configured.
+RunParameters_START
+  run-mode                           = parametric
+  archetype-dir                      = C:/HTAP/arch
+  unit-costs-db                      = C:/HTAP/HTAPUnitCosts.json
+  options-file                       = C:/HTAP/HTAP-options.json
+RunParameters_END
+
+
+! Parameters controlling archetypes, locations, reference rulests. (these will always be
+! run in mesh, even if an optimization mode is added in the future.
+RunScope_START
+
+  archetypes                        = *.h2k
+  locations                         = HALIFAX
+  rulesets                          = as-found
+
+RunScope_END
+
+! Parameters controlling the design of the building
+Upgrades_START
+
+
+   Opt-ResultHouseCode  = General
+   Opt-Specifications   = NBC_Specs_Normal
+   Opt-Baseloads        = NBC-Baseloads
+   Opt-Temperatures     = NBC_Temps
+
+
+Upgrades_END
