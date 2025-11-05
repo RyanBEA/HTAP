@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "version": "2.7",
+    "version": "3.2",
     "description": "Comprehensive H2K to NBC 2020 compliance form field mapping configuration",
-    "last_updated": "2025-10-30",
-    "notes": "Added attribute-filtered parallel path RSI formulas for unheated basement floors (above/below frost line). Supports missing AddedToSlab elements.",
+    "last_updated": "2025-11-04",
+    "notes": "Added parallel_path_rsi_windows formula for area-weighted window U-values using parallel path method. Extended formula_processor.py to support width-based area calculations (height × width) for windows and pipe operator handling for multiple XPath expressions. Updated T5_R14_C2/C3 to use calculated average window U-values instead of single window values. Now 82 fields extracted from H2K files (vs 55 placeholders).",
     "fields_mapped": 137,
     "fields_total": 137
   },
@@ -38,24 +38,11 @@
       "nbc_field": "T0_R3_C1",
       "description": "Applicant Name",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
+      "xpath": ".//ProgramInformation/Client/Name/First",
       "transform": "text",
       "default": ""
     },
-    {
-      "nbc_field": "T0_R4_C1",
-      "description": "Applicant Address",
-      "source": "proposed",
-      "xpath_list": [
-        ".//ProgramInformation/Client/MailingAddress/Street",
-        ".//ProgramInformation/Client/MailingAddress/City",
-        ".//ProgramInformation/Client/MailingAddress/Province",
-        ".//ProgramInformation/Client/MailingAddress/PostalCode"
-      ],
-      "transform": "concatenate",
-      "separator": ", ",
-      "default": ""
-    },
+
     {
       "nbc_field": "T1_R3_C0",
       "description": "Climate Zone",
@@ -82,9 +69,9 @@
     },
     {
       "nbc_field": "T3_R1_C2",
-      "description": "FDWR% (for comparison)",
+      "description": "Gross Wall Area =",
       "source": "proposed",
-      "formula": "fdwr_calculation",
+      "formula": "gross_wall_area",
       "default": ""
     },
     {
@@ -112,9 +99,7 @@
       "nbc_field": "T5_R6_C3",
       "description": "Below-grade walls RSI (Proposed)",
       "source": "proposed",
-      "xpath": ".//House/Components/Basement/Wall/Construction/InteriorAddedInsulation/Composite/Section",
-      "xpath_attr": "rsi",
-      "transform": "round2",
+      "formula": "parallel_path_rsi_foundation_walls",
       "default": ""
     },
     {
@@ -134,29 +119,27 @@
     },
     {
       "nbc_field": "T5_R14_C2",
-      "description": "Window U-value (Proposed)",
-      "source": "proposed",
-      "xpath": ".//House/Components/Wall/Components/Window/Construction/Type",
-      "xpath_attr": "rValue",
+      "description": "Window U-value (Reference)",
+      "source": "reference",
+      "formula": "parallel_path_rsi_windows",
       "transform": "r_to_u",
       "format": "%.2f",
       "default": ""
     },
     {
       "nbc_field": "T5_R14_C3",
-      "description": "Window SHGC (Proposed)",
+      "description": "Window U-value (Proposed)",
       "source": "proposed",
-      "xpath": ".//House/Components/Wall/Components/Window",
-      "xpath_attr": "shgc",
-      "transform": "round2",
+      "formula": "parallel_path_rsi_windows",
+      "transform": "r_to_u",
+      "format": "%.2f",
       "default": ""
     },
     {
       "nbc_field": "T5_R18_C1",
       "description": "Door U-value (Reference)",
       "source": "reference",
-      "xpath": ".//House/Components/Basement/Components/Door/Construction/Type",
-      "xpath_attr": "value",
+      "formula": "parallel_path_rsi_doors",
       "transform": "r_to_u",
       "format": "%.2f",
       "default": ""
@@ -165,8 +148,7 @@
       "nbc_field": "T5_R18_C2",
       "description": "Door U-value (Proposed)",
       "source": "proposed",
-      "xpath": ".//House/Components/Basement/Components/Door/Construction/Type",
-      "xpath_attr": "value",
+      "formula": "parallel_path_rsi_doors",
       "transform": "r_to_u",
       "format": "%.2f",
       "default": ""
@@ -175,14 +157,14 @@
       "nbc_field": "T5_R19_C1",
       "description": "FDWR % (Reference)",
       "source": "reference",
-      "formula": "fdwr_calculation",
+      "formula": "fdwr_percentage_comprehensive",
       "default": ""
     },
     {
       "nbc_field": "T5_R19_C2",
       "description": "FDWR % (Proposed)",
       "source": "proposed",
-      "formula": "fdwr_calculation",
+      "formula": "fdwr_percentage_comprehensive",
       "default": ""
     },
     {
@@ -583,9 +565,7 @@
       "nbc_field": "T5_R6_C2",
       "description": "Below-grade walls RSI (Reference)",
       "source": "reference",
-      "xpath": ".//House/Components/Basement/Wall/Construction/InteriorAddedInsulation/Composite/Section",
-      "xpath_attr": "rsi",
-      "transform": "round2",
+      "formula": "parallel_path_rsi_foundation_walls",
       "default": ""
     },
     {
@@ -902,75 +882,69 @@
     },
     {
       "nbc_field": "T3_R1_C4",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
+      "description": "FDWR%",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "formula": "fdwr_percentage_comprehensive",
+      "default": ""
     },
     {
       "nbc_field": "T5_R10_C2",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
-      "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "description": "Heated floors RSI (Reference)",
+      "source": "reference",
+      "formula": "parallel_path_rsi_heated_floors",
+      "default": ""
     },
     {
       "nbc_field": "T5_R10_C3",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
+      "description": "Heated floors RSI (Proposed)",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "formula": "parallel_path_rsi_heated_floors",
+      "default": ""
     },
     {
       "nbc_field": "T5_R11_C2",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
-      "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "description": "Slabs-on-grade with integral footing RSI (Reference)",
+      "source": "reference",
+      "formula": "parallel_path_rsi_slabs_integral_footing",
+      "default": ""
     },
     {
       "nbc_field": "T5_R11_C3",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
+      "description": "Slabs-on-grade with integral footing RSI (Proposed)",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "formula": "parallel_path_rsi_slabs_integral_footing",
+      "default": ""
     },
     {
       "nbc_field": "T5_R15_C3",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
+      "description": "Weighted average SHGC for proposed home",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "formula": "weighted_average_shgc"
     },
     {
       "nbc_field": "T5_R16_C2",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
-      "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "description": "Skylight U-value (Reference)",
+      "source": "reference",
+      "formula": "parallel_path_rsi_skylights",
+      "transform": "r_to_u",
+      "format": "%.2f",
+      "default": ""
     },
     {
       "nbc_field": "T5_R16_C3",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
+      "description": "Skylight U-value (Proposed)",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "formula": "parallel_path_rsi_skylights",
+      "transform": "r_to_u",
+      "format": "%.2f",
+      "default": ""
     },
     {
       "nbc_field": "T5_R17_C3",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
+      "description": "Weighted average SHGC for skylights (Proposed)",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "formula": "weighted_average_shgc_skylights",
+      "default": ""
     },
     {
       "nbc_field": "T5_R26_C3",
@@ -1062,19 +1036,17 @@
     },
     {
       "nbc_field": "T5_R5_C2",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
-      "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "description": "Floors over unheated spaces RSI (Reference)",
+      "source": "reference",
+      "formula": "parallel_path_rsi_exposed_floors",
+      "default": ""
     },
     {
       "nbc_field": "T5_R5_C3",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
+      "description": "Floors over unheated spaces RSI (Proposed)",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "formula": "parallel_path_rsi_exposed_floors",
+      "default": ""
     },
     {
       "nbc_field": "T5_R7_C3",
@@ -1164,7 +1136,7 @@
       "format": "%.1f"
     },
     "total_window_door_area": {
-      "description": "Calculate total fenestration and door area in mÂ²",
+      "description": "Calculate total fenestration and door area in mÂ² (includes main floor and basement windows/doors)",
       "inputs": {
         "window_se": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/SouthEast",
         "window_ne": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/NorthEast",
@@ -1175,7 +1147,15 @@
         "window_e": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/East",
         "window_w": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/West",
         "door_main": ".//AllResults/Results/Other/GrossArea/MainFloors/Door",
-        "door_basement": ".//AllResults/Results/Other/GrossArea/Basement/Door"
+        "door_basement": ".//AllResults/Results/Other/GrossArea/Basement/Door",
+        "basement_window_se": ".//AllResults/Results/Other/GrossArea/Basement/Windows/SouthEast",
+        "basement_window_ne": ".//AllResults/Results/Other/GrossArea/Basement/Windows/NorthEast",
+        "basement_window_nw": ".//AllResults/Results/Other/GrossArea/Basement/Windows/NorthWest",
+        "basement_window_sw": ".//AllResults/Results/Other/GrossArea/Basement/Windows/SouthWest",
+        "basement_window_s": ".//AllResults/Results/Other/GrossArea/Basement/Windows/South",
+        "basement_window_n": ".//AllResults/Results/Other/GrossArea/Basement/Windows/North",
+        "basement_window_e": ".//AllResults/Results/Other/GrossArea/Basement/Windows/East",
+        "basement_window_w": ".//AllResults/Results/Other/GrossArea/Basement/Windows/West"
       },
       "input_attrs": {
         "window_se": "grossArea",
@@ -1187,9 +1167,17 @@
         "window_e": "grossArea",
         "window_w": "grossArea",
         "door_main": "grossArea",
-        "door_basement": "grossArea"
+        "door_basement": "grossArea",
+        "basement_window_se": "grossArea",
+        "basement_window_ne": "grossArea",
+        "basement_window_nw": "grossArea",
+        "basement_window_sw": "grossArea",
+        "basement_window_s": "grossArea",
+        "basement_window_n": "grossArea",
+        "basement_window_e": "grossArea",
+        "basement_window_w": "grossArea"
       },
-      "calculation": "window_se + window_ne + window_nw + window_sw + window_s + window_n + window_e + window_w + door_main + door_basement",
+      "calculation": "window_se + window_ne + window_nw + window_sw + window_s + window_n + window_e + window_w + door_main + door_basement + basement_window_se + basement_window_ne + basement_window_nw + basement_window_sw + basement_window_s + basement_window_n + basement_window_e + basement_window_w",
       "format": "%.1f"
     },
     "ventilation_power": {
@@ -1204,6 +1192,84 @@
       },
       "calculation": "fan_power / flow_rate if flow_rate > 0 else 0",
       "format": "%.2f"
+    },
+    "gross_wall_area": {
+      "description": "Calculate total above-grade wall area in m² (includes pony walls, main walls, basement above-grade, floor headers, and crawlspace walls)",
+      "inputs": {
+        "pony_wall": ".//AllResults/Results/Other/GrossArea",
+        "main_walls": ".//AllResults/Results/Other/GrossArea/MainFloors",
+        "basement_above_grade": ".//AllResults/Results/Other/GrossArea/Basement",
+        "basement_floor_header": ".//AllResults/Results/Other/GrossArea/Basement",
+        "crawlspace_wall": ".//AllResults/Results/Other/GrossArea/Crawlspace",
+        "crawlspace_floor_header": ".//AllResults/Results/Other/GrossArea/Crawlspace"
+      },
+      "input_attrs": {
+        "pony_wall": "ponyWall",
+        "main_walls": "mainWalls",
+        "basement_above_grade": "aboveGrade",
+        "basement_floor_header": "floorHeader",
+        "crawlspace_wall": "wall",
+        "crawlspace_floor_header": "floorHeader"
+      },
+      "calculation": "pony_wall + main_walls + basement_above_grade + basement_floor_header + crawlspace_wall + crawlspace_floor_header",
+      "format": "%.1f"
+    },
+    "fdwr_percentage_comprehensive": {
+      "description": "Calculate FDWR percentage (fenestration and door to wall ratio) as (total fenestration area / gross wall area) * 100",
+      "inputs": {
+        "window_se": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/SouthEast",
+        "window_ne": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/NorthEast",
+        "window_nw": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/NorthWest",
+        "window_sw": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/SouthWest",
+        "window_s": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/South",
+        "window_n": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/North",
+        "window_e": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/East",
+        "window_w": ".//AllResults/Results/Other/GrossArea/MainFloors/Windows/West",
+        "door_main": ".//AllResults/Results/Other/GrossArea/MainFloors/Door",
+        "door_basement": ".//AllResults/Results/Other/GrossArea/Basement/Door",
+        "basement_window_se": ".//AllResults/Results/Other/GrossArea/Basement/Windows/SouthEast",
+        "basement_window_ne": ".//AllResults/Results/Other/GrossArea/Basement/Windows/NorthEast",
+        "basement_window_nw": ".//AllResults/Results/Other/GrossArea/Basement/Windows/NorthWest",
+        "basement_window_sw": ".//AllResults/Results/Other/GrossArea/Basement/Windows/SouthWest",
+        "basement_window_s": ".//AllResults/Results/Other/GrossArea/Basement/Windows/South",
+        "basement_window_n": ".//AllResults/Results/Other/GrossArea/Basement/Windows/North",
+        "basement_window_e": ".//AllResults/Results/Other/GrossArea/Basement/Windows/East",
+        "basement_window_w": ".//AllResults/Results/Other/GrossArea/Basement/Windows/West",
+        "pony_wall": ".//AllResults/Results/Other/GrossArea",
+        "main_walls": ".//AllResults/Results/Other/GrossArea/MainFloors",
+        "basement_above_grade": ".//AllResults/Results/Other/GrossArea/Basement",
+        "basement_floor_header": ".//AllResults/Results/Other/GrossArea/Basement",
+        "crawlspace_wall": ".//AllResults/Results/Other/GrossArea/Crawlspace",
+        "crawlspace_floor_header": ".//AllResults/Results/Other/GrossArea/Crawlspace"
+      },
+      "input_attrs": {
+        "window_se": "grossArea",
+        "window_ne": "grossArea",
+        "window_nw": "grossArea",
+        "window_sw": "grossArea",
+        "window_s": "grossArea",
+        "window_n": "grossArea",
+        "window_e": "grossArea",
+        "window_w": "grossArea",
+        "door_main": "grossArea",
+        "door_basement": "grossArea",
+        "basement_window_se": "grossArea",
+        "basement_window_ne": "grossArea",
+        "basement_window_nw": "grossArea",
+        "basement_window_sw": "grossArea",
+        "basement_window_s": "grossArea",
+        "basement_window_n": "grossArea",
+        "basement_window_e": "grossArea",
+        "basement_window_w": "grossArea",
+        "pony_wall": "ponyWall",
+        "main_walls": "mainWalls",
+        "basement_above_grade": "aboveGrade",
+        "basement_floor_header": "floorHeader",
+        "crawlspace_wall": "wall",
+        "crawlspace_floor_header": "floorHeader"
+      },
+      "calculation": "((window_se + window_ne + window_nw + window_sw + window_s + window_n + window_e + window_w + door_main + door_basement + basement_window_se + basement_window_ne + basement_window_nw + basement_window_sw + basement_window_s + basement_window_n + basement_window_e + basement_window_w) / (pony_wall + main_walls + basement_above_grade + basement_floor_header + crawlspace_wall + crawlspace_floor_header)) * 100 if (pony_wall + main_walls + basement_above_grade + basement_floor_header + crawlspace_wall + crawlspace_floor_header) > 0 else 0",
+      "format": "%.1f"
     },
     "parallel_path_rsi_walls": {
       "description": "Calculate area-weighted average RSI for walls using parallel path method",
@@ -1237,6 +1303,7 @@
       "rvalue_attr": "rValue",
       "area_xpath": "./Measurements",
       "area_attr": "area",
+      "return_na_if_no_elements": true,
       "format": "%.2f"
     },
     "parallel_path_rsi_ceilings_cathedral_flat": {
@@ -1249,6 +1316,7 @@
       "rvalue_attr": "rValue",
       "area_xpath": "./Measurements",
       "area_attr": "area",
+      "return_na_if_no_elements": true,
       "format": "%.2f"
     },
     "parallel_path_rsi_floors": {
@@ -1273,6 +1341,7 @@
       "rvalue_xpath": "./Construction/AddedToSlab",
       "rvalue_attr": "rValue",
       "allow_missing_rvalue": true,
+      "return_na_if_no_elements": true,
       "area_xpath": "./Measurements",
       "area_attr": "area",
       "format": "%.2f"
@@ -1289,9 +1358,133 @@
       "rvalue_xpath": "./Construction/AddedToSlab",
       "rvalue_attr": "rValue",
       "allow_missing_rvalue": true,
+      "return_na_if_no_elements": true,
       "area_xpath": "./Measurements",
       "area_attr": "area",
       "format": "%.2f"
+    },
+    "parallel_path_rsi_exposed_floors": {
+      "description": "Calculate RSI for exposed floors over unheated spaces using parallel path method",
+      "type": "parallel_path_rsi",
+      "elements_xpath": ".//House/Components/Floor",
+      "rvalue_xpath": "./Construction/Type",
+      "rvalue_attr": "rValue",
+      "return_na_if_no_elements": true,
+      "area_xpath": "./Measurements",
+      "area_attr": "area",
+      "format": "%.2f"
+    },
+    "parallel_path_rsi_foundation_walls": {
+      "description": "Calculate RSI for foundation walls using parallel path method",
+      "type": "parallel_path_rsi",
+      "elements_xpath": ".//House/Components/Basement/Wall",
+      "rvalue_xpath": "./Construction/InteriorAddedInsulation/Composite/Section",
+      "rvalue_attr": "rsi",
+      "return_na_if_no_elements": true,
+      "area_height_xpath": "./Measurements",
+      "area_height_attr": "height",
+      "area_perimeter_xpath": "../Floor/Measurements",
+      "area_perimeter_attr": "perimeter",
+      "format": "%.2f"
+    },
+    "parallel_path_rsi_heated_floors": {
+      "description": "Calculate RSI for heated floors using parallel path method",
+      "type": "parallel_path_rsi",
+      "elements_xpath": ".//Basement/Floor | .//Crawlspace/Floor | .//Slab/Floor",
+      "attribute_filter": {
+        "heatedFloor": "true"
+      },
+      "attribute_filter_xpath": "./Construction",
+      "rvalue_xpath": "./Construction/AddedToSlab",
+      "rvalue_attr": "rValue",
+      "allow_missing_rvalue": true,
+      "return_na_if_no_elements": true,
+      "area_xpath": "./Measurements",
+      "area_attr": "area",
+      "format": "%.2f"
+    },
+    "parallel_path_rsi_slabs_integral_footing": {
+      "description": "Calculate RSI for slabs-on-grade with integral footing using parallel path method",
+      "type": "parallel_path_rsi",
+      "elements_xpath": ".//Slab/Floor",
+      "attribute_filter": {
+        "hasIntegralFooting": "true"
+      },
+      "attribute_filter_xpath": "./Construction",
+      "rvalue_xpath": "./Construction/AddedToSlab",
+      "rvalue_attr": "rValue",
+      "allow_missing_rvalue": true,
+      "return_na_if_no_elements": true,
+      "area_xpath": "./Measurements",
+      "area_attr": "area",
+      "format": "%.2f"
+    },
+    "parallel_path_rsi_windows": {
+      "description": "Calculate area-weighted average R-value for all windows using parallel path method",
+      "type": "parallel_path_rsi",
+      "elements_xpath": ".//House/Components/Wall/Components/Window | .//House/Components/Basement/Components/Window",
+      "rvalue_xpath": "./Construction/Type",
+      "rvalue_attr": "rValue",
+      "area_height_xpath": "./Measurements",
+      "area_height_attr": "height",
+      "area_width_xpath": "./Measurements",
+      "area_width_attr": "width",
+      "format": "%.4f"
+    },
+    "weighted_average_shgc": {
+      "description": "Calculate area-weighted average SHGC for all windows",
+      "type": "weighted_average",
+      "elements_xpath": ".//House/Components/Wall/Components/Window | .//House/Components/Basement/Components/Window | .//House/Components/Walkout/Components/Window | .//House/Components/Crawlspace/Components/Window",
+      "attribute_name": "shgc",
+      "attribute_xpath": ".",
+      "area_height_xpath": "./Measurements",
+      "area_height_attr": "height",
+      "area_width_xpath": "./Measurements",
+      "area_width_attr": "width",
+      "format": "%.3f"
+    },
+    "parallel_path_rsi_skylights": {
+      "description": "Calculate area-weighted average RSI for skylights using parallel path method",
+      "type": "parallel_path_rsi",
+      "elements_xpath": ".//House/Components/Ceiling/Components/Window",
+      "rvalue_xpath": "./Construction/Type",
+      "rvalue_attr": "rValue",
+      "area_height_xpath": "./Measurements",
+      "area_height_attr": "height",
+      "area_width_xpath": "./Measurements",
+      "area_width_attr": "width",
+      "return_na_if_no_elements": true,
+      "format": "%.4f"
+    },
+    "weighted_average_shgc_skylights": {
+      "description": "Calculate area-weighted average SHGC for skylights",
+      "type": "weighted_average",
+      "elements_xpath": ".//House/Components/Ceiling/Components/Window",
+      "attribute_name": "shgc",
+      "attribute_xpath": ".",
+      "area_height_xpath": "./Measurements",
+      "area_height_attr": "height",
+      "area_width_xpath": "./Measurements",
+      "area_width_attr": "width",
+      "return_na_if_no_elements": true,
+      "format": "%.3f"
+    },
+    "parallel_path_rsi_doors": {
+      "description": "Calculate area-weighted average R-value for all exterior doors using parallel path method",
+      "type": "parallel_path_rsi",
+      "elements_xpath": ".//House/Components/Wall/Components/Door | .//House/Components/Basement/Components/Door",
+      "attribute_filter": {
+        "adjacentEnclosedSpace": "false"
+      },
+      "attribute_filter_xpath": ".",
+      "rvalue_xpath": ".",
+      "rvalue_attr": "rValue",
+      "area_height_xpath": "./Measurements",
+      "area_height_attr": "height",
+      "area_width_xpath": "./Measurements",
+      "area_width_attr": "width",
+      "return_na_if_no_elements": true,
+      "format": "%.4f"
     }
   },
   "transformations": {

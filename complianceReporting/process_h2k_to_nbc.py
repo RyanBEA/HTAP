@@ -107,13 +107,13 @@ class H2KToNBCProcessor:
                 # No extraction method specified, use default
                 value = mapping.get('default', '')
 
-            # Apply transformation if specified
-            if value and 'transform' in mapping:
+            # Apply transformation if specified (but skip for "N/A" values)
+            if value and 'transform' in mapping and value != "N/A":
                 transformer = ValueTransformer(self.config)
                 value = transformer.apply_transformation(value, mapping['transform'])
 
-            # Apply format if specified
-            if value and 'format' in mapping:
+            # Apply format if specified (but skip for "N/A" values)
+            if value and 'format' in mapping and value != "N/A":
                 transformer = ValueTransformer(self.config)
                 value = transformer.apply_format(value, mapping['format'])
 

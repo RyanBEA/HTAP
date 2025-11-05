@@ -38,7 +38,16 @@ class FormulaProcessor:
             # Check if this is a parallel path RSI calculation
             if formula.get('type') == 'parallel_path_rsi':
                 result = self._calculate_parallel_path_rsi(formula)
+                # If result is "N/A" string, return it directly without formatting
+                if isinstance(result, str) and result == "N/A":
+                    return result
                 format_str = formula.get('format', '%.2f')
+                return self._format_result(result, format_str)
+
+            # Check if this is a weighted average calculation
+            if formula.get('type') == 'weighted_average':
+                result = self._calculate_weighted_average(formula)
+                format_str = formula.get('format', '%.3f')
                 return self._format_result(result, format_str)
 
             # Standard formula calculation
@@ -114,12 +123,16 @@ class FormulaProcessor:
         Format a calculation result.
 
         Args:
-            result: Numeric result
+            result: Numeric result or "N/A" string
             format_str: Format string (e.g., '%.1f')
 
         Returns:
             Formatted string
         """
+        # Pass through "N/A" without formatting
+        if result == "N/A":
+            return "N/A"
+
         try:
             if '%' in format_str:
                 return format_str % result
@@ -138,14 +151,31 @@ class FormulaProcessor:
             formula: Formula definition with parallel path RSI parameters
 
         Returns:
-            Calculated average RSI value
+            Calculated average RSI value, or "N/A" string if component doesn't exist
         """
+        # Check if we should return "N/A" for missing components
+        return_na_if_no_elements = formula.get('return_na_if_no_elements', False)
+
+        # Build parent map for the entire tree to support parent navigation
+        parent_map = {c: p for p in self.extractor.root.iter() for c in p}
+
         # Extract all elements (e.g., Wall components)
+        # ElementTree doesn't support pipe operator in XPath, so split and combine
         elements_xpath = formula.get('elements_xpath')
-        elements = self.extractor.root.findall(elements_xpath, self.extractor.namespaces)
+
+        # Split on pipe and strip whitespace
+        xpath_list = [x.strip() for x in elements_xpath.split('|')]
+
+        # Find elements using each XPath and combine results
+        elements = []
+        for xpath in xpath_list:
+            found = self.extractor.root.findall(xpath, self.extractor.namespaces)
+            elements.extend(found)
 
         if not elements:
             print(f"Warning: No elements found for xpath '{elements_xpath}'")
+            if return_na_if_no_elements:
+                return "N/A"
             return 0.0
 
         # Get type filter if specified
@@ -233,22 +263,60 @@ class FormulaProcessor:
                 except (ValueError, TypeError):
                     continue
             else:
-                # Calculate area from height * perimeter (for walls)
+                # Calculate area from height * perimeter (for walls) or height * width (for windows)
                 area_height_xpath = formula.get('area_height_xpath', './Measurements')
                 area_height_attr = formula.get('area_height_attr', 'height')
-                area_perimeter_xpath = formula.get('area_perimeter_xpath', './Measurements')
-                area_perimeter_attr = formula.get('area_perimeter_attr', 'perimeter')
 
-                measurements_elem = element.find(area_height_xpath, self.extractor.namespaces)
-                if measurements_elem is None:
+                # Check if width-based calculation (for windows)
+                area_width_xpath = formula.get('area_width_xpath', None)
+                area_width_attr = formula.get('area_width_attr', None)
+
+                # Get height from height element
+                height_elem = element.find(area_height_xpath, self.extractor.namespaces)
+                if height_elem is None:
                     continue
 
-                try:
-                    height = float(measurements_elem.get(area_height_attr, 0))
-                    perimeter = float(measurements_elem.get(area_perimeter_attr, 0))
-                    area = height * perimeter
-                except (ValueError, TypeError):
-                    continue
+                # Determine if using width or perimeter
+                if area_width_xpath and area_width_attr:
+                    # Width-based calculation (for windows: height × width)
+                    width_elem = element.find(area_width_xpath, self.extractor.namespaces)
+                    if width_elem is None:
+                        continue
+
+                    try:
+                        height = float(height_elem.get(area_height_attr, 0))
+                        width = float(width_elem.get(area_width_attr, 0))
+                        # Windows measurements are in mm, convert to m²
+                        area = (height * width) / 1_000_000
+                    except (ValueError, TypeError):
+                        continue
+                else:
+                    # Perimeter-based calculation (for walls: height × perimeter)
+                    area_perimeter_xpath = formula.get('area_perimeter_xpath', './Measurements')
+                    area_perimeter_attr = formula.get('area_perimeter_attr', 'perimeter')
+
+                    # Get perimeter from perimeter element (may be same or different from height element)
+                    # Handle parent-relative XPaths (starting with ../)
+                    if area_perimeter_xpath.startswith('../'):
+                        parent = parent_map.get(element)
+                        if parent is not None:
+                            # Remove ../ prefix and search from parent
+                            relative_path = area_perimeter_xpath[3:]  # Remove "../"
+                            perimeter_elem = parent.find(relative_path, self.extractor.namespaces)
+                        else:
+                            perimeter_elem = None
+                    else:
+                        perimeter_elem = element.find(area_perimeter_xpath, self.extractor.namespaces)
+
+                    if perimeter_elem is None:
+                        continue
+
+                    try:
+                        height = float(height_elem.get(area_height_attr, 0))
+                        perimeter = float(perimeter_elem.get(area_perimeter_attr, 0))
+                        area = height * perimeter
+                    except (ValueError, TypeError):
+                        continue
 
             if area <= 0:
                 continue
@@ -262,6 +330,117 @@ class FormulaProcessor:
             average_rsi = total_area / sum_area_over_rsi
             return average_rsi
         else:
+            # No valid elements found after filtering
+            if return_na_if_no_elements:
+                return "N/A"
+            return 0.0
+
+    def _calculate_weighted_average(self, formula):
+        """
+        Calculate area-weighted average of an attribute (e.g., SHGC).
+        Formula: Weighted Avg = Σ(attribute_i × Area_i) / Σ(Area_i)
+
+        Args:
+            formula: Formula definition with weighted average parameters
+
+        Returns:
+            Calculated weighted average value, or "N/A" string if component doesn't exist
+        """
+        # Check if we should return "N/A" for missing components
+        return_na_if_no_elements = formula.get('return_na_if_no_elements', False)
+
+        # Extract all elements (e.g., Window components)
+        elements_xpath = formula.get('elements_xpath')
+
+        # Split on pipe and strip whitespace (support multiple XPaths)
+        xpath_list = [x.strip() for x in elements_xpath.split('|')]
+
+        # Find elements using each XPath and combine results
+        elements = []
+        for xpath in xpath_list:
+            found = self.extractor.root.findall(xpath, self.extractor.namespaces)
+            elements.extend(found)
+
+        if not elements:
+            print(f"Warning: No elements found for xpath '{elements_xpath}'")
+            if return_na_if_no_elements:
+                return "N/A"
+            return 0.0
+
+        # Extract attribute and area for each element
+        total_area = 0.0
+        weighted_sum = 0.0
+
+        # Get attribute configuration
+        attribute_name = formula.get('attribute_name')
+        attribute_xpath = formula.get('attribute_xpath', '.')  # Default to element itself
+
+        for element in elements:
+            # Extract attribute value
+            if attribute_xpath == '.':
+                # Attribute is on the element itself
+                attr_elem = element
+            else:
+                # Navigate to sub-element
+                attr_elem = element.find(attribute_xpath, self.extractor.namespaces)
+                if attr_elem is None:
+                    continue
+
+            try:
+                attribute_value = float(attr_elem.get(attribute_name, 0))
+            except (ValueError, TypeError):
+                continue
+
+            # Extract area (using same logic as parallel path RSI)
+            if 'area_xpath' in formula:
+                # Direct area
+                area_xpath = formula.get('area_xpath', './Measurements')
+                area_attr = formula.get('area_attr', 'area')
+
+                area_elem = element.find(area_xpath, self.extractor.namespaces)
+                if area_elem is None:
+                    continue
+
+                try:
+                    area = float(area_elem.get(area_attr, 0))
+                except (ValueError, TypeError):
+                    continue
+            else:
+                # Calculate area from height * width (for windows)
+                area_height_xpath = formula.get('area_height_xpath', './Measurements')
+                area_height_attr = formula.get('area_height_attr', 'height')
+                area_width_xpath = formula.get('area_width_xpath', './Measurements')
+                area_width_attr = formula.get('area_width_attr', 'width')
+
+                height_elem = element.find(area_height_xpath, self.extractor.namespaces)
+                width_elem = element.find(area_width_xpath, self.extractor.namespaces)
+
+                if height_elem is None or width_elem is None:
+                    continue
+
+                try:
+                    height = float(height_elem.get(area_height_attr, 0))
+                    width = float(width_elem.get(area_width_attr, 0))
+                    # Windows measurements are in mm, convert to m²
+                    area = (height * width) / 1_000_000
+                except (ValueError, TypeError):
+                    continue
+
+            if area <= 0:
+                continue
+
+            # Accumulate weighted sum
+            total_area += area
+            weighted_sum += (attribute_value * area)
+
+        # Calculate weighted average
+        if total_area > 0:
+            weighted_avg = weighted_sum / total_area
+            return weighted_avg
+        else:
+            # No valid elements found after processing
+            if return_na_if_no_elements:
+                return "N/A"
             return 0.0
 
     def calculate_fdwr(self):
