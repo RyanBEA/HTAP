@@ -488,9 +488,33 @@ class ComplexMappingProcessor:
             components = mapping.get('components', [])
             values = []
 
-            for component in components:
-                value = self.extractor.extract_for_complex_mapping(component)
-                values.append(value)
+            for i, component in enumerate(components):
+                result = self.extractor.extract_for_complex_mapping(component)
+
+                # Check if result is a tuple (value, check_attr_value)
+                if isinstance(result, tuple):
+                    value, check_attr_value = result
+
+                    # Apply conversion if specified
+                    conversion = component.get('conversion')
+                    if conversion and value:
+                        # Apply COP to HSPF conversion based on isCop attribute
+                        if conversion == 'cop_to_hspf_conditional':
+                            # If isCop is "true", convert COP to HSPF
+                            # If isCop is not "true", value is already HSPF, use as-is
+                            if check_attr_value == "true":
+                                # Value is COP, convert to HSPF: HSPF = (COP - 0.78) / 0.376
+                                try:
+                                    cop_value = float(value)
+                                    hspf_value = (cop_value - 0.78) / 0.376
+                                    value = f"{hspf_value:.2f}"
+                                except (ValueError, TypeError):
+                                    pass  # Keep original value if conversion fails
+                            # else: value is already HSPF, use as-is
+
+                    values.append(value)
+                else:
+                    values.append(result)
 
             # Check if we have optional components with no values
             # If the last components are optional and empty, use simple format

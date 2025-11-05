@@ -47,7 +47,7 @@ This design allows non-programmers to add new field mappings by editing JSON con
 - Coordinates extraction, transformation, and form filling
 - Handles static values, formulas, and complex mappings
 
-**h2k_to_nbc_mapping.json** (58 KB, version 3.3)
+**h2k_to_nbc_mapping.json** (58 KB, version 3.4)
 - Configuration file with 137 field mappings
 - 82 real data extractions from H2K files (78 unique + 4 FDWR/wall/window area fields in Tables 3 and 5)
 - 55 placeholder mappings (extract from `.//Application/Name` for manual completion)
@@ -57,6 +57,7 @@ This design allows non-programmers to add new field mappings by editing JSON con
 - Comprehensive wall area, fenestration, and FDWR% formulas (used in Tables 3 and 5)
 - Parent-relative XPath support for basement wall perimeter calculation
 - Weighted average formulas for window and skylight SHGC calculations
+- Conditional COP to HSPF conversion for heat pump systems based on isCop attribute
 - Metadata tracking: version, date, fields mapped
 
 **config_loader.py** (137 lines)
@@ -64,11 +65,13 @@ This design allows non-programmers to add new field mappings by editing JSON con
 - Ensures all required fields present
 - Validates references to transformations and formulas
 
-**h2k_extractor.py** (150 lines)
+**h2k_extractor.py** (185 lines)
 - Extracts data from H2K XML using XPath expressions
 - Handles element extraction with optional attributes
 - Supports XPath lists for concatenated multi-field values
 - Checks element existence for validation
+- Extracts multiple attributes from same element (value + check attribute)
+- Returns tuples for conditional conversion processing
 
 **transformations.py** (180 lines)
 - Value transformation functions:
@@ -78,15 +81,16 @@ This design allows non-programmers to add new field mappings by editing JSON con
   - `round2`, `round1`: Decimal rounding
   - `text`: Passthrough for strings
 
-**formula_processor.py** (413 lines)
+**formula_processor.py** (540 lines)
 - Formula calculation engine with parallel path RSI support
 - Type-filtered component selection (e.g., filter ceilings by Attic/gable vs Cathedral)
 - Attribute-filtered component selection (e.g., filter basement floors by heatedFloor="false" and isBelowFrostline="true")
 - Component presence detection: returns "N/A" string when components don't exist (vs 0 when uninsulated)
 - Parent-relative XPath support: enables navigation to sibling elements (e.g., basement wall perimeter from Floor element)
 - Handles missing rValue elements (treats as uninsulated, returns 0)
-- Complex mapping processor for multi-component strings
-- Examples: FDWR calculation, parallel path RSI averaging, ventilation power, equipment descriptions
+- Complex mapping processor for multi-component strings with conditional conversions
+- Conditional unit conversion based on XML attributes (COP to HSPF conversion)
+- Examples: FDWR calculation, parallel path RSI averaging, ventilation power, equipment descriptions with heat pumps
 
 ### Form Template Structure
 
@@ -602,14 +606,15 @@ Calculates the Fenestration and Door to Wall Ratio as a percentage by dividing t
 
 ### 4. Complex Mappings
 
-Example: Heating system description
+Complex mappings combine multiple H2K values into formatted strings and support conditional conversions based on attribute values.
+
+#### Basic Complex Mapping Example
 
 ```json
 {
   "complex_mappings": {
-    "heating_system_proposed": {
-      "description": "Format heating system description for proposed model",
-      "source": "proposed",
+    "heating_system": {
+      "description": "Format heating system description",
       "components": [
         {
           "xpath": ".//House/HeatingCooling/Type1/Furnace/Equipment/EnergySource/English",
@@ -631,6 +636,66 @@ Example: Heating system description
 }
 ```
 *Output example: "Natural gas Condensing, 96.1% AFUE"*
+
+#### Complex Mapping with Conditional Conversion
+
+For heat pump systems, heating efficiency may be stored as either COP or HSPF depending on the `isCop` attribute. The system supports conditional conversion:
+
+```json
+{
+  "complex_mappings": {
+    "heating_system_with_hp": {
+      "description": "Format heating system with optional heat pump",
+      "components": [
+        {
+          "xpath": ".//House/HeatingCooling/Type1/Furnace/Equipment/EnergySource/English",
+          "default": "Unknown"
+        },
+        {
+          "xpath": ".//House/HeatingCooling/Type1/Furnace/Equipment/EquipmentType/English",
+          "default": "furnace"
+        },
+        {
+          "xpath": ".//House/HeatingCooling/Type1/Furnace/Specifications",
+          "attr": "efficiency",
+          "default": "0"
+        },
+        {
+          "xpath": ".//House/HeatingCooling/Type2/AirHeatPump/Equipment/Type/English",
+          "default": "",
+          "optional": true
+        },
+        {
+          "xpath": ".//House/HeatingCooling/Type2/AirHeatPump/Specifications/HeatingEfficiency",
+          "attr": "value",
+          "check_attr": "isCop",
+          "conversion": "cop_to_hspf_conditional",
+          "default": "",
+          "optional": true
+        }
+      ],
+      "format": "{0} {1}, {2}% AFUE; {3} HSPF {4}",
+      "format_simple": "{0} {1}, {2}% AFUE"
+    }
+  }
+}
+```
+
+**Conditional Conversion Logic:**
+- `check_attr: "isCop"` - Reads the `isCop` attribute from the HeatingEfficiency element
+- `conversion: "cop_to_hspf_conditional"` - Applies conversion if needed:
+  - If `isCop="true"`: Value is COP, convert to HSPF using: **HSPF = (COP - 0.78) / 0.376**
+  - If `isCop` is not "true": Value is already HSPF, use as-is
+- Always displays result as HSPF in the output
+
+**Example Results:**
+- H2K stores `isCop="true" value="3.45"` → Converts to "HSPF 7.10"
+- H2K stores `isCop="false" value="7.13"` → Uses directly as "HSPF 7.13"
+
+**Optional Components:**
+- Components marked `"optional": true` may not exist in all H2K files
+- If optional components are absent, uses `format_simple` instead of `format`
+- Example: Furnace-only systems use simple format without heat pump details
 
 ### 5. Transformations
 
@@ -1152,7 +1217,20 @@ Potential improvements:
 7. Error reporting and data quality checks
 8. Integration with HTAP run definitions (.run files)
 
-## Recent Enhancements (v3.3)
+## Recent Enhancements
+
+### v3.4 (2025-11-05)
+
+**COP to HSPF Conversion** - Added conditional unit conversion for heat pump efficiency:
+- Reads `isCop` attribute from HeatingEfficiency element
+- If `isCop="true"`: Converts COP to HSPF using formula: **HSPF = (COP - 0.78) / 0.376**
+- If `isCop` is not "true": Uses value directly as HSPF
+- Applied to T5_R25_C1 (Reference) and T5_R25_C2 (Proposed) heating system descriptions
+- Ensures consistent HSPF reporting regardless of how HOT2000 stores the value
+- Enhanced `h2k_extractor.py` to read multiple attributes from same element
+- Enhanced `formula_processor.py` with conditional conversion processing
+
+### v3.3 (2025-11-04)
 
 **Skylight Support** - Added parallel path RSI and weighted average SHGC calculations for skylights:
 - T5_R16_C2/C3: Skylight U-values using parallel path method

@@ -147,17 +147,41 @@ class H2KExtractor:
             component_spec: Dictionary specifying xpath, optional attr, and default
 
         Returns:
-            Extracted value or default
+            Extracted value or default (or tuple if check_attr specified)
         """
         xpath = component_spec.get('xpath')
         attr = component_spec.get('attr')
         default = component_spec.get('default', '')
+        check_attr = component_spec.get('check_attr')
 
         if not xpath:
+            if check_attr:
+                return (default, None)
             return default
 
-        value = self.extract_by_xpath(xpath, attr)
-        return value if value is not None else default
+        # Get the element
+        element = self.root.find(xpath, self.namespaces)
+        if element is None:
+            if check_attr:
+                return (default, None)
+            return default
+
+        # Extract the main value
+        if attr:
+            value = element.get(attr)
+        else:
+            value = element.text
+
+        # Extract the check attribute if specified
+        check_value = None
+        if check_attr:
+            check_value = element.get(check_attr)
+
+        # Return tuple if check_attr specified, otherwise just value
+        if check_attr:
+            return (value if value is not None else default, check_value)
+        else:
+            return value if value is not None else default
 
     def element_exists(self, xpath):
         """
