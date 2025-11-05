@@ -4,7 +4,7 @@
 
 This directory contains a configuration-driven system for automatically generating NBC 2020 Energy Compliance Forms from HOT2000 .h2k building model files. The system extracts data from reference and proposed building models and populates the official NBC compliance form template.
 
-## Quick Start
+## SLOW Start
 
 ```bash
 # Navigate to the complianceReporting directory
