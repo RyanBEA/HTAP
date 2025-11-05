@@ -1,0 +1,832 @@
+{
+  "configuration": {
+    "OptionsFile": "HTAP-options.json",
+    "Recovered-results": "General",
+    "version": {
+      "h2kHouseFile": "1.3",
+      "HOT2000": "v11.8b18"
+    }
+  },
+  "archetype": {
+    "h2k-File": "227NN01521.h2k",
+    "House-Builder": "N0108CrescoConstructionLimite",
+    "EvaluationDate": "2025-03-26",
+    "Year-Built": "2024",
+    "House-Type": "SingleDetached",
+    "House-Storeys": "Two",
+    "Front-Orientation": "S",
+    "Weather-Locale": "HALIFAX",
+    "Base-Region": "NOVA SCOTIA",
+    "Base-Locale": "HALIFAXINTL",
+    "Base-City": "Bedford",
+    "climate-zone": "Zone 6",
+    "fuel-heating-presub": "Natural gas",
+    "fuel-DHW-presub": "Electricity",
+    "Ceiling-Type": "Attic/hip",
+    "Area-Slab-m2": "0",
+    "Area-Basement-m2": "55.46",
+    "Area-Walkout-m2": "0",
+    "Area-Crawl-m2": "0",
+    "Floor-Area-m2": "224.2",
+    "House-Volume-m3": "621.4",
+    "Win-SHGC-S": "0.257",
+    "Win-Area-m2-S": "9.7",
+    "Win-SHGC-SE": "0",
+    "Win-Area-m2-SE": "0",
+    "Win-SHGC-E": "0.257",
+    "Win-Area-m2-E": "9.7",
+    "Win-SHGC-NE": "0",
+    "Win-Area-m2-NE": "0",
+    "Win-SHGC-N": "0.257",
+    "Win-Area-m2-N": "9.7",
+    "Win-SHGC-NW": "0",
+    "Win-Area-m2-NW": "0",
+    "Win-SHGC-W": "0.257",
+    "Win-Area-m2-W": "9.7",
+    "Win-SHGC-SW": "0",
+    "Win-Area-m2-SW": "0",
+    "Wall-UAValue": "56.5",
+    "Window-UAValue": "62.19",
+    "ExposedFloor-UAValue": "4.6",
+    "Ceiling-UAValue": "9.73",
+    "Wall-RSI": "2.97",
+    "Ceiling-RSI": "8.67",
+    "ExposedFloor-RSI": "4.67",
+    "Archetype-ACH": "2.5",
+    "Area-Door-m2": "7.061",
+    "Area-DoorWin-m2": "0.0",
+    "Area-Windows-m2": "38.871",
+    "Area-Wall-m2": "167.745",
+    "Area-Header-m2": "17.489",
+    "Area-Ceiling-m2": "84.356",
+    "Area-ExposedFloor-m2": "21.461",
+    "Area-House-m2": "336.983"
+  },
+  "input": {
+    "Run-Region": "NOVA SCOTIA",
+    "Run-Locale": "HALIFAX",
+    "House-Upgraded": "true",
+    "House-ListOfUpgrades": "Opt-ACH=>ACH_NBC;Opt-Windows=>NBC-Zone6-Window-BEA;Opt-DoorWindows=>NBC-zone6-Doorwindow;Opt-Doors=>NBC-zone6-door;Opt-FloorHeaderIntIns=>NBC_RSI2.97_int;Opt-FoundationWallIntIns=>NBC_936_2.98RSI;Opt-FoundationSlabBelowGrade=>NBC_936_uninsulated_EffR0;Opt-FoundationSlabOnGrade=>NBC_936_1.96RSI;Opt-ExposedFloor=>NBC_936_4.67RSI;Opt-AtticCeilings=>NBC_Ceiling_zone6;Opt-CathCeilings=>NBC_CathCeiling_RSI4.67;Opt-FlatCeilings=>NBC_FlatCeiling_RSI4.67;Opt-VentSystem=>NBC_HRV;Opt-Heating-Cooling=>central-hybrid-2015NBC;Opt-WindowDistribution=>Reference-9.36;Opt-AboveGradeWall=>NBC_Wall_zone6_HRV;Opt-DHWSystem=>NBC-HotWater_gas;Opt-DWHR=>none;",
+    "Ruleset-Fuel-Source": "",
+    "Ruleset-Ventilation": "",
+    "Opt-ResultHouseCode": "General",
+    "Opt-Specifications": "NBC_Specs_Normal",
+    "Opt-ACH": "ACH_NBC",
+    "Opt-Windows": "NBC-Zone6-Window-BEA",
+    "Opt-DoorWindows": "NBC-zone6-Doorwindow",
+    "Opt-Doors": "NBC-zone6-door",
+    "Opt-FloorHeaderIntIns": "NBC_RSI2.97_int",
+    "Opt-FoundationWallExtIns": "NA",
+    "Opt-FoundationWallIntIns": "NBC_936_2.98RSI",
+    "Opt-FoundationSlabBelowGrade": "NBC_936_uninsulated_EffR0",
+    "Opt-FoundationSlabOnGrade": "NBC_936_1.96RSI",
+    "Opt-ExposedFloor": "NBC_936_4.67RSI",
+    "Opt-AtticCeilings": "NBC_Ceiling_zone6",
+    "Opt-CathCeilings": "NBC_CathCeiling_RSI4.67",
+    "Opt-FlatCeilings": "NBC_FlatCeiling_RSI4.67",
+    "Opt-VentSystem": "NBC_HRV",
+    "Opt-Heating-Cooling": "central-hybrid-2015NBC",
+    "Opt-H2K-PV": "NA",
+    "Opt-Baseloads": "NBC-Baseloads",
+    "Opt-WindowDistribution": "Reference-9.36",
+    "Opt-Temperatures": "NBC_Temps",
+    "Opt-AboveGradeWall": "NBC_Wall_zone6_HRV",
+    "Opt-DHWSystem": "NBC-HotWater_gas",
+    "Opt-DWHR": "none",
+    "Opt-Skylights": "NA",
+    "Opt-Location": "HALIFAX",
+    "Opt-Ruleset": "as-found",
+    "upgrade-package-list": "{}",
+    "GOconfig_rotate": "S",
+    "Opt-FuelCost": "rates2016",
+    "Opt-DBFiles": "H2KCodeLibFile",
+    "Opt-Ceilings": "NA",
+    "Opt-HRVspec": "NA"
+  },
+  "analysis_BCStepCode": {
+    "TEDI_compliance": "Step 1"
+  },
+  "output": {
+    "HDDs": 4000,
+    "Energy-Total-GJ": 93.6,
+    "ERSRefHouse_Energy-Total-GJ": 0.0,
+    "Util-Bill-gross": 1960.54,
+    "Util-PV-revenue": 0.0,
+    "Util-Bill-Net": 1960.54,
+    "Util-Bill-Elec": 1152.57,
+    "Util-Bill-Gas": 807.97,
+    "Util-Bill-Prop": 0.0,
+    "Util-Bill-Oil": 0.0,
+    "Util-Bill-Wood": 0.0,
+    "Energy-PV-kWh": 0,
+    "Gross-HeatLoss-GJ": 108.9,
+    "Infil-VentHeatLoss-GJ": 21.8,
+    "Useful-Solar-Gain-GJ": 16.0,
+    "Energy-HeatingGJ": 34.6,
+    "ERSRefHouse_Energy-HeatingGJ": 0.0,
+    "AuxEnergyReq-HeatingGJ": 61.0,
+    "TotalAirConditioning-LoadGJ": 8.5,
+    "AvgAirConditioning-COP": 2.9,
+    "Energy-CoolingGJ": 2.7,
+    "ERSRefHouse_Energy-CoolingGJ": 0.0,
+    "Energy-VentGJ": 1.7,
+    "ERSRefHouse_Energy-VentGJ": 0.0,
+    "Energy-DHWGJ": 28.0,
+    "ERSRefHouse_Energy-DHWGJ": 0.0,
+    "Energy-PlugGJ": 26.3,
+    "ESRefHouse_Energy-PlugGJ": 0.0,
+    "EnergyEleckWh": 13439.7,
+    "EnergyGasM3": 1213.4,
+    "EnergyOil_l": 0.0,
+    "EnergyProp_L": 0.0,
+    "EnergyWood_cord": 0.0,
+    "TEDI_kWh_m2": 75.5,
+    "MEUI_kWh_m2": 83.0,
+    "ERS-Value": 0,
+    "NumTries": 1,
+    "LapsedTime": 1.03,
+    "PEAK-Heating-W": 10006.3,
+    "PEAK-Cooling-W": 3734.1,
+    "DesignTemp-Heating-oC": -16.0
+  },
+  "status": {
+    "MD5master": "28375050052c930ebc331f759a0686aa",
+    "MD5workingcopy": "28375050052c930ebc331f759a0686aa",
+    "H2KDirCopyAttempts": "1",
+    "H2KDirCheckSumMatch": "true",
+    "H2KExecutionAttempts": "1",
+    "H2KExecutionTime": "1.0263460999999998",
+    "errors": [
+
+    ],
+    "warnings": [
+      "Experimental costing feature \"per\" in use. Not yet supported. (warning reported by solveComponentConditionals - inc/costing.rb:176)",
+      "Experimental costing feature \"per\" in use. Not yet supported. (warning reported by solveComponentConditionals - inc/costing.rb:176)",
+      "Experimental costing feature \"per\" in use. Not yet supported. (warning reported by solveComponentConditionals - inc/costing.rb:176)",
+      "Experimental costing feature \"per\" in use. Not yet supported. (warning reported by solveComponentConditionals - inc/costing.rb:176)"
+    ],
+    "infoMsgs": [
+      "Option GOconfig_rotate was not specified in Choices file OR rule set;  Using default value (S)",
+      "Option Opt-FuelCost was not specified in Choices file OR rule set;  Using default value (rates2016)",
+      "Option Opt-DBFiles was not specified in Choices file OR rule set;  Using default value (H2KCodeLibFile)",
+      "Option Opt-Ceilings was not specified in Choices file OR rule set;  Using default value (NA)",
+      "Option Opt-H2KFoundation was not specified in Choices file OR rule set;  Using default value (NA)",
+      "Option Opt-H2KFoundationSlabCrawl was not specified in Choices file OR rule set;  Using default value (NA)",
+      "Option Opt-HRVspec was not specified in Choices file OR rule set;  Using default value (NA)",
+      "Comprehensive costing calculation report written to HTAP-costing-audit-report.txt"
+    ],
+    "success": true,
+    "processingtime": null
+  },
+  "cost-estimates": {
+    "total": 44517.899999999994,
+    "byAttribute": {
+      "Opt-Ceilings": 0.0,
+      "Opt-AtticCeilings": 1616.24,
+      "Opt-FlatCeilings": 0.0,
+      "Opt-CathCeilings": 0.0,
+      "Opt-ACH": 1111.09,
+      "Opt-Windows": 12878.48,
+      "Opt-DWHR": 0.0,
+      "Opt-AboveGradeWall": 10838.2,
+      "Opt-Heating-Cooling": 12778.03,
+      "Opt-VentSystem": 1359.98,
+      "Opt-DHWSystem": 1240.59,
+      "Opt-FoundationWallExtIns": 0.0,
+      "Opt-FoundationWallIntIns": 2152.76,
+      "Opt-FoundationSlabBelowGrade": 0.0,
+      "Opt-FoundationSlabOnGrade": 0.0,
+      "Opt-FloorHeaderIntIns": 184.48,
+      "Opt-ExposedFloor": 358.05
+    },
+    "bySource": {
+      "VancouverAirSealData": 1111.09,
+      "LEEP-MB-Winnipeg": 14494.72,
+      "MiscNRCanEstimates2019": 12233.48,
+      "NA": 0.0,
+      "LEEP-ON-Ottawa": 16678.61,
+      "nil": 0.0,
+      "LEEP-BC-Vancouver": 0.0
+    },
+    "byBuildingComponent": {
+      "envelope": 29139.300000000003,
+      "mechanical": 15378.6,
+      "renewable": 0
+    },
+    "audit": {
+      "Opt-ACH": {
+        "elements": {
+          "upgrade_to_plastic_air_tight_electrical_boxes": {
+            "source": "VancouverAirSealData",
+            "quantity": 3979.284655299297,
+            "units": "sf wall area (gross)",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Gross interior wall area including headers, foundation walls, window and door area",
+            "unit-cost-materials": 0.05,
+            "unit-cost-labour": 0.0,
+            "unit-cost-total": 0.05,
+            "component-costs": 213.09
+          },
+          "greater_attention_to_taping_electrical_boxes;_create_better_seal_around_stairs_and_mechanical_penetrations;_caulk_between_joists": {
+            "source": "VancouverAirSealData",
+            "quantity": 3979.284655299297,
+            "units": "sf wall area (gross)",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Gross interior wall area including headers, foundation walls, window and door area",
+            "unit-cost-materials": 0.0,
+            "unit-cost-labour": 0.09,
+            "unit-cost-total": 0.09,
+            "component-costs": 348.19
+          },
+          "caulking_sill_plate_of_walls_to_the_subfloor:and_applying_a_bead_of_acoustic_sealant_at_top_and_bottom_of_drywall": {
+            "source": "VancouverAirSealData",
+            "quantity": 3979.284655299297,
+            "units": "sf wall area (gross)",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Gross interior wall area including headers, foundation walls, window and door area",
+            "unit-cost-materials": 0.0,
+            "unit-cost-labour": 0.03,
+            "unit-cost-total": 0.03,
+            "component-costs": 124.35
+          },
+          "use_air-tight_junction_boxes_for_lighting_on_ceiling": {
+            "source": "VancouverAirSealData",
+            "quantity": 907.9995483999999,
+            "units": "sf attic",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Ceiling area: including attics, flat roofs and scissor ceilings",
+            "unit-cost-materials": 0.11,
+            "unit-cost-labour": 0.0,
+            "unit-cost-total": 0.11,
+            "component-costs": 102.15
+          },
+          "on_exterior_walls:place_acoustic_sealant_half_way_up_sill_plate:and_caulk_sill_plate_to_subfloor": {
+            "source": "VancouverAirSealData",
+            "quantity": 3979.284655299297,
+            "units": "sf wall area (gross)",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Gross interior wall area including headers, foundation walls, window and door area",
+            "unit-cost-materials": 0.0,
+            "unit-cost-labour": 0.05,
+            "unit-cost-total": 0.05,
+            "component-costs": 198.96
+          },
+          "all_poly_lapped_joints_located_over_solid_backing:sealed": {
+            "source": "VancouverAirSealData",
+            "quantity": 3979.284655299297,
+            "units": "sf wall area (gross)",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Gross interior wall area including headers, foundation walls, window and door area",
+            "unit-cost-materials": 0.0,
+            "unit-cost-labour": 0.03,
+            "unit-cost-total": 0.03,
+            "component-costs": 124.35
+          }
+        },
+        "providence": {
+          "proxyCosts": true,
+          "proxyChoice": "New-Const-air_seal_to_2.50_ach"
+        }
+      },
+      "Opt-Windows": {
+        "elements": {
+          "window:shgc_0.51:u-value_1.65": {
+            "source": "LEEP-MB-Winnipeg",
+            "quantity": 418.4041504626003,
+            "units": "sf applied",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Window area, glass + frame",
+            "unit-cost-materials": 27.68,
+            "unit-cost-labour": 3.1,
+            "unit-cost-total": 30.78,
+            "component-costs": 12878.48
+          }
+        },
+        "providence": {
+          "proxyCosts": true,
+          "proxyChoice": "NC-2g-HG-u1.65"
+        }
+      },
+      "Opt-FloorHeaderIntIns": {
+        "elements": {
+          "insulation:r17_batt": {
+            "source": "MiscNRCanEstimates2019",
+            "quantity": 188.249817822192,
+            "units": "sf applied",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Floor header area",
+            "unit-cost-materials": 0.68,
+            "unit-cost-labour": 0.3,
+            "unit-cost-total": 0.98,
+            "component-costs": 184.48
+          }
+        },
+        "providence": {
+          "proxyCosts": true,
+          "proxyChoice": "NC_R-16eff_5inBatt"
+        }
+      },
+      "Opt-FoundationWallExtIns": {
+        "elements": {
+          "as_per_h2k_file": {
+            "source": "NA",
+            "quantity": 0.0,
+            "units": "NA",
+            "count": 1,
+            "measureDescription": "Spec as defined in H2K file; costs cannot be computed",
+            "unit-cost-materials": 0.0,
+            "unit-cost-labour": 0.0,
+            "unit-cost-total": 0.0,
+            "component-costs": 0.0
+          }
+        },
+        "providence": {
+          "proxyCosts": false,
+          "proxyChoice": null
+        }
+      },
+      "Opt-FoundationWallIntIns": {
+        "elements": {
+          "framing:interior_basement:38x89mm_o.c.": {
+            "source": "LEEP-ON-Ottawa",
+            "quantity": 1071.0255383236079,
+            "units": "sf wall",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Foundation walls - total internal area inc. above & below grade",
+            "unit-cost-materials": 0.24,
+            "unit-cost-labour": 0.51,
+            "unit-cost-total": 0.75,
+            "component-costs": 803.27
+          },
+          "insulation:r22_batt": {
+            "source": "MiscNRCanEstimates2019",
+            "quantity": 1071.0255383236079,
+            "units": "sf applied",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Foundation walls - total internal area inc. above & below grade",
+            "unit-cost-materials": 0.9,
+            "unit-cost-labour": 0.36,
+            "unit-cost-total": 1.26,
+            "component-costs": 1349.49
+          }
+        },
+        "providence": {
+          "proxyCosts": true,
+          "proxyChoice": "WoodFrameEffR17"
+        }
+      },
+      "Opt-FoundationSlabBelowGrade": {
+        "elements": {
+          "no_costs_defined": {
+            "source": "nil",
+            "quantity": 0.0,
+            "units": "nil",
+            "count": 1,
+            "measureDescription": "No costs have been defined; assume zero cost impact.",
+            "unit-cost-materials": 0.0,
+            "unit-cost-labour": 0.0,
+            "unit-cost-total": 0.0,
+            "component-costs": 0.0
+          }
+        },
+        "providence": {
+          "proxyCosts": true,
+          "proxyChoice": "uninsulated"
+        }
+      },
+      "Opt-FoundationSlabOnGrade": {
+        "elements": {
+          "insulation:xps_type_4:rigid:64mm": {
+            "source": "LEEP-BC-Vancouver",
+            "quantity": 0.0,
+            "units": "sf applied",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Below grade floor area: slab on grade",
+            "unit-cost-materials": 2.67,
+            "unit-cost-labour": 0.68,
+            "unit-cost-total": 3.35,
+            "component-costs": 0.0
+          }
+        },
+        "providence": {
+          "proxyCosts": true,
+          "proxyChoice": "xps2.5inEffR12.5"
+        }
+      },
+      "Opt-ExposedFloor": {
+        "elements": {
+          "insulation:r27_batt": {
+            "source": "MiscNRCanEstimates2019",
+            "quantity": 230.99975234,
+            "units": "sf applied",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Exposed floor area",
+            "unit-cost-materials": 1.12,
+            "unit-cost-labour": 0.43,
+            "unit-cost-total": 1.55,
+            "component-costs": 358.05
+          }
+        },
+        "providence": {
+          "proxyCosts": false,
+          "proxyChoice": null
+        }
+      },
+      "Opt-AtticCeilings": {
+        "elements": {
+          "r50:cost_including_materials:labour:mark-up_and_taxes": {
+            "source": "LEEP-MB-Winnipeg",
+            "quantity": 907.9995483999999,
+            "units": "sf attic",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Ceiling area, attics",
+            "unit-cost-materials": 1.78,
+            "unit-cost-labour": 0.0,
+            "unit-cost-total": 1.78,
+            "component-costs": 1616.24
+          }
+        },
+        "providence": {
+          "proxyCosts": true,
+          "proxyChoice": "CeilR50"
+        }
+      },
+      "Opt-CathCeilings": {
+        "elements": {
+          "insulation:r27_batt": {
+            "source": "MiscNRCanEstimates2019",
+            "quantity": 0.0,
+            "units": "sf applied",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Ceiling area, cathedral",
+            "unit-cost-materials": 1.12,
+            "unit-cost-labour": 0.43,
+            "unit-cost-total": 1.55,
+            "component-costs": 0.0
+          }
+        },
+        "providence": {
+          "proxyCosts": false,
+          "proxyChoice": null
+        }
+      },
+      "Opt-FlatCeilings": {
+        "elements": {
+          "insulation:r27_batt": {
+            "source": "MiscNRCanEstimates2019",
+            "quantity": 0.0,
+            "units": "sf applied",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Ceiling area, flat",
+            "unit-cost-materials": 1.12,
+            "unit-cost-labour": 0.43,
+            "unit-cost-total": 1.55,
+            "component-costs": 0.0
+          }
+        },
+        "providence": {
+          "proxyCosts": false,
+          "proxyChoice": null
+        }
+      },
+      "Opt-VentSystem": {
+        "elements": {
+          "hrv:conventional_sre_60%_@_0:55%_@_-25": {
+            "source": "LEEP-ON-Ottawa",
+            "quantity": 1.0,
+            "units": "ea",
+            "count": 1.0,
+            "measureDescription": "ea.   - Total component installation cost",
+            "unit-cost-materials": 1079.0,
+            "unit-cost-labour": 280.98,
+            "unit-cost-total": 1359.98,
+            "component-costs": 1359.98
+          },
+          "ducting:connect_ventilator_to_central_forced_air": {
+            "source": "MiscNRCanEstimates2019",
+            "quantity": 1.0,
+            "units": "ea",
+            "count": 1.0,
+            "measureDescription": "ea.   - Total component installation cost",
+            "unit-cost-materials": 0.0,
+            "unit-cost-labour": 0.0,
+            "unit-cost-total": 0.0,
+            "component-costs": 0.0
+          }
+        },
+        "providence": {
+          "proxyCosts": true,
+          "proxyChoice": "HRV_sre_60"
+        }
+      },
+      "Opt-Heating-Cooling": {
+        "elements": {
+          "furnace:94%_afue_vs_2_stage:70_mbtuh_input:19.5_kw_max_output:incl._vent_kit_&_hrv_interlock": {
+            "source": "LEEP-ON-Ottawa",
+            "quantity": 1.0,
+            "units": "ea",
+            "count": 1.0,
+            "measureDescription": "ea.   - Total component installation cost",
+            "unit-cost-materials": 2149.33,
+            "unit-cost-labour": 191.45,
+            "unit-cost-total": 2340.7799999999997,
+            "component-costs": 2340.78
+          },
+          "ashp:conventional": {
+            "source": "MiscNRCanEstimates2019",
+            "quantity": 1.0,
+            "units": "ea",
+            "count": 1.0,
+            "measureDescription": "ea.   - Total component installation cost",
+            "unit-cost-materials": 5300.0,
+            "unit-cost-labour": 2000.0,
+            "unit-cost-total": 7300.0,
+            "component-costs": 7300.0
+          },
+          "ducting:central_forced_air": {
+            "source": "LEEP-ON-Ottawa",
+            "quantity": 2413.2663799999996,
+            "units": "sf heated floor area",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Heated floor area from HOT2000 file",
+            "unit-cost-materials": 0.86,
+            "unit-cost-labour": 0.44,
+            "unit-cost-total": 1.3,
+            "component-costs": 3137.25
+          }
+        },
+        "providence": {
+          "proxyCosts": false,
+          "proxyChoice": null
+        }
+      },
+      "Opt-AboveGradeWall": {
+        "elements": {
+          "air_barrier_membrane": {
+            "source": "LEEP-ON-Ottawa",
+            "quantity": 2413.855068519483,
+            "units": "sf applied",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Opaque above-grade wall area - excludes headers, windows/doors and a.g. fdn",
+            "unit-cost-materials": 0.12,
+            "unit-cost-labour": 0.26,
+            "unit-cost-total": 0.38,
+            "component-costs": 917.26
+          },
+          "osb:12mm": {
+            "source": "LEEP-ON-Ottawa",
+            "quantity": 2413.855068519483,
+            "units": "sf applied",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Opaque above-grade wall area - excludes headers, windows/doors and a.g. fdn",
+            "unit-cost-materials": 0.26,
+            "unit-cost-labour": 0.0,
+            "unit-cost-total": 0.26,
+            "component-costs": 627.6
+          },
+          "insulation:r22_batt": {
+            "source": "MiscNRCanEstimates2019",
+            "quantity": 2413.855068519483,
+            "units": "sf applied",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Opaque above-grade wall area - excludes headers, windows/doors and a.g. fdn",
+            "unit-cost-materials": 0.9,
+            "unit-cost-labour": 0.36,
+            "unit-cost-total": 1.26,
+            "component-costs": 3041.46
+          },
+          "framing:conventional:38x140mm_o.c.": {
+            "source": "LEEP-ON-Ottawa",
+            "quantity": 2413.855068519483,
+            "units": "sf wall",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Opaque above-grade wall area - excludes headers, windows/doors and a.g. fdn",
+            "unit-cost-materials": 0.63,
+            "unit-cost-labour": 0.81,
+            "unit-cost-total": 1.44,
+            "component-costs": 3475.95
+          },
+          "vapour_barrier:6_mil": {
+            "source": "LEEP-ON-Ottawa",
+            "quantity": 2413.855068519483,
+            "units": "sf wall",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Opaque above-grade wall area - excludes headers, windows/doors and a.g. fdn",
+            "unit-cost-materials": 0.11,
+            "unit-cost-labour": 0.28,
+            "unit-cost-total": 0.39,
+            "component-costs": 941.4
+          },
+          "1/2in_gypsum_board": {
+            "source": "LEEP-ON-Ottawa",
+            "quantity": 2413.855068519483,
+            "units": "sf wall",
+            "count": 1.0,
+            "measureDescription": "sq.ft - Opaque above-grade wall area - excludes headers, windows/doors and a.g. fdn",
+            "unit-cost-materials": 0.35,
+            "unit-cost-labour": 0.41,
+            "unit-cost-total": 0.76,
+            "component-costs": 1834.53
+          }
+        },
+        "providence": {
+          "proxyCosts": true,
+          "proxyChoice": "NC_R-17(eff)_2x6-16inOC_R22-batt_poly_vb"
+        }
+      },
+      "Opt-DHWSystem": {
+        "elements": {
+          "dhw_tank:gas_fuelled:190_l:power_vented:ef_0.67": {
+            "source": "LEEP-ON-Ottawa",
+            "quantity": 1.0,
+            "units": "ea",
+            "count": 1.0,
+            "measureDescription": "ea.   - Total component installation cost (ea)",
+            "unit-cost-materials": 916.77,
+            "unit-cost-labour": 323.82,
+            "unit-cost-total": 1240.59,
+            "component-costs": 1240.59
+          }
+        },
+        "providence": {
+          "proxyCosts": true,
+          "proxyChoice": "gas_storagetank_w/powervent_ef0.67"
+        }
+      },
+      "Opt-DWHR": {
+        "elements": {
+          "no_costs_defined": {
+            "source": "nil",
+            "quantity": 0.0,
+            "units": "nil",
+            "count": 1,
+            "measureDescription": "No costs have been defined; assume zero cost impact.",
+            "unit-cost-materials": 0.0,
+            "unit-cost-labour": 0.0,
+            "unit-cost-total": 0.0,
+            "component-costs": 0.0
+          }
+        },
+        "providence": {
+          "proxyCosts": false,
+          "proxyChoice": null
+        }
+      },
+      "Opt-Ceilings": {
+        "elements": {
+          "as_per_h2k_file": {
+            "source": "NA",
+            "quantity": 0.0,
+            "units": "NA",
+            "count": 1,
+            "measureDescription": "Spec as defined in H2K file; costs cannot be computed",
+            "unit-cost-materials": 0.0,
+            "unit-cost-labour": 0.0,
+            "unit-cost-total": 0.0,
+            "component-costs": 0.0
+          }
+        },
+        "providence": {
+          "proxyCosts": false,
+          "proxyChoice": null
+        }
+      }
+    },
+    "status": true,
+    "costing-dimensions": {
+      "h2kFile": "C:\\HTAP\\2015NBC\\HTAP-work-0\\227NN01521.h2k",
+      "locale": {
+        "weatherLoc": "HALIFAX",
+        "region": "NOVA SCOTIA",
+        "city": "Bedford"
+      },
+      "house-description": {
+        "stories": "Two",
+        "buildingType": "House",
+        "type": "SingleDetached",
+        "frontOrient": "S",
+        "MURBUnits": null
+      },
+      "dimensions": {
+        "ceilings": {
+          "area": {
+            "all": 84.356,
+            "flat": 0.0,
+            "attic": 84.356,
+            "cathedral": 0.0
+          }
+        },
+        "heatedFloorArea": 224.2,
+        "windows": {
+          "area": {
+            "total": 38.87105514382336,
+            "byOrientation": {
+              "1": 9.71776378595584,
+              "2": 0,
+              "3": 9.71776378595584,
+              "4": 0,
+              "5": 9.71776378595584,
+              "6": 0,
+              "7": 9.71776378595584,
+              "8": 0
+            }
+          }
+        },
+        "walls": {
+          "above-grade": {
+            "perimeter": 0.0,
+            "count": 0,
+            "area": {
+              "gross": 270.18637454599997,
+              "net": 224.25469100599997,
+              "headers": 8.291596413,
+              "windows": 38.871051788,
+              "doors": 7.060631752
+            }
+          }
+        },
+        "headers": {
+          "area": {
+            "total": 17.48899728,
+            "above-grade": 9.197400960000001,
+            "below-grade": 8.29159632
+          }
+        },
+        "exposed-floors": {
+          "area": {
+            "total": 21.4606
+          }
+        },
+        "below-grade": {
+          "basement": {
+            "exposed-perimeter": 36.2721,
+            "total-perimeter": 36.2721,
+            "floor-area": 55.4631,
+            "configuration": "BCIN_1"
+          },
+          "crawlspace": {
+            "exposed-perimeter": 0.0,
+            "total-perimeter": 0.0,
+            "floor-area": 0.0,
+            "configuration": null
+          },
+          "slab": {
+            "exposed-perimeter": 0.0,
+            "total-perimeter": 0.0,
+            "floor-area": 0.0,
+            "configuration": null
+          },
+          "walls": {
+            "total-area": {
+              "internal": 99.50162472,
+              "external": 105.07580712000001
+            },
+            "below-grade-area": {
+              "internal": 55.278680400000006,
+              "external": 58.37544840000001
+            }
+          }
+        }
+      },
+      "HVAC": {
+        "fansAndPump": {
+          "count": 1.0,
+          "powerLowW": 0.0,
+          "powerHighW": 270.1848
+        },
+        "Furnace": {
+          "count": 1.0,
+          "capacity_kW": 11.5
+        },
+        "Boiler": {
+          "count": 0.0,
+          "capacity_kW": 0.0
+        },
+        "Baseboards": {
+          "count": 0.0,
+          "capacity_kW": 0.0
+        },
+        "ASHP": {
+          "count": 1.0,
+          "capacity_kW": 9.3783
+        },
+        "GSHP": {
+          "count": 0.0,
+          "capacity_kW": 0.0
+        },
+        "AirConditioner": {
+          "count": 0.0,
+          "capacity_kW": 0.0
+        },
+        "Ventilator": {
+          "count": 1.0,
+          "capacity_l/s": 70.0
+        },
+        "designLoads": {
+          "heating_W": 10006.346679688,
+          "cooling_W": 3734.077148438
+        }
+      }
+    }
+  }
+}

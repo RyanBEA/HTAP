@@ -1,0 +1,14 @@
+
+_______________________________________________________________________________
+= htap-prm: LOG FILE. =========================================================
+
+Run started at 2025-11-05 16:26:06 -0400
+
+htap-prm location: C:/HTAP
+Parsing HTAP configuration file
+Recovering git version info
+
+Parsing options file - C:/HTAP/HTAP-options.json
+Reading available options (C:/HTAP/HTAP-options.json)
+Waited for 1 seconds
+

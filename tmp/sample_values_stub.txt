@@ -1,0 +1,139 @@
+sample_values = {
+    'T0_R1_C1': '',  # Project Name:
+    'T0_R2_C1': '',  # Project Address:
+    'T0_R3_C1': '',  # Applicant Name:
+    'T0_R4_C1': '',  # Applicant Address:
+    'T10_R1_C1': '',  # Software Title:
+    'T10_R1_C3': '',  # Software Title:
+    'T11_R1_C0': '',  # Reference House:
+    'T11_R1_C2': '',  # Proposed House:
+    'T12_R0_C1': '',  # ☐ (if pursuing Energy Tier ≥ 2) 9.36 Submittal Calculator attached, demonstrating Energy Tier of | {{T12_R0_C1}}
+    'T13_R10_C1': '',  # Date:
+    'T13_R10_C3': '',  # Date:
+    'T13_R1_C1': '',  # Name:
+    'T13_R1_C3': '',  # Name:
+    'T13_R2_C1': '',  # Phone:
+    'T13_R2_C3': '',  # Phone:
+    'T13_R3_C1': '',  # Accreditation or Evaluator/ Advisor/Rater License #:
+    'T13_R5_C1': '',  # Date:
+    'T13_R5_C3': '',  # Date:
+    'T13_R7_C1': '',  # Name:
+    'T13_R7_C3': '',  # Name:
+    'T13_R8_C1': '',  # Phone:
+    'T13_R8_C3': '',  # Phone:
+    'T14_R10_C5': '',  # 
+    'T14_R11_C4': '',  # 
+    'T14_R12_C4': '',  # 
+    'T14_R13_C4': '',  # 
+    'T14_R14_C4': '',  # 
+    'T14_R15_C6': '',  # 
+    'T14_R16_C6': '',  # 
+    'T14_R20_C5': '',  # Fenestration & doors
+    'T14_R21_C5': '',  # 
+    'T14_R22_C4': '',  # Skylights (Max. U-value)
+    'T14_R23_C2': '',  # One door exception (Max. U-value)
+    'T14_R24_C2': '',  # Access hatches (Min. RSIeff)
+    'T14_R27_C5': '',  # Furnace
+    'T14_R28_C5': '',  # 
+    'T14_R29_C5': '',  # 
+    'T14_R2_C7': '',  # 
+    'T14_R30_C5': '',  # Boiler
+    'T14_R31_C5': '',  # 
+    'T14_R32_C5': '',  # 
+    'T14_R33_C4': '',  # Air source heat pump – split
+    'T14_R34_C4': '',  # Combined space- and water-heating systems
+    'T14_R35_C5': '',  # Heat Recovery Ventilation
+    'T14_R36_C5': '',  # 
+    'T14_R37_C1': '',  # (Other)
+    'T14_R37_C2': '',  # (Other)
+    'T14_R37_C3': '',  # (Other)
+    'T14_R37_C4': '',  # (Other)
+    'T14_R3_C6': '',  # Above-ground
+    'T14_R40_C5': '',  # Tank Storage
+    'T14_R41_C5': '',  # 
+    'T14_R42_C5': '',  # 
+    'T14_R43_C5': '',  # 
+    'T14_R44_C5': '',  # 
+    'T14_R45_C5': '',  # 
+    'T14_R46_C5': '',  # 
+    'T14_R47_C4': '',  # Tankless, gas-fired (≤ 58.6 kW)
+    'T14_R48_C4': '',  # 
+    'T14_R49_C4': '',  # Heat pump water heaters
+    'T14_R4_C6': '',  # 
+    'T14_R50_C1': '',  # (Other)
+    'T14_R50_C2': '',  # (Other)
+    'T14_R50_C3': '',  # (Other)
+    'T14_R50_C4': '',  # (Other)
+    'T14_R5_C4': '',  # 
+    'T14_R6_C6': '',  # 
+    'T14_R7_C6': '',  # 
+    'T14_R8_C4': '',  # 
+    'T14_R9_C7': '',  # Below-Grade or in Contact with Ground
+    'T16_R0_C1': '',  # (if pursuing Energy Tier ≥ 2) Energy Tier Achieved: | {{T16_R0_C1}}
+    'T17_R1_C1': '',  # Name:
+    'T17_R1_C3': '',  # Name:
+    'T17_R2_C1': '',  # Phone:
+    'T17_R2_C3': '',  # Phone:
+    'T17_R4_C1': '',  # Date:
+    'T17_R4_C3': '',  # Date:
+    'T1_R3_C0': '',  # Climate zone (based on heating degree days in Celsius Degree-Days, per AHJ or Appendix C Table C2)
+    'T2_R0_C0': '',  # {{T2_R0_C0}}
+    'T3_R1_C0': '',  # Fenestration & door area/
+    'T3_R1_C2': '',  # FDWR%
+    'T3_R1_C4': '',  # 
+    'T5_R10_C2': '',  # Proposed Model
+    'T5_R10_C3': '',  # 
+    'T5_R11_C2': '',  # Proposed Model
+    'T5_R11_C3': '',  # 
+    'T5_R13_C1': '',  # Front orientation of house (N, NE, E, SE, S, SW, W, NW): | Reference Model
+    'T5_R14_C2': '',  # Windows | Proposed Model
+    'T5_R14_C3': '',  # Windows
+    'T5_R15_C3': '',  # 
+    'T5_R16_C2': '',  # Skylights | Proposed Model
+    'T5_R16_C3': '',  # Skylights
+    'T5_R17_C3': '',  # 
+    'T5_R18_C1': '',  # Doors | Reference Model
+    'T5_R18_C2': '',  # Doors | Proposed Model
+    'T5_R19_C1': '',  # Fenestration & door area to gross wall ratio, FDWR (%) | Reference Model
+    'T5_R19_C2': '',  # Fenestration & door area to gross wall ratio, FDWR (%) | Proposed Model
+    'T5_R25_C1': '',  # Heating System(s) | Reference Model
+    'T5_R25_C2': '',  # Heating System(s) | Proposed Model
+    'T5_R26_C2': '',  # Cooling System | Proposed Model
+    'T5_R26_C3': '',  # Cooling System
+    'T5_R27_C2': '',  # Proposed Model
+    'T5_R27_C3': '',  # 
+    'T5_R28_C3': '',  # 
+    'T5_R28_C4': '',  # 
+    'T5_R29_C3': '',  # 
+    'T5_R29_C4': '',  # 
+    'T5_R2_C2': '',  # Above-ground | Proposed Model
+    'T5_R2_C3': '',  # Above-ground
+    'T5_R30_C1': '',  # Supplementary Heating System(s)3 | Reference Model
+    'T5_R30_C2': '',  # Supplementary Heating System(s)3 | Proposed Model
+    'T5_R31_C2': '',  # Ventilation System | Proposed Model
+    'T5_R33_C4': '',  # 
+    'T5_R34_C4': '',  # 
+    'T5_R35_C4': '',  # 
+    'T5_R36_C4': '',  # 
+    'T5_R37_C1': '',  # Service Water Heating System(s) | Reference Model
+    'T5_R37_C2': '',  # Service Water Heating System(s) | Proposed Model
+    'T5_R3_C2': '',  # Proposed Model
+    'T5_R3_C3': '',  # 
+    'T5_R4_C2': '',  # Proposed Model
+    'T5_R4_C3': '',  # 
+    'T5_R5_C2': '',  # Proposed Model
+    'T5_R5_C3': '',  # 
+    'T5_R6_C2': '',  # Below-Grade or in Contact with Ground | Proposed Model
+    'T5_R6_C3': '',  # Below-Grade or in Contact with Ground
+    'T5_R7_C3': '',  # 
+    'T5_R7_C4': '',  # 
+    'T5_R8_C3': '',  # 
+    'T5_R8_C4': '',  # 
+    'T5_R9_C2': '',  # Proposed Model
+    'T5_R9_C3': '',  # 
+    'T6_R1_C0': '',  # Max. test result target:
+    'T7_R0_C1': '',  # 2.32 W/L/s = | {{T7_R0_C1}}
+    'T8_R0_C1': '',  # % | {{T8_R0_C1}}
+    'T9_R0_C0': '',  # {{T9_R0_C0}}
+    'T9_R0_C2': '',  # {{T9_R0_C2}}
+}

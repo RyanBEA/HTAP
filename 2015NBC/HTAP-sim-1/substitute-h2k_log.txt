@@ -1,0 +1,53 @@
+
+_______________________________________________________________________________
+= substitute-h2k: LOG FILE. ===================================================
+
+Run started at 2025-11-05 16:26:08 -0400
+
+substitute-h2k location: C:/HTAP
+Parsing HTAP configuration file
+Reading available options (HTAP-options.json)
+ supplied choices:
+  Opt-ResultHouseCode = General
+  Opt-Specifications = NBC_Specs_Normal
+  Opt-ACH = ACH_NBC
+  Opt-Windows = NBC-Zone6-Window-BEA
+  Opt-DoorWindows = NBC-zone6-Doorwindow
+  Opt-Doors = NBC-zone6-door
+  Opt-FloorHeaderIntIns = NBC_RSI2.97_int
+  Opt-FoundationWallExtIns = NA
+  Opt-FoundationWallIntIns = NBC_936_2.98RSI
+  Opt-FoundationSlabBelowGrade = NBC_936_uninsulated_EffR0
+  Opt-FoundationSlabOnGrade = NBC_936_1.96RSI
+  Opt-ExposedFloor = NBC_936_4.67RSI
+  Opt-AtticCeilings = NBC_Ceiling_zone6
+  Opt-CathCeilings = NBC_CathCeiling_RSI4.67
+  Opt-FlatCeilings = NBC_FlatCeiling_RSI4.67
+  Opt-VentSystem = NBC_HRV
+  Opt-Heating-Cooling = central-hybrid-2015NBC
+  Opt-H2K-PV = NA
+  Opt-Baseloads = NBC-Baseloads
+  Opt-WindowDistribution = Reference-9.36
+  Opt-Temperatures = NBC_Temps
+  Opt-AboveGradeWall = NBC_Wall_zone6_HRV
+  Opt-DHWSystem = NBC-HotWater_gas
+  Opt-DWHR = none
+  Opt-Skylights = NA
+  Opt-Location = HALIFAX
+  Opt-Ruleset = as-found
+  upgrade-package-list = {}
+Info: Option GOconfig_rotate was not specified in Choices file OR rule set;  Using default value (S)
+Info: Option Opt-FuelCost was not specified in Choices file OR rule set;  Using default value (rates2016)
+Info: Option Opt-DBFiles was not specified in Choices file OR rule set;  Using default value (H2KCodeLibFile)
+Info: Option Opt-Ceilings was not specified in Choices file OR rule set;  Using default value (NA)
+Info: Option Opt-H2KFoundation was not specified in Choices file OR rule set;  Using default value (NA)
+Info: Option Opt-H2KFoundationSlabCrawl was not specified in Choices file OR rule set;  Using default value (NA)
+Info: Option Opt-HRVspec was not specified in Choices file OR rule set;  Using default value (NA)
+saving processed h2k file  version (C:\HTAP\2015NBC\HTAP-work-0\227NN01521.h2k)
+saving copy of the pre-h2k version (file-post-sub.h2k)
+Parsed Browse.Rpt.
+Querying HOT2000 file for result set General.
+
+Experimental costing feature "per" in use. Not yet supported. (warning reported by solveComponentConditionals - inc/costing.rb:176)Experimental costing feature "per" in use. Not yet supported. (warning reported by solveComponentConditionals - inc/costing.rb:176)Experimental costing feature "per" in use. Not yet supported. (warning reported by solveComponentConditionals - inc/costing.rb:176)Experimental costing feature "per" in use. Not yet supported. (warning reported by solveComponentConditionals - inc/costing.rb:176)Info: Comprehensive costing calculation report written to HTAP-costing-audit-report.txt
+substitute-h2k.rb run complete.
+Closing log files

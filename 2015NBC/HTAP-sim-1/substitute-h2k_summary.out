@@ -1,0 +1,14 @@
+status.info   = "Option GOconfig_rotate was not specified in Choices file OR rule set;  Using default value (S)" 
+status.info   = "Option Opt-FuelCost was not specified in Choices file OR rule set;  Using default value (rates2016)" 
+status.info   = "Option Opt-DBFiles was not specified in Choices file OR rule set;  Using default value (H2KCodeLibFile)" 
+status.info   = "Option Opt-Ceilings was not specified in Choices file OR rule set;  Using default value (NA)" 
+status.info   = "Option Opt-H2KFoundation was not specified in Choices file OR rule set;  Using default value (NA)" 
+status.info   = "Option Opt-H2KFoundationSlabCrawl was not specified in Choices file OR rule set;  Using default value (NA)" 
+status.info   = "Option Opt-HRVspec was not specified in Choices file OR rule set;  Using default value (NA)" 
+status.info   = "Comprehensive costing calculation report written to HTAP-costing-audit-report.txt" 
+status.warning   = "Experimental costing feature "per" in use. Not yet supported. (warning reported by solveComponentConditionals - inc/costing.rb:176)" 
+status.warning   = "Experimental costing feature "per" in use. Not yet supported. (warning reported by solveComponentConditionals - inc/costing.rb:176)" 
+status.warning   = "Experimental costing feature "per" in use. Not yet supported. (warning reported by solveComponentConditionals - inc/costing.rb:176)" 
+status.warning   = "Experimental costing feature "per" in use. Not yet supported. (warning reported by solveComponentConditionals - inc/costing.rb:176)" 
+status.success    = true
+status.processingtime  = 3.1069885
