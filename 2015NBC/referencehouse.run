@@ -13,7 +13,7 @@ RunParameters_END
 ! run in mesh, even if an optimization mode is added in the future.
 RunScope_START
 
-  archetypes                        = *.h2k
+  archetypes                        = 227NN01521.h2k
   locations                         = HALIFAX
   rulesets                          = as-found
 
@@ -28,12 +28,11 @@ Upgrades_START
 
    Opt-ACH         = ACH_NBC
 
-   Opt-Windows     = NBC-zone6-window
-   Opt-Skylights   = NA
+   Opt-Windows     = NBC-Zone6-Window-BEA
    Opt-DoorWindows = NBC-zone6-Doorwindow
    Opt-Doors       = NBC-zone6-door
 
-   Opt-AboveGradeWall = NBC_Wall_zone5_HRV
+
    Opt-FloorHeaderIntIns = NBC_RSI2.97_int
 
    Opt-FoundationWallExtIns     =  NA
@@ -49,18 +48,23 @@ Upgrades_START
    Opt-FlatCeilings     = NBC_FlatCeiling_RSI4.67
 
    Opt-VentSystem       = NA
-   Opt-DHWSystem        = NBC-HotWater_gas
-!   Opt-DHWSystem        = NBC-HotWater_elec
-   Opt-Heating-Cooling  = NBC-gas-furnace
+
+   Opt-Heating-Cooling  = central-hybrid-2015NBC
 !   Opt-Heating-Cooling  = NBC-elec-heat
 !   Opt-Heating-Cooling  = NBC-CCASHP
 
-   Opt-DWHR             = NA
    Opt-H2K-PV           = NA
    Opt-Baseloads        = NBC-Baseloads
    Opt-WindowDistribution = Reference-9.36
    Opt-VentSystem          = NBC_HRV
    Opt-Temperatures     = NBC_Temps
+
+! These Opt-* parameters have non-NA defaults and must be specified
+  Opt-AboveGradeWall    = NBC_Wall_zone6_HRV
+  Opt-DHWSystem         = NBC-HotWater_gas
+!   Opt-DHWSystem        = NBC-HotWater_elec
+  Opt-DWHR              = none
+  Opt-Skylights         = NA
 
 
 Upgrades_END

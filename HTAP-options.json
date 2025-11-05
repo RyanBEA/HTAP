@@ -3040,6 +3040,25 @@
           }
         }
       },
+      "NBC-Zone6-Window-BEA": {
+        "h2kMap": {
+          "base": {
+            "<Opt-win-S-CON>": "NBC-Zone6-Window-BEA",
+            "<Opt-win-E-CON>": "NBC-Zone6-Window-BEA",
+            "<Opt-win-N-CON>": "NBC-Zone6-Window-BEA",
+            "<Opt-win-W-CON>": "NBC-Zone6-Window-BEA",
+            "<Opt-win-SE-CON>": "NBC-Zone6-Window-BEA",
+            "<Opt-win-SW-CON>": "NBC-Zone6-Window-BEA",
+            "<Opt-win-NE-CON>": "NBC-Zone6-Window-BEA",
+            "<Opt-win-NW-CON>": "NBC-Zone6-Window-BEA"
+          }
+        },
+        "costs": {
+          "proxy": "NC-2g-HG-u1.65",
+          "custom-costs": {
+          }
+        }
+      },
       "NBC-zone7A-window": {
         "h2kMap": {
           "base": {
@@ -9901,6 +9920,51 @@
             "Opt-H2K-Type2CutoffType": "1",
             "Opt-H2K-Type2CutoffTemp": "NA",
             "Opt-H2K-CoolOperWindow": "4"
+          }
+        },
+        "costs": {
+          "custom-costs": {
+          },
+          "components": [
+            {
+              "H2KHouseInfo.HVAC/Furnace/capacity_kW": {
+                "per?14": "furnace:94%_afue_vs_2_stage:70_mbtuh_input:19.5_kw_max_output:incl._vent_kit_&_hrv_interlock"
+              }
+            },            
+            {
+              "H2KHouseInfo.HVAC/ASHP/capacity_kW": {
+                "per?14": "ashp:conventional"
+              }
+            },
+            "ducting:central_forced_air"           
+          ]
+        }
+      },
+      "central-hybrid-2015NBC": {
+        "h2kMap": {
+          "base": {
+            "Opt-H2K-SysType1": "Furnace",             
+            "Opt-H2K-SysType2": "AirHeatPump",
+            "Opt-H2K-Type1Fuel": "NA",
+            "Opt-H2K-Type1EqpType": "NA",
+            "Opt-H2K-Type1CapOpt": "NA",
+            "Opt-H2K-Type1CapVal": "NA",
+            "Opt-H2K-Type1EffType": "false",
+            "Opt-H2K-Type1EffVal": "92",
+            "Opt-H2K-Type1FanCtl": "1",
+            "Opt-H2K-Type1EEMotor": "true",
+            "Opt-H2K-Type2CCaseH": "60",
+            "Opt-H2K-Type2Func": "2",
+            "Opt-H2K-Type2Type": "NA",
+            "Opt-H2K-Type2CapOpt": "NA",
+            "Opt-H2K-Type2CapVal": "NA",
+            "Opt-H2K-Type2HeatCOP": "3.45",
+            "Opt-H2K-Type2RatingTemp": "8.3", 
+            "Opt-H2K-CoolSpecType": "SEER",           
+            "Opt-H2K-Type2CoolCOP": "14.5",
+            "Opt-H2K-Type2CutoffType": "1",
+            "Opt-H2K-Type2CutoffTemp": "NA",
+            "Opt-H2K-CoolOperWindow": "NA"
           }
         },
         "costs": {

@@ -50,6 +50,11 @@ class FormulaProcessor:
                 format_str = formula.get('format', '%.3f')
                 return self._format_result(result, format_str)
 
+            # Check if this is a cutoff temperature extraction
+            if formula.get('type') == 'cutoff_temperature':
+                result = self._extract_cutoff_temperature(formula)
+                return result  # Already formatted or "N/A"
+
             # Standard formula calculation
             # Extract input values
             inputs = self._extract_formula_inputs(formula)
@@ -443,6 +448,56 @@ class FormulaProcessor:
                 return "N/A"
             return 0.0
 
+    def _extract_cutoff_temperature(self, formula):
+        """
+        Extract heat pump cutoff temperature with conditional logic.
+
+        Returns "N/A" if:
+        - No heat pump present (Type2 empty)
+
+        Returns "Balance point" if:
+        - Cutoff type is "Balance point" (code="1")
+
+        Returns formatted temperature if:
+        - Cutoff type is "Restricted" (code="2") with numeric value
+
+        Args:
+            formula: Formula definition with cutoff temperature parameters
+
+        Returns:
+            Formatted temperature string, "Balance point", or "N/A"
+        """
+        # Extract the CutoffType element
+        xpath = formula.get('xpath', './/House/HeatingCooling/Type2/AirHeatPump/Temperature/CutoffType')
+
+        element = self.extractor.root.find(xpath, self.extractor.namespaces)
+
+        # If element doesn't exist, no heat pump present
+        if element is None:
+            return "N/A"
+
+        # Check the code attribute
+        code = element.get('code')
+
+        # If code is "1", it's a balance point → return "Balance point"
+        if code == "1":
+            return "Balance point"
+
+        # If code is "2", it's restricted with a numeric cutoff temperature
+        if code == "2":
+            value = element.get('value')
+            if value is not None:
+                try:
+                    # Convert to float and format to 1 decimal place
+                    temp = float(value)
+                    format_str = formula.get('format', '%.1f')
+                    return format_str % temp
+                except (ValueError, TypeError):
+                    return "N/A"
+
+        # Unknown code or missing value
+        return "N/A"
+
     def calculate_fdwr(self):
         """
         Calculate FDWR (Fenestration and Door to Wall Ratio) percentage.
@@ -507,10 +562,30 @@ class ComplexMappingProcessor:
                                 try:
                                     cop_value = float(value)
                                     hspf_value = (cop_value - 0.78) / 0.376
-                                    value = f"{hspf_value:.2f}"
+                                    value = f"{hspf_value:.1f}"
                                 except (ValueError, TypeError):
                                     pass  # Keep original value if conversion fails
-                            # else: value is already HSPF, use as-is
+                            else:
+                                # Value is already HSPF, format to 1 decimal place
+                                try:
+                                    hspf_value = float(value)
+                                    value = f"{hspf_value:.1f}"
+                                except (ValueError, TypeError):
+                                    pass  # Keep original value if conversion fails
+
+                        # Apply COP to SEER conversion based on isCop attribute
+                        elif conversion == 'cop_to_seer_conditional':
+                            # If isCop is "true", convert COP to SEER
+                            # If isCop is not "true", value is already SEER, use as-is
+                            if check_attr_value == "true":
+                                # Value is COP, convert to SEER: SEER = (COP - 1.428) / 0.115
+                                try:
+                                    cop_value = float(value)
+                                    seer_value = (cop_value - 1.428) / 0.115
+                                    value = f"{seer_value:.2f}"
+                                except (ValueError, TypeError):
+                                    pass  # Keep original value if conversion fails
+                            # else: value is already SEER, use as-is
 
                     values.append(value)
                 else:

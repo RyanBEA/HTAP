@@ -13,7 +13,7 @@ RunParameters_END
 ! run in mesh, even if an optimization mode is added in the future.
 RunScope_START
 
-  archetypes                        = *.h2k
+  archetypes                        = 227NN01521.h2k
   locations                         = HALIFAX
   rulesets                          = as-found
 
@@ -22,11 +22,45 @@ RunScope_END
 ! Parameters controlling the design of the building
 Upgrades_START
 
-
    Opt-ResultHouseCode  = General
    Opt-Specifications   = NBC_Specs_Normal
+
+   Opt-ACH         = NA
+
+   Opt-Windows     = NA
+   Opt-DoorWindows = NA
+   Opt-Doors       = NA
+
+   Opt-FloorHeaderIntIns = NA
+
+   Opt-FoundationWallExtIns     =  NA
+   Opt-FoundationWallIntIns     =  NA
+   Opt-FoundationSlabBelowGrade =  NA
+!   Opt-FoundationSlabBelowGrade =  NA
+   Opt-FoundationSlabOnGrade    =  NA
+!   Opt-H2KFoundationSlabCrawl   =  NA
+   Opt-ExposedFloor     = NA
+
+   Opt-AtticCeilings    = NA
+   Opt-CathCeilings     = NA
+   Opt-FlatCeilings     = NA
+
+   Opt-VentSystem       = NA
+   Opt-Heating-Cooling  = NA
+!   Opt-Heating-Cooling  = NA
+!   Opt-Heating-Cooling  = NA
+
+   Opt-H2K-PV           = NA
    Opt-Baseloads        = NBC-Baseloads
+   Opt-WindowDistribution = NA
+   Opt-VentSystem          = NBC_HRV
    Opt-Temperatures     = NBC_Temps
+
+! These Opt-* parameters have non-NA defaults and must be specified
+  Opt-AboveGradeWall    = NA
+  Opt-DHWSystem         = NA
+  Opt-DWHR              = NA
+  Opt-Skylights         = NA
 
 
 Upgrades_END

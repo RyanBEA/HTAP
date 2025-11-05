@@ -1460,8 +1460,8 @@ module H2KFile
             window.elements["Construction"].attributes["energyStar"] = "true"
             window.elements["Construction"].add_element("Type")
             window.elements["Construction"].elements["Type"].attributes["idref"] = winCode
-            window.elements["Construction"].elements["Type"].attributes["rValue"] = "0.9259"
-            window.elements["Construction"].elements["Type"].add_text("NC-3g-HG-u1.08")
+            window.elements["Construction"].elements["Type"].attributes["rValue"] = "0.625"
+            window.elements["Construction"].elements["Type"].add_text("NBC-zone6-window")
             # Window measurements
             window.add_element("Measurements")
             window.elements["Measurements"].attributes["height"] = height
@@ -1584,8 +1584,8 @@ module H2KFile
           window.elements["Construction"].attributes["energyStar"] = "true"
           window.elements["Construction"].add_element("Type")
           window.elements["Construction"].elements["Type"].attributes["idref"] = winCode
-          window.elements["Construction"].elements["Type"].attributes["rValue"] = "0.9259"
-          window.elements["Construction"].elements["Type"].add_text("NC-3g-HG-u1.08")
+          window.elements["Construction"].elements["Type"].attributes["rValue"] = "0.625"
+          window.elements["Construction"].elements["Type"].add_text("NBC-zone6-window")
           # Window measurements
           window.add_element("Measurements")
           window.elements["Measurements"].attributes["height"] = height

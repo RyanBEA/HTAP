@@ -183,10 +183,12 @@
     },
     {
       "nbc_field": "T5_R26_C2",
-      "description": "Cooling System (Proposed)",
-      "source": "proposed",
-      "complex_mapping": "cooling_system",
-      "default": ""
+      "description": "Heating capacity in kW (Reference)",
+      "source": "reference",
+      "xpath": ".//House/HeatingCooling/Type2/*/Specifications/OutputCapacity",
+      "xpath_attr": "value",
+      "transform": "round1",
+      "default": "N/A"
     },
     {
       "nbc_field": "T5_R30_C1",
@@ -948,59 +950,54 @@
     },
     {
       "nbc_field": "T5_R26_C3",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
+      "description": "Heating capacity in kW (Proposed)",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "xpath": ".//House/HeatingCooling/Type2/*/Specifications/OutputCapacity",
+      "xpath_attr": "value",
+      "transform": "round1",
+      "default": "N/A"
     },
     {
       "nbc_field": "T5_R27_C2",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
-      "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "description": "SEER value for heat pump cooling (Reference)",
+      "source": "reference",
+      "complex_mapping": "seer_value",
+      "default": "N/A"
     },
     {
       "nbc_field": "T5_R27_C3",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
+      "description": "SEER value for heat pump cooling (Proposed)",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "complex_mapping": "seer_value",
+      "default": "N/A"
     },
     {
       "nbc_field": "T5_R28_C3",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
-      "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "description": "HSPF value for heat pump heating (Reference)",
+      "source": "reference",
+      "complex_mapping": "hspf_value",
+      "default": "N/A"
     },
     {
       "nbc_field": "T5_R28_C4",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
+      "description": "HSPF value for heat pump heating (Proposed)",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "complex_mapping": "hspf_value",
+      "default": "N/A"
     },
     {
       "nbc_field": "T5_R29_C3",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
-      "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "description": "Heat pump cutoff temperature (Reference)",
+      "source": "reference",
+      "formula": "cutoff_temperature",
+      "default": "N/A"
     },
     {
       "nbc_field": "T5_R29_C4",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
+      "description": "Heat pump cutoff temperature (Proposed)",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "formula": "cutoff_temperature",
+      "default": "N/A"
     },
     {
       "nbc_field": "T5_R33_C4",
@@ -1485,6 +1482,12 @@
       "area_width_attr": "width",
       "return_na_if_no_elements": true,
       "format": "%.4f"
+    },
+    "cutoff_temperature": {
+      "type": "cutoff_temperature",
+      "description": "Extract heat pump cutoff temperature (returns 'N/A' for balance point or missing data)",
+      "xpath": ".//House/HeatingCooling/Type2/AirHeatPump/Temperature/CutoffType",
+      "format": "%.1f"
     }
   },
   "transformations": {
@@ -1700,6 +1703,32 @@
         }
       ],
       "format": "{0} v{1}.{2}"
+    },
+    "seer_value": {
+      "description": "Extract SEER value with conditional COP to SEER conversion",
+      "components": [
+        {
+          "xpath": ".//House/HeatingCooling/Type2/AirHeatPump/Specifications/CoolingEfficiency",
+          "attr": "value",
+          "check_attr": "isCop",
+          "conversion": "cop_to_seer_conditional",
+          "default": "N/A"
+        }
+      ],
+      "format": "{0}"
+    },
+    "hspf_value": {
+      "description": "Extract HSPF value with conditional COP to HSPF conversion",
+      "components": [
+        {
+          "xpath": ".//House/HeatingCooling/Type2/AirHeatPump/Specifications/HeatingEfficiency",
+          "attr": "value",
+          "check_attr": "isCop",
+          "conversion": "cop_to_hspf_conditional",
+          "default": "N/A"
+        }
+      ],
+      "format": "{0}"
     }
   }
 }

@@ -47,17 +47,18 @@ This design allows non-programmers to add new field mappings by editing JSON con
 - Coordinates extraction, transformation, and form filling
 - Handles static values, formulas, and complex mappings
 
-**h2k_to_nbc_mapping.json** (58 KB, version 3.4)
+**h2k_to_nbc_mapping.json** (60 KB, version 3.5)
 - Configuration file with 137 field mappings
-- 82 real data extractions from H2K files (78 unique + 4 FDWR/wall/window area fields in Tables 3 and 5)
-- 55 placeholder mappings (extract from `.//Application/Name` for manual completion)
+- 88 real data extractions from H2K files (84 unique + 4 FDWR/wall/window area fields in Tables 3 and 5)
+- 49 placeholder mappings (extract from `.//Application/Name` for manual completion)
 - Type-filtered parallel path RSI formulas for ceiling types (attic vs cathedral/flat)
 - Attribute-filtered formulas for unheated basement floors (above/below frost line), heated floors, and exterior doors
 - Component presence detection with N/A support for absent building components (ceilings, floors, skylights, doors)
 - Comprehensive wall area, fenestration, and FDWR% formulas (used in Tables 3 and 5)
 - Parent-relative XPath support for basement wall perimeter calculation
 - Weighted average formulas for window and skylight SHGC calculations
-- Conditional COP to HSPF conversion for heat pump systems based on isCop attribute
+- Conditional COP to HSPF/SEER conversion for heat pump systems based on isCop attribute
+- Heat pump cutoff temperature extraction with balance point detection (returns N/A for balance point)
 - Metadata tracking: version, date, fields mapped
 
 **config_loader.py** (137 lines)
@@ -1218,6 +1219,45 @@ Potential improvements:
 8. Integration with HTAP run definitions (.run files)
 
 ## Recent Enhancements
+
+### v3.5 (2025-11-05)
+
+**Heat Pump Efficiency Fields** - Added standalone SEER and HSPF value extraction:
+- T5_R27_C2/C3: SEER values for heat pump cooling (Reference/Proposed)
+- T5_R28_C3/C4: HSPF values for heat pump heating (Reference/Proposed)
+- Both use conditional COP conversion when HOT2000 stores values as COP
+- COP to SEER formula: **SEER = (COP - 1.428) / 0.115**
+- COP to HSPF formula: **HSPF = (COP - 0.78) / 0.376** (same as v3.4)
+- Returns "N/A" when no heat pump present in building
+- New complex mappings: `seer_value` and `hspf_value`
+
+**Heat Pump Cutoff Temperature** - Added cutoff temperature extraction with balance point detection:
+- T5_R29_C3/C4: Cutoff temperatures for heat pump operation (Reference/Proposed)
+- Reads `code` attribute from CutoffType element:
+  - `code="1"` (Balance point) → Returns "N/A"
+  - `code="2"` (Restricted cutoff) → Returns numeric value formatted to 1 decimal
+- Returns "N/A" when no heat pump present
+- New formula type: `cutoff_temperature` with special code-based logic
+- Method `_extract_cutoff_temperature()` in `formula_processor.py`
+
+**Example H2K Data:**
+```xml
+<!-- Reference case: COP values requiring conversion -->
+<CoolingEfficiency isCop="true" value="3.1" />    <!-- Converts to SEER 14.50 -->
+<HeatingEfficiency isCop="true" value="3.45" />   <!-- Converts to HSPF 7.10 -->
+<CutoffType code="2" value="-21.6667" />          <!-- Shows as -21.7°C -->
+
+<!-- Proposed case: Already in SEER/HSPF units -->
+<CoolingEfficiency isCop="false" value="14" />    <!-- Shows as SEER 14.00 -->
+<HeatingEfficiency isCop="false" value="7.13" />  <!-- Shows as HSPF 7.13 -->
+<CutoffType code="2" value="-21.6667" />          <!-- Shows as -21.7°C -->
+```
+
+**Field Mapping Summary:**
+- Added 6 new real data extractions (total now 88 real, 49 placeholders)
+- Reduced placeholder count from 55 to 49
+- Enhanced `formula_processor.py` with COP to SEER conversion (lines 568-580)
+- Enhanced `formula_processor.py` with cutoff temperature extraction (lines 451-497)
 
 ### v3.4 (2025-11-05)
 
