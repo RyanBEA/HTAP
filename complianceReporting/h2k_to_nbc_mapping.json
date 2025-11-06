@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "version": "3.6",
+    "version": "3.7",
     "description": "Comprehensive H2K to NBC 2020 compliance form field mapping configuration",
     "last_updated": "2025-11-06",
-    "notes": "Added supplementary_heating_system_first complex mapping for T5_R30_C1/C2. Extracts fuel source and equipment type from first supplementary heating system (fireplaces, wood stoves, etc.). Returns 'None' when no supplementary systems present. Now 84 fields extracted from H2K files (vs 53 placeholders).",
+    "notes": "Added HRV rated condition specifications for T5_R33-36_C4 (fan power and heat recovery efficiency at 0°C and -25°C). Converted placeholders to real XPath extractions using fanPower1/fanPower2 and efficiency1/efficiency2 attributes from Hrv element. Now 88 fields extracted from H2K files (vs 49 placeholders).",
     "fields_mapped": 137,
     "fields_total": 137
   },
@@ -206,10 +206,12 @@
     },
     {
       "nbc_field": "T5_R31_C2",
-      "description": "Ventilation System (Proposed)",
+      "description": "Ventilation flow rate L/s (Proposed)",
       "source": "proposed",
-      "complex_mapping": "hrv_system",
-      "default": ""
+      "xpath": ".//House/Ventilation/WholeHouseVentilatorList/Hrv",
+      "xpath_attr": "supplyFlowrate",
+      "transform": "round1",
+      "default": "0"
     },
     {
       "nbc_field": "T5_R37_C1",
@@ -451,10 +453,12 @@
     },
     {
       "nbc_field": "T7_R0_C1",
-      "description": "Ventilation fan power (W/L/s)",
-      "source": "proposed",
-      "formula": "ventilation_power",
-      "default": ""
+      "description": "Ventilation fan power (Reference)",
+      "source": "reference",
+      "xpath": ".//House/Ventilation/WholeHouseVentilatorList/Hrv",
+      "xpath_attr": "fanPower1",
+      "transform": "round1",
+      "default": "0"
     },
     {
       "nbc_field": "T13_R1_C3",
@@ -997,35 +1001,39 @@
     },
     {
       "nbc_field": "T5_R33_C4",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
+      "description": "Fan power at 0°C (Proposed)",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "xpath": ".//House/Ventilation/WholeHouseVentilatorList/Hrv",
+      "xpath_attr": "fanPower1",
+      "transform": "round1",
+      "default": "N/A"
     },
     {
       "nbc_field": "T5_R34_C4",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
+      "description": "Fan power at -25°C (Proposed)",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "xpath": ".//House/Ventilation/WholeHouseVentilatorList/Hrv",
+      "xpath_attr": "fanPower2",
+      "transform": "round1",
+      "default": "N/A"
     },
     {
       "nbc_field": "T5_R35_C4",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
+      "description": "Heat recovery % SRE at 0°C (Proposed)",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "xpath": ".//House/Ventilation/WholeHouseVentilatorList/Hrv",
+      "xpath_attr": "efficiency1",
+      "transform": "round1",
+      "default": "N/A"
     },
     {
       "nbc_field": "T5_R36_C4",
-      "description": "PLACEHOLDER - manual mapping required",
-      "default": "NA",
+      "description": "Heat recovery % SRE at -25°C (Proposed)",
       "source": "proposed",
-      "xpath": ".//HouseFile/House/Components/Wall/FacingDirection/English",
-      "transform": "text"
+      "xpath": ".//House/Ventilation/WholeHouseVentilatorList/Hrv",
+      "xpath_attr": "efficiency2",
+      "transform": "round1",
+      "default": "N/A"
     },
     {
       "nbc_field": "T5_R5_C2",
