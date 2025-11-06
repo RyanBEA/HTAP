@@ -738,8 +738,8 @@ For heat pump systems, heating efficiency may be stored as either COP or HSPF de
 ## Current Field Coverage
 
 **Status**: 137 of 137 fields mapped (100%)
-- **Real extractions**: 82 fields with H2K data (78 unique + 4 FDWR/wall/window area fields in Tables 3 and 5)
-- **Placeholders**: 55 fields extracting "HOT2000" for manual completion
+- **Real extractions**: 84 fields with H2K data (80 unique + 4 FDWR/wall/window area fields in Tables 3 and 5)
+- **Placeholders**: 53 fields extracting "HOT2000" for manual completion
 
 ### Fully Mapped Sections
 
@@ -771,6 +771,7 @@ For heat pump systems, heating efficiency may be stored as either COP or HSPF de
 - **Door U-value** (T5_R18_C1, T5_R18_C2) - Parallel path method for exterior doors only
 - Airtightness (T5_R20_C1, T5_R20_C2)
 - Heating system descriptions (T5_R25_C1, T5_R25_C2)
+- **Supplementary heating systems** (T5_R30_C1, T5_R30_C2) - First supplementary system (fireplace, wood stove, etc.)
 - Ventilation system (T5_R31_C2)
 - DHW system (T5_R37_C1, T5_R37_C2)
 
@@ -789,7 +790,7 @@ For heat pump systems, heating efficiency may be stored as either COP or HSPF de
 - Envelope specifications
 - Equipment types and efficiencies
 
-### Placeholder Fields (55 fields)
+### Placeholder Fields (53 fields)
 
 Placeholder fields are mapped to extract `.//Application/Name` which returns "HOT2000". These fields appear in the generated document with "HOT2000" as the value, making them easy to identify for manual completion.
 

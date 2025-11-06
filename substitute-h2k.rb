@@ -2662,8 +2662,19 @@ def processFile(h2kElements)
             break
           elsif(valHash["1"] == "true")
             # Option is active
-            # Delete all existing systems
             locationText = "HouseFile/House/Ventilation/"
+
+            # Preserve existing flow rates if OPT-FlowCalc is 0 (preserve existing values)
+            existingSupplyFlow = nil
+            existingExhaustFlow = nil
+            if(valHash["4"] == "0")
+              if(h2kElements[locationText + "WholeHouseVentilatorList/Hrv"] != nil)
+                existingSupplyFlow = h2kElements[locationText + "WholeHouseVentilatorList/Hrv"].attributes["supplyFlowrate"]
+                existingExhaustFlow = h2kElements[locationText + "WholeHouseVentilatorList/Hrv"].attributes["exhaustFlowrate"]
+              end
+            end
+
+            # Delete all existing systems
             h2kElements[locationText].delete_element("WholeHouseVentilatorList")          
 
             # Make fresh elements
@@ -2708,8 +2719,17 @@ def processFile(h2kElements)
                 h2kElements[locationText + "WholeHouseVentilatorList/Hrv"].attributes["exhaustFlowrate"] = calcFlow.to_s
                 # Exhaust = Supply
               end
+            elsif(valHash["4"] == "0")
+              # Preserve existing flow rate from original model
+              if(existingSupplyFlow != nil && existingExhaustFlow != nil)
+                h2kElements[locationText + "WholeHouseVentilatorList/Hrv"].attributes["supplyFlowrate"] = existingSupplyFlow
+                h2kElements[locationText + "WholeHouseVentilatorList/Hrv"].attributes["exhaustFlowrate"] = existingExhaustFlow
+                calcFlow = existingSupplyFlow.to_f
+              else
+                fatalerror("ERROR: For Opt-VentSystem, OPT-FlowCalc=0 but no existing HRV flow rate found in model!\n")
+              end
             else
-              fatalerror("ERROR: For Opt-VentSystem, invalid flow calculation input  #{valHash["4"]}!\n")
+              fatalerror("ERROR: For Opt-VentSystem, invalid flow calculation input  #{valHash["4"]}! Valid values: 0 (preserve existing), 1 (F326 calculation), 2 (user-specified)\n")
             end
 
             # Update the HRV efficiency

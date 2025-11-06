@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "version": "3.2",
+    "version": "3.6",
     "description": "Comprehensive H2K to NBC 2020 compliance form field mapping configuration",
-    "last_updated": "2025-11-04",
-    "notes": "Added parallel_path_rsi_windows formula for area-weighted window U-values using parallel path method. Extended formula_processor.py to support width-based area calculations (height × width) for windows and pipe operator handling for multiple XPath expressions. Updated T5_R14_C2/C3 to use calculated average window U-values instead of single window values. Now 82 fields extracted from H2K files (vs 55 placeholders).",
+    "last_updated": "2025-11-06",
+    "notes": "Added supplementary_heating_system_first complex mapping for T5_R30_C1/C2. Extracts fuel source and equipment type from first supplementary heating system (fireplaces, wood stoves, etc.). Returns 'None' when no supplementary systems present. Now 84 fields extracted from H2K files (vs 53 placeholders).",
     "fields_mapped": 137,
     "fields_total": 137
   },
@@ -194,18 +194,14 @@
       "nbc_field": "T5_R30_C1",
       "description": "Supplementary Heating System(s) (Reference)",
       "source": "reference",
-      "xpath": ".//House/HeatingCooling/MultipleSystems/Summary",
-      "xpath_attr": "woodAppliances",
-      "transform": "wood_stove_check",
+      "complex_mapping": "supplementary_heating_system_first",
       "default": "None"
     },
     {
       "nbc_field": "T5_R30_C2",
       "description": "Supplementary Heating System(s) (Proposed)",
       "source": "proposed",
-      "xpath": ".//House/HeatingCooling/MultipleSystems/Summary",
-      "xpath_attr": "woodAppliances",
-      "transform": "wood_stove_check",
+      "complex_mapping": "supplementary_heating_system_first",
       "default": "None"
     },
     {
@@ -1729,6 +1725,23 @@
         }
       ],
       "format": "{0}"
+    },
+    "supplementary_heating_system_first": {
+      "description": "Format first supplementary heating system with fuel type and equipment type",
+      "components": [
+        {
+          "xpath": ".//House/HeatingCooling/SupplementaryHeatingSystems/System[1]/Equipment/EnergySource/English",
+          "default": "",
+          "optional": true
+        },
+        {
+          "xpath": ".//House/HeatingCooling/SupplementaryHeatingSystems/System[1]/Equipment/Type/English",
+          "default": "",
+          "optional": true
+        }
+      ],
+      "format": "{0} {1}",
+      "format_simple": "None"
     }
   }
 }

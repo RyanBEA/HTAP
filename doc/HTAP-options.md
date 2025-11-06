@@ -101,6 +101,19 @@ If you omit the `costs` block for a costed attribute, the costing pipeline treat
 - To add a brand new attribute, start from an existing tree or flat template, confirm `structure`/`h2kSchema` align with how you plan to edit the HOT2000 XML, and test with `substitute-h2k.rb --export-options-to-json` to verify round-tripping.
 - Avoid deleting unused options outright if they appear in archived `.choices` or rulesets; instead, set `stop-on-error: false` and map the option to a fallback value, or update the dependent artifacts in tandem.
 
+## Notable Option Behaviors
+
+### Opt-VentSystem: Flow Rate Calculation Modes
+The `Opt-VentSystem` attribute controls whole-house ventilation systems (HRV/ERV) and includes special logic for flow rate determination via the `OPT-FlowCalc` parameter:
+
+**OPT-FlowCalc values:**
+- `"0"` - **Preserve existing**: Reads the supply/exhaust flow rates from the original model before rebuilding the ventilation system, then re-applies them. Useful when the model already has an appropriate flow rate that should not be recalculated. If no existing HRV is found, the substitution will fail with an error.
+- `"1"` - **F326 calculation**: Calculates required ventilation flow rate using the CSA F326 standard based on room counts (5 L/s per room, with special handling for bedrooms and basements). Implemented in `getF326FlowRates()` (substitute-h2k.rb:4192).
+- `"2"` - **User-specified**: Uses the explicit flow rate provided via `OPT-H2K-HRVSupply` parameter.
+- `"NA"` - Not applicable (used when `Opt-IsActive` is false).
+
+**Implementation note:** The Opt-VentSystem option performs a complete delete/rebuild of the ventilation system (substitute-h2k.rb:2677) to ensure a clean, consistent configuration. The preserve-existing mode (`OPT-FlowCalc="0"`) captures flow rates before deletion and restores them after the rebuild, allowing other ventilation parameters (efficiency, fan power, operation schedule) to be modified while maintaining the original flow rate.
+
 ## References in Code
 - Parsing: `inc/H2KUtils.rb` (`HTAPData.parse_json_options_file`).
 - Validation: `substitute-h2k.rb` (`HTAPData.validate_options`).

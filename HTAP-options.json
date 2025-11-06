@@ -11510,6 +11510,28 @@
           "proxy": "VentFans_sre_0"
         }
       },
+      "NBC_noHRVBEA": {
+        "h2kMap": {
+          "base": {
+            "Opt-IsActive": "true",
+            "OPT-H2K-AirDistType": "1",
+            "OPT-H2K-OpSched": "480",
+            "OPT-FlowCalc": "0",
+            "OPT-H2K-HRVSupply": "NA",
+            "OPT-H2K-Rating1": "0",
+            "OPT-H2K-Rating2": "0",
+            "OPT-H2K-Rating3": "0",
+            "OPT-H2K-FanPowerCalc": "NBC",
+            "OPT-H2K-FanPower1": "NA",
+            "OPT-H2K-FanPower2": "NA"
+          }
+        },
+        "costs": {
+          "custom-costs": {
+          },
+          "proxy": "VentFans_sre_0"
+        }
+      },
 	  "Yukon_HRV": {
         "h2kMap": {
           "base": {
