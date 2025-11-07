@@ -54,10 +54,9 @@
     },
     {
       "nbc_field": "T2_R0_C0",
-      "description": "Design Conditions",
+      "description": "Total heated floor area (m²)",
       "source": "proposed",
-      "xpath": ".//ProgramInformation/Weather/Location/English",
-      "transform": "text",
+      "formula": "total_heated_floor_area",
       "default": ""
     },
     {
@@ -1193,6 +1192,19 @@
       },
       "calculation": "fan_power / flow_rate if flow_rate > 0 else 0",
       "format": "%.2f"
+    },
+    "total_heated_floor_area": {
+      "description": "Calculate total heated floor area (above-grade + below-grade)",
+      "inputs": {
+        "above_grade": ".//House/Specifications/HeatedFloorArea",
+        "below_grade": ".//House/Specifications/HeatedFloorArea"
+      },
+      "input_attrs": {
+        "above_grade": "aboveGrade",
+        "below_grade": "belowGrade"
+      },
+      "calculation": "above_grade + below_grade",
+      "format": "%.1f"
     },
     "gross_wall_area": {
       "description": "Calculate total above-grade wall area in m² (includes pony walls, main walls, basement above-grade, floor headers, and crawlspace walls)",

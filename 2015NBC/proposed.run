@@ -53,7 +53,6 @@ Upgrades_START
    Opt-H2K-PV           = NA
    Opt-Baseloads        = NBC-Baseloads
    Opt-WindowDistribution = NA
-   Opt-VentSystem          = NBC_HRV
    Opt-Temperatures     = NBC_Temps
 
 ! These Opt-* parameters have non-NA defaults and must be specified

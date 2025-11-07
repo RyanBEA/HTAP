@@ -1,0 +1,42 @@
+
+ ▐▛███▜▌   Claude Code v2.0.34
+▝▜█████▛▘  Opus 4.1 · Claude API
+  ▘▘ ▝▝    C:\HTAP
+══════════════════════════════════════════════════════════════════════ Conversation compacted · ctrl+o for history ═════════════════════════════════════════════════════════════════════
+  ⎿  Read dev\ponywallsupport.md (483 lines)
+  ⎿  Referenced file HTAP-options.json
+  ⎿  Referenced file doc\complianceReporting.md
+  ⎿  Referenced file complianceReporting\proposed.h2k
+  ⎿  Referenced file substitute-h2k.rb
+
+● I've successfully created and saved the comprehensive implementation plan for pony wall support to /dev/ponywallsupport.md. The plan covers:
+
+  Key Highlights:
+
+  Core Approach: Extends the existing Opt-H2KFoundation system by adding a new OPT-H2K-PonyWall-RValue parameter that works alongside existing interior wall insulation settings.
+
+  Implementation Structure:
+  - Week 1: Core modifications to HTAP-options.json and substitute-h2k.rb
+  - Week 2: Surface-by-surface mode support in H2KUtils.rb
+  - Week 3: Testing framework with validation scripts
+  - Week 4: Cleanup of dead walkout code and documentation
+
+  Technical Details:
+  - Adds pony wall R-value parameter to all NBC_936_* and BCIN foundation options
+  - Implements graceful degradation for basements without pony walls
+  - Handles the XML <PonyWallType> element manipulation directly
+  - Includes RSI conversion (R-value ÷ 5.678) and proper XML structure updates
+
+  Risk Mitigation:
+  - Backward compatibility maintained with existing .choices files
+  - Auto-creation of missing PonyWallType elements when hasPonyWall="true"
+  - Validation against manual baseline runs (as you mentioned you'll create)
+
+  The plan addresses the 24/40 archetypes with pony walls (representing ~43% of basement wall area on average) and avoids the option proliferation concern by using a single
+  parameter addition to existing foundation options.
+
+  The implementation follows HTAP's existing patterns and should integrate smoothly with the current Opt-H2KFoundation workflow while maintaining compatibility with your manual
+  runs for validation purposes.
+
+
+

@@ -6,6 +6,7 @@ Extracts data from reference and proposed H2K files and fills the NBC form templ
 
 import sys
 import os
+import argparse
 from pathlib import Path
 from datetime import datetime
 
@@ -199,73 +200,261 @@ class H2KToNBCProcessor:
                 print(f"  {field_id}: {display_value}")
 
 
+def find_matching_pairs(reference_dir, proposed_dir):
+    """
+    Find matching .h2k file pairs in reference and proposed directories.
+
+    Args:
+        reference_dir: Path to directory containing reference .h2k files
+        proposed_dir: Path to directory containing proposed .h2k files
+
+    Returns:
+        List of tuples: (reference_path, proposed_path, building_id)
+    """
+    ref_dir = Path(reference_dir)
+    prop_dir = Path(proposed_dir)
+
+    # Find all .h2k files in each directory
+    ref_files = {f.stem: f for f in ref_dir.glob('*.h2k')}
+    prop_files = {f.stem: f for f in prop_dir.glob('*.h2k')}
+
+    # Find matching pairs
+    matched_pairs = []
+    unmatched_ref = []
+    unmatched_prop = []
+
+    for building_id in sorted(ref_files.keys()):
+        if building_id in prop_files:
+            matched_pairs.append((
+                str(ref_files[building_id]),
+                str(prop_files[building_id]),
+                building_id
+            ))
+        else:
+            unmatched_ref.append(building_id)
+
+    # Check for proposed files without matching reference
+    for building_id in prop_files.keys():
+        if building_id not in ref_files:
+            unmatched_prop.append(building_id)
+
+    # Print summary
+    print(f"\nFound {len(matched_pairs)} matching file pairs")
+
+    if unmatched_ref:
+        print(f"\nWarning: {len(unmatched_ref)} reference files without matching proposed:")
+        for building_id in unmatched_ref:
+            print(f"  - {building_id}")
+
+    if unmatched_prop:
+        print(f"\nWarning: {len(unmatched_prop)} proposed files without matching reference:")
+        for building_id in unmatched_prop:
+            print(f"  - {building_id}")
+
+    return matched_pairs
+
+
+def process_batch(reference_dir, proposed_dir, output_dir):
+    """
+    Process multiple H2K file pairs in batch mode.
+
+    Args:
+        reference_dir: Directory containing reference .h2k files
+        proposed_dir: Directory containing proposed .h2k files
+        output_dir: Directory for output .docx files
+    """
+    print("="*70)
+    print("BATCH MODE: H2K to NBC Compliance Form Generator")
+    print("="*70)
+    print(f"Reference directory: {reference_dir}")
+    print(f"Proposed directory: {proposed_dir}")
+    print(f"Output directory: {output_dir}")
+
+    # Find matching pairs
+    pairs = find_matching_pairs(reference_dir, proposed_dir)
+
+    if not pairs:
+        print("\nError: No matching file pairs found!")
+        sys.exit(1)
+
+    # Create output directory
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
+
+    # Initialize processor once
+    config_path = Path(__file__).parent / 'h2k_to_nbc_mapping.json'
+
+    # Process each pair
+    success_count = 0
+    failure_count = 0
+    failures = []
+
+    print("\n" + "="*70)
+    print(f"Processing {len(pairs)} building(s)...")
+    print("="*70)
+
+    for i, (ref_file, prop_file, building_id) in enumerate(pairs, 1):
+        print(f"\n[{i}/{len(pairs)}] Processing: {building_id}")
+        print("-" * 70)
+
+        output_file = output_path / f"{building_id}_NBC_compliance.docx"
+
+        try:
+            # Create new processor for each building
+            processor = H2KToNBCProcessor(config_path)
+
+            # Validate configuration (only once, on first iteration)
+            if i == 1:
+                is_valid, errors = processor.config.validate_config()
+                if not is_valid:
+                    print("\nConfiguration validation failed:")
+                    for error in errors:
+                        print(f"  - {error}")
+                    sys.exit(1)
+
+            # Load H2K files
+            processor.load_h2k_files(ref_file, prop_file)
+
+            # Process all mappings
+            form_values = processor.process_all_mappings()
+
+            # Fill form template
+            processor.fill_form_template(form_values, str(output_file))
+
+            print(f"[OK] Success: Generated {output_file.name}")
+            success_count += 1
+
+        except Exception as e:
+            print(f"[FAIL] ERROR: {e}")
+            failure_count += 1
+            failures.append((building_id, str(e)))
+
+    # Print summary
+    print("\n" + "="*70)
+    print("BATCH PROCESSING COMPLETE")
+    print("="*70)
+    print(f"Successfully processed: {success_count}/{len(pairs)}")
+    print(f"Failed: {failure_count}/{len(pairs)}")
+
+    if failures:
+        print("\nFailures:")
+        for building_id, error in failures:
+            print(f"  - {building_id}: {error}")
+
+    print(f"\nOutput files saved to: {output_dir}/")
+
+
 def main():
     """Main entry point."""
-    # Parse command line arguments
-    if len(sys.argv) < 3:
-        print("Usage: python process_h2k_to_nbc.py <reference.h2k> <proposed.h2k> [output.docx]")
-        print("\nExample:")
-        print("  python process_h2k_to_nbc.py reference.h2k proposed.h2k NBC_compliance.docx")
-        sys.exit(1)
+    # Set up argument parser
+    parser = argparse.ArgumentParser(
+        description='Generate NBC compliance forms from H2K files',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  Single file mode:
+    python process_h2k_to_nbc.py reference.h2k proposed.h2k output.docx
 
-    reference_path = sys.argv[1]
-    proposed_path = sys.argv[2]
+  Batch mode (uses default directories):
+    python process_h2k_to_nbc.py --batch
 
-    # Generate output filename if not provided
-    if len(sys.argv) > 3:
-        output_path = sys.argv[3]
+  Batch mode (custom directories):
+    python process_h2k_to_nbc.py --batch --ref-dir reference/ --prop-dir proposed/ --output-dir output/
+        """
+    )
+
+    # Batch mode flag
+    parser.add_argument('--batch', action='store_true',
+                        help='Enable batch processing mode')
+
+    # Batch mode arguments
+    parser.add_argument('--ref-dir', default='reference',
+                        help='Reference directory for batch mode (default: reference)')
+    parser.add_argument('--prop-dir', default='proposed',
+                        help='Proposed directory for batch mode (default: proposed)')
+    parser.add_argument('--output-dir', default='output',
+                        help='Output directory for batch mode (default: output)')
+
+    # Single file mode arguments (positional)
+    parser.add_argument('reference', nargs='?',
+                        help='Reference .h2k file (single file mode)')
+    parser.add_argument('proposed', nargs='?',
+                        help='Proposed .h2k file (single file mode)')
+    parser.add_argument('output', nargs='?',
+                        help='Output .docx file (single file mode, optional)')
+
+    args = parser.parse_args()
+
+    # Determine mode
+    if args.batch:
+        # Batch mode
+        process_batch(args.ref_dir, args.prop_dir, args.output_dir)
+
     else:
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        output_path = f'NBC_compliance_{timestamp}.docx'
-
-    # Create output directory if it doesn't exist
-    output_dir = Path(output_path).parent
-    if output_dir and not output_dir.exists():
-        output_dir.mkdir(parents=True, exist_ok=True)
-
-    print("="*70)
-    print("H2K to NBC Compliance Form Generator")
-    print("="*70)
-
-    try:
-        # Initialize processor
-        config_path = Path(__file__).parent / 'h2k_to_nbc_mapping.json'
-        processor = H2KToNBCProcessor(config_path)
-
-        # Validate configuration
-        is_valid, errors = processor.config.validate_config()
-        if not is_valid:
-            print("\nConfiguration validation failed:")
-            for error in errors:
-                print(f"  - {error}")
+        # Single file mode
+        if not args.reference or not args.proposed:
+            parser.print_help()
+            print("\nError: Single file mode requires reference and proposed .h2k files")
             sys.exit(1)
 
-        # Load H2K files
-        processor.load_h2k_files(reference_path, proposed_path)
+        reference_path = args.reference
+        proposed_path = args.proposed
 
-        # Process all mappings
-        form_values = processor.process_all_mappings()
+        # Generate output filename if not provided
+        if args.output:
+            output_path = args.output
+        else:
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            output_path = f'NBC_compliance_{timestamp}.docx'
 
-        # Generate report
-        processor.generate_report(form_values)
+        # Create output directory if it doesn't exist
+        output_dir = Path(output_path).parent
+        if output_dir and not output_dir.exists():
+            output_dir.mkdir(parents=True, exist_ok=True)
 
-        # Fill form template
-        processor.fill_form_template(form_values, output_path)
-
-        print("\n" + "="*70)
-        print("COMPLETED SUCCESSFULLY")
         print("="*70)
-        print(f"\nGenerated NBC compliance form: {output_path}")
-        print(f"Total fields populated: {len(form_values)}")
+        print("H2K to NBC Compliance Form Generator")
+        print("="*70)
 
-    except FileNotFoundError as e:
-        print(f"\nError: {e}")
-        sys.exit(1)
-    except Exception as e:
-        print(f"\nError: {e}")
-        import traceback
-        traceback.print_exc()
-        sys.exit(1)
+        try:
+            # Initialize processor
+            config_path = Path(__file__).parent / 'h2k_to_nbc_mapping.json'
+            processor = H2KToNBCProcessor(config_path)
+
+            # Validate configuration
+            is_valid, errors = processor.config.validate_config()
+            if not is_valid:
+                print("\nConfiguration validation failed:")
+                for error in errors:
+                    print(f"  - {error}")
+                sys.exit(1)
+
+            # Load H2K files
+            processor.load_h2k_files(reference_path, proposed_path)
+
+            # Process all mappings
+            form_values = processor.process_all_mappings()
+
+            # Generate report
+            processor.generate_report(form_values)
+
+            # Fill form template
+            processor.fill_form_template(form_values, output_path)
+
+            print("\n" + "="*70)
+            print("COMPLETED SUCCESSFULLY")
+            print("="*70)
+            print(f"\nGenerated NBC compliance form: {output_path}")
+            print(f"Total fields populated: {len(form_values)}")
+
+        except FileNotFoundError as e:
+            print(f"\nError: {e}")
+            sys.exit(1)
+        except Exception as e:
+            print(f"\nError: {e}")
+            import traceback
+            traceback.print_exc()
+            sys.exit(1)
 
 
 if __name__ == '__main__':

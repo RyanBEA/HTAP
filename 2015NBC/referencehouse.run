@@ -47,8 +47,6 @@ Upgrades_START
    Opt-CathCeilings     = NBC_CathCeiling_RSI4.67
    Opt-FlatCeilings     = NBC_FlatCeiling_RSI4.67
 
-   Opt-VentSystem       = NA
-
    Opt-Heating-Cooling  = central-hybrid-2015NBC
 !   Opt-Heating-Cooling  = NBC-elec-heat
 !   Opt-Heating-Cooling  = NBC-CCASHP
@@ -56,13 +54,14 @@ Upgrades_START
    Opt-H2K-PV           = NA
    Opt-Baseloads        = NBC-Baseloads
    Opt-WindowDistribution = Reference-9.36
-   Opt-VentSystem          = NBC_HRV
+   Opt-VentSystem          = NBC_noHRVBEA
+!   Opt-HRVSpec          = NBC-noHRV
    Opt-Temperatures     = NBC_Temps
 
 ! These Opt-* parameters have non-NA defaults and must be specified
   Opt-AboveGradeWall    = NBC_Wall_zone6_HRV
-  Opt-DHWSystem         = NBC-HotWater_gas
-!   Opt-DHWSystem        = NBC-HotWater_elec
+!  Opt-DHWSystem         = NBC-HotWater_gas
+   Opt-DHWSystem        = NBC-HotWater_elec
   Opt-DWHR              = none
   Opt-Skylights         = NA
 
