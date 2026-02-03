@@ -75,7 +75,7 @@ The analyzer maps Type1 fuel to reference house run files:
 | `gas` | Natural gas, Gas | `referencehouse_T1gasfurnace_T2ASHP.run` |
 | `propane` | Propane | `referencehouse_T1gasfurnace_T2ASHP.run` |
 | `electric` | Electric, Electricity, Baseboard | `referencehouse_T1elecfurnace_T2ASHP.run` |
-| `oil` | Oil, Heating oil | `referencehouse_T1oilfurnace_T2ASHP.run` |
+| `oil` | Oil, Heating oil | Not yet supported (manual reference house creation required) |
 
 **Note:** Propane uses the gas furnace run file as NBC treats propane similarly to natural gas for reference house equipment selection.
 

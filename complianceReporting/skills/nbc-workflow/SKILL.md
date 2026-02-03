@@ -22,14 +22,14 @@ Run HTAP batch for each fuel-type group identified in Phase 1:
 ruby htap-prm.rb --run-def <project>/referencehouse_T1gasfurnace_T2ASHP.run --threads 4 --json --keep-all-files
 ruby htap-prm.rb --run-def <project>/referencehouse_T1elecfurnace_T2ASHP.run --threads 4 --json --keep-all-files
 ```
-Copy archetype files from `HTAP-sim-*/` to `complianceReporting/reference/`.
+Copy archetype files from `HTAP-sim-*/` to `complianceReporting/reference/`. The archetype file is the `.h2k` file matching the input filename (NOT `file-postsub.h2k`, `file-presub.h2k`, or `run_file_file_1.h2k`).
 
 ### Phase 3: Generate Proposed Houses
 Run HTAP batch with proposed building configuration:
 ```bash
 ruby htap-prm.rb --run-def <project>/proposed.run --threads 4 --json --keep-all-files
 ```
-Copy archetype files from `HTAP-sim-*/` to `complianceReporting/proposed/`.
+Copy archetype files from `HTAP-sim-*/` to `complianceReporting/proposed/`. The archetype file is the `.h2k` file matching the input filename (NOT `file-postsub.h2k`, `file-presub.h2k`, or `run_file_file_1.h2k`).
 
 ### Phase 4: Manual Checkpoint
 Review files flagged for manual intervention:
@@ -51,7 +51,7 @@ Output: NBC compliance forms in `complianceReporting/output/`.
 Spot-check key values in generated forms:
 - FDWR percentages (Table 3, Table 5)
 - Energy consumption totals (Table 11)
-- Equipment descriptions (Table 5 rows 25-37)
+- Equipment descriptions in Table 5 (heating, cooling, ventilation, DHW)
 
 ## Run File Selection
 
@@ -59,13 +59,13 @@ Spot-check key values in generated forms:
 |------------|----------|
 | Natural gas, Propane | `referencehouse_T1gasfurnace_T2ASHP.run` |
 | Electric, Baseboard | `referencehouse_T1elecfurnace_T2ASHP.run` |
-| Oil | `referencehouse_T1oilfurnace_T2ASHP.run` |
+| Oil | Not yet supported (manual reference house creation required) |
 
 ## References
 
 - [XPath Patterns](references/xpath-patterns.md) - Equipment and foundation classification XPaths
 - [Batch Workflow](../../doc/batch-compliance-workflow.md) - Detailed step-by-step instructions
-- [Field Mapping](../../doc/complianceReporting.md) - NBC form field mapping documentation
+- [Field Mapping](../../README.md) - NBC form field mapping documentation
 
 ## Troubleshooting
 
