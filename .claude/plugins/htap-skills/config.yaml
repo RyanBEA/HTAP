@@ -1,0 +1,6 @@
+name: htap-skills
+version: 1.0.0
+description: HTAP workflow automation skills
+
+skills:
+  - path: ../../../complianceReporting/skills/nbc-workflow
