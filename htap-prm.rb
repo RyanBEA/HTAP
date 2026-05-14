@@ -41,7 +41,7 @@ $gLocations  = Array.new
 
 $gChoiceFileSet = Hash.new
 
-$gArchetypeDir = "C:/HTAP/archetypes"
+$gArchetypeDir = File.expand_path("archetypes", __dir__)
 $gArchetypeHash = Hash.new
 $gRulesetHash   = Hash.new
 $gLocationHash  = Hash.new

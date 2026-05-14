@@ -187,8 +187,8 @@ $aliasArch    = $aliasLongArch
 
 # Not sure why, but substiture-h2k.rb fails without this converison.
 $gMasterPath.gsub!(/\//, '\\')
-#$unitCostFileName = "C:/HTAP/HTAPUnitCosts.json"
-#$rulesetsFileName = "C:/HTAP/HTAP-rulesets.json"
+#$unitCostFileName = File.expand_path("HTAPUnitCosts.json", __dir__)
+#$rulesetsFileName = File.expand_path("HTAP-rulesets.json", __dir__)
 
 #Variables that store the average utility costs, energy amounts.
 $gAvgEnergy_Total   = 0
