@@ -1578,7 +1578,7 @@ $gTest_params["verbosity"] = "verbose"
 $gHTAPOptionsFile = ""
 $gRulesetsFile = ""
 
-$gSubstitutePath = "C:\/HTAP\/h2k-agent.rb"
+$gSubstitutePath = File.expand_path("h2k-agent.rb", __dir__)
 $gWarn = "1"
 $gOutputFile = "HTAP-prm-output.csv"
 $gResumeFile = "HTAP-prm.resume"
