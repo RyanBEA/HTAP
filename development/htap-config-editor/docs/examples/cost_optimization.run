@@ -1,0 +1,141 @@
+! ============================================================================
+! cost_optimization.run
+!
+! Example: Cost-focused optimization study
+!
+! Description:
+!   This configuration explores cost-effective upgrade packages by varying:
+!   - Wall insulation levels (3 options)
+!   - Attic insulation levels (3 options)
+!   - Window specifications (2 options)
+!   - Foundation insulation (2 options)
+!
+! Use case:
+!   Finding the most cost-effective path to energy savings
+!   Evaluating incremental costs vs energy performance
+!
+! Expected output:
+!   3 × 3 × 2 × 2 = 36 simulation runs (~12 minutes with 7 threads)
+!
+! ============================================================================
+
+RunParameters_START
+  run-mode = parametric
+  archetype-dir = C:/HTAP/Archetypes
+  options-file = C:/HTAP/HTAP-options.json
+  unit-costs-db = C:/HTAP/HTAPUnitCosts.json
+RunParameters_END
+
+! ----------------------------------------------------------------------------
+! Run Scope: Single archetype for focused cost comparison
+! ----------------------------------------------------------------------------
+RunScope_START
+  archetypes = BC-base.h2k
+  locations = Kelowna
+  rulesets =
+RunScope_END
+
+! ----------------------------------------------------------------------------
+! Upgrades: Envelope-focused parametric options
+!
+! Focus on envelope upgrades where costs are well-defined and
+! incremental benefits can be clearly evaluated.
+!
+! Total combinations = 3 (walls) × 3 (attic) × 2 (windows) × 2 (foundation)
+!                    = 36 runs
+! ----------------------------------------------------------------------------
+Upgrades_START
+  ! -------------------------------------------------------------------------
+  ! PARAMETRIC OPTIONS - Envelope upgrades with cost data
+  ! -------------------------------------------------------------------------
+
+  ! Above-grade walls: Test three insulation levels
+  Opt-AboveGradeWall = RSI-3.6_R-20.5, RSI-4.4_R-25, RSI-5.3_R-30
+  ! RSI-3.6 (R-20.5): Code-compliant baseline
+  ! RSI-4.4 (R-25): Moderate upgrade
+  ! RSI-5.3 (R-30): High-performance upgrade
+  !
+  ! Analysis focus: Cost per RSI improvement vs energy savings
+
+  ! Attic/ceiling insulation: Test three levels
+  Opt-AtticCeilings = RSI-7.0_R-40, RSI-8.8_R-50, RSI-10.6_R-60
+  ! RSI-7.0 (R-40): Code-compliant baseline
+  ! RSI-8.8 (R-50): Common upgrade level
+  ! RSI-10.6 (R-60): High-performance level
+  !
+  ! Analysis focus: Attic insulation is typically cost-effective,
+  !                 but are diminishing returns at R-60?
+
+  ! Windows: Compare double vs triple glazing
+  Opt-Windows = NC_2g_HG_u1.65, NC_3g_HG_u1.0
+  ! NC_2g_HG_u1.65: Double-glazed (U=1.65) - baseline cost
+  ! NC_3g_HG_u1.0: Triple-glazed (U=1.0) - premium cost
+  !
+  ! Analysis focus: Is the cost premium of triple-glazing justified
+  !                 by energy savings?
+
+  ! Foundation exterior insulation: Two levels
+  Opt-FoundationWallExtIns = RSI-1.4_R-8, RSI-2.1_R-12
+  ! RSI-1.4 (R-8): Minimum upgrade
+  ! RSI-2.1 (R-12): Moderate upgrade
+  !
+  ! Analysis focus: Foundation insulation cost-effectiveness
+
+  ! -------------------------------------------------------------------------
+  ! FIXED OPTIONS - Keep consistent to isolate envelope effects
+  ! -------------------------------------------------------------------------
+
+  ! Airtightness: Fixed at achievable level
+  Opt-ACH = ACH_2_5
+
+  ! Heating: Fixed at efficient system
+  Opt-Heating-Cooling = CCASHP
+
+  ! DHW: Fixed at baseline
+  Opt-DHWSystem = elecWH
+
+  ! Ventilation: Fixed at efficient
+  Opt-VentSystem = HRV_60
+
+  ! Slab: Fixed at uninsulated
+  Opt-FoundationSlabOnGrade = Uninsulated
+Upgrades_END
+
+! ============================================================================
+! Cost Analysis Workflow:
+!
+! 1. Run simulation with -c flag to compute costs:
+!    ruby C:/HTAP/htap-prm.rb -r cost_optimization.run -c -k -t 7
+!
+! 2. Open HTAP-prm-output.csv and analyze:
+!    - Total energy use (kWh/year)
+!    - Total upgrade cost ($)
+!    - Simple payback (years)
+!    - Life-cycle cost savings
+!
+! 3. Create cost-effectiveness metrics:
+!    - Cost per kWh saved ($/kWh)
+!    - Cost per GHG reduction ($/tonne CO2e)
+!    - Simple payback period (years)
+!
+! 4. Identify optimal packages:
+!    - Lowest cost for target energy savings
+!    - Best payback period
+!    - Highest energy savings within budget
+!
+! Example Analysis Questions:
+! - What's the most cost-effective attic insulation level?
+! - Does triple glazing justify the cost premium?
+! - What's the optimal wall insulation vs foundation insulation balance?
+! - Which upgrade has the best $/kWh saved ratio?
+!
+! Cost Database Notes:
+! - Costs are incremental vs baseline (not total construction cost)
+! - Regional cost differences may apply (check unit-costs-db source)
+! - Cost data quality varies by component (check HTAPUnitCosts.json)
+!
+! Expected runtime: ~12 minutes with 7 threads
+!                   (36 runs × ~20 sec/run ÷ 7 threads)
+!
+! Expected output size: ~2 MB (36 simulations + detailed cost data)
+! ============================================================================

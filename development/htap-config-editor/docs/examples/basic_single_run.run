@@ -1,0 +1,95 @@
+! ============================================================================
+! basic_single_run.run
+!
+! Example: Basic single-run configuration
+!
+! Description:
+!   This configuration demonstrates a minimal single-run setup with:
+!   - One archetype (BC-base.h2k)
+!   - One location (Kelowna)
+!   - A few basic upgrade options
+!
+! Use case:
+!   Testing a specific building configuration or validating HTAP setup
+!
+! Expected output:
+!   1 simulation run (~20 seconds)
+!
+! ============================================================================
+
+RunParameters_START
+  run-mode = parametric
+  archetype-dir = C:/HTAP/Archetypes
+  options-file = C:/HTAP/HTAP-options.json
+  unit-costs-db = C:/HTAP/HTAPUnitCosts.json
+RunParameters_END
+
+! ----------------------------------------------------------------------------
+! Run Scope: Single archetype and location
+! ----------------------------------------------------------------------------
+RunScope_START
+  archetypes = BC-base.h2k
+  locations = Kelowna
+  rulesets =
+RunScope_END
+
+! ----------------------------------------------------------------------------
+! Upgrades: Fixed options for single run
+!
+! Each option has a single choice, so there are no parametric combinations.
+! This configuration represents one specific building scenario.
+! ----------------------------------------------------------------------------
+Upgrades_START
+  ! Airtightness: 3.0 ACH @ 50 Pa (moderate airtightness)
+  Opt-ACH = ACH_3_0
+
+  ! Windows: Double-glazed, high-gain, U=1.65 W/m²K
+  ! (Standard efficient windows)
+  Opt-Windows = NC_2g_HG_u1.65
+
+  ! Walls: RSI-3.6 (R-20.5) above-grade wall insulation
+  ! (Code-compliant baseline)
+  Opt-AboveGradeWall = RSI-3.6_R-20.5
+
+  ! Attic: RSI-8.8 (R-50) ceiling insulation
+  ! (Common high-performance level)
+  Opt-AtticCeilings = RSI-8.8_R-50
+
+  ! Heating/Cooling: Electric baseboard heating
+  ! (Simple baseline system)
+  Opt-Heating-Cooling = elecBaseboard
+
+  ! Domestic Hot Water: Electric water heater
+  ! (Standard baseline)
+  Opt-DHWSystem = elecWH
+
+  ! Ventilation: HRV with 60% efficiency
+  ! (Energy-efficient ventilation)
+  Opt-VentSystem = HRV_60
+
+  ! Foundation: RSI-2.1 (R-12) exterior insulation
+  ! (Moderate foundation insulation)
+  Opt-FoundationWallExtIns = RSI-2.1_R-12
+
+  ! Slab: Uninsulated slab on grade
+  ! (Baseline configuration)
+  Opt-FoundationSlabOnGrade = Uninsulated
+Upgrades_END
+
+! ============================================================================
+! Notes:
+!
+! - This is a baseline configuration suitable for testing
+! - All options use standard, code-compliant or better values
+! - Runtime: Approximately 20 seconds
+! - Output: Single row in HTAP-prm-output.csv
+!
+! To run this configuration:
+!   ruby C:/HTAP/htap-prm.rb -r basic_single_run.run -c -k -t 1
+!
+! Flags:
+!   -r: Specify run file
+!   -c: Compute costs
+!   -k: Keep generated files
+!   -t 1: Use 1 thread (single run doesn't need parallelization)
+! ============================================================================

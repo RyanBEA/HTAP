@@ -1,0 +1,116 @@
+! ============================================================================
+! parametric_study.run
+!
+! Example: Parametric study with multiple options
+!
+! Description:
+!   This configuration demonstrates a parametric study exploring:
+!   - Multiple airtightness levels (3 options)
+!   - Multiple window specifications (3 options)
+!   - Multiple heating systems (3 options)
+!
+! Use case:
+!   Exploring design space to find optimal combinations or understand
+!   sensitivity to different upgrades
+!
+! Expected output:
+!   3 × 3 × 3 = 27 simulation runs (~9 minutes with 7 threads)
+!
+! ============================================================================
+
+RunParameters_START
+  run-mode = parametric
+  archetype-dir = C:/HTAP/Archetypes
+  options-file = C:/HTAP/HTAP-options.json
+  unit-costs-db = C:/HTAP/HTAPUnitCosts.json
+RunParameters_END
+
+! ----------------------------------------------------------------------------
+! Run Scope: Single archetype and location to focus on upgrades
+! ----------------------------------------------------------------------------
+RunScope_START
+  archetypes = BC-base.h2k
+  locations = Kelowna
+  rulesets =
+RunScope_END
+
+! ----------------------------------------------------------------------------
+! Upgrades: Parametric options (multiple choices)
+!
+! Options with multiple choices create parametric combinations.
+! Total combinations = 3 (ACH) × 3 (Windows) × 3 (Heating) = 27 runs
+! ----------------------------------------------------------------------------
+Upgrades_START
+  ! -------------------------------------------------------------------------
+  ! PARAMETRIC OPTIONS (vary across runs)
+  ! -------------------------------------------------------------------------
+
+  ! Airtightness: Test 3 levels from code-minimum to high-performance
+  Opt-ACH = ACH_3_0, ACH_2_5, ACH_1_5
+  ! ACH_3_0: Code-compliant baseline (3.0 ACH @ 50 Pa)
+  ! ACH_2_5: Improved airtightness (2.5 ACH @ 50 Pa)
+  ! ACH_1_5: High-performance (1.5 ACH @ 50 Pa)
+
+  ! Windows: Test different glazing levels
+  Opt-Windows = NC_2g_HG_u1.65, NC_3g_HG_u1.0, NC_2g_LG_u1.80
+  ! NC_2g_HG_u1.65: Double-glazed high-gain (U=1.65)
+  ! NC_3g_HG_u1.0: Triple-glazed high-gain (U=1.0)
+  ! NC_2g_LG_u1.80: Double-glazed low-gain (U=1.8, less solar heat)
+
+  ! Heating/Cooling: Compare different systems
+  Opt-Heating-Cooling = elecBaseboard, CCASHP, ASHP
+  ! elecBaseboard: Electric baseboard (baseline)
+  ! CCASHP: Cold-climate air-source heat pump (high efficiency)
+  ! ASHP: Standard air-source heat pump (moderate climate)
+
+  ! -------------------------------------------------------------------------
+  ! FIXED OPTIONS (same for all runs)
+  ! -------------------------------------------------------------------------
+
+  ! Walls: Fixed at code-compliant level
+  Opt-AboveGradeWall = RSI-3.6_R-20.5
+
+  ! Attic: Fixed at high-performance level
+  Opt-AtticCeilings = RSI-8.8_R-50
+
+  ! DHW: Fixed at baseline
+  Opt-DHWSystem = elecWH
+
+  ! Ventilation: Fixed at efficient level
+  Opt-VentSystem = HRV_60
+
+  ! Foundation: Fixed at moderate insulation
+  Opt-FoundationWallExtIns = RSI-2.1_R-12
+
+  ! Slab: Fixed at uninsulated baseline
+  Opt-FoundationSlabOnGrade = Uninsulated
+Upgrades_END
+
+! ============================================================================
+! Analysis Notes:
+!
+! This parametric study allows you to:
+! 1. Compare energy savings from different airtightness levels
+! 2. Evaluate window performance (triple vs double, high vs low gain)
+! 3. Assess heat pump benefits vs electric baseboard
+! 4. Find optimal combinations for energy and cost
+!
+! Post-processing:
+! - Open HTAP-prm-output.csv in Excel or analysis tool
+! - Create pivot tables or charts to compare:
+!   * Energy use vs airtightness
+!   * Cost vs heating system
+!   * Interaction effects (e.g., windows + heat pump)
+!
+! To run this configuration:
+!   ruby C:/HTAP/htap-prm.rb -r parametric_study.run -c -k -t 7
+!
+! Flags:
+!   -r: Specify run file
+!   -c: Compute costs (important for optimization analysis)
+!   -k: Keep generated files
+!   -t 7: Use 7 parallel threads (speeds up 27 runs)
+!
+! Expected runtime: ~9 minutes with 7 threads
+!                   (27 runs × ~20 sec/run ÷ 7 threads)
+! ============================================================================

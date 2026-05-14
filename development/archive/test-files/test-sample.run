@@ -1,0 +1,18 @@
+RunParameters_START
+  run-mode = parametric
+  archetype-dir = C:/HTAP/archetypes
+  options-file = HTAP-options.json
+  unit-costs-db = HTAPUnitCosts.json
+RunParameters_END
+
+RunScope_START
+  archetypes = BC-base.h2k, ON-base.h2k
+  locations = Vancouver-BC, Toronto-ON
+  rulesets = as_found
+RunScope_END
+
+Upgrades_START
+  Opt-Windows = DoubleGlazed-Air-LowE, TripleGlazed-Argon-LowE
+  Opt-ACH = ACH-1.5, ACH-2.5
+  Opt-AboveGradeWall = R-20-Wall, R-30-Wall
+Upgrades_END

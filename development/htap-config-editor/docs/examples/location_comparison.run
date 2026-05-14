@@ -1,0 +1,157 @@
+! ============================================================================
+! location_comparison.run
+!
+! Example: Multi-location climate comparison
+!
+! Description:
+!   This configuration compares the same building configuration across
+!   multiple BC climate zones:
+!   - Kelowna (cold, dry interior)
+!   - Vancouver (mild, wet coastal)
+!   - Victoria (mild, coastal)
+!   - Prince George (very cold northern)
+!
+! Use case:
+!   Understanding climate impacts on energy performance
+!   Evaluating upgrade effectiveness across different regions
+!   Climate-specific building code analysis
+!
+! Expected output:
+!   4 locations × 2 window options = 8 simulation runs (~3 minutes with 7 threads)
+!
+! ============================================================================
+
+RunParameters_START
+  run-mode = parametric
+  archetype-dir = C:/HTAP/Archetypes
+  options-file = C:/HTAP/HTAP-options.json
+  unit-costs-db = C:/HTAP/HTAPUnitCosts.json
+RunParameters_END
+
+! ----------------------------------------------------------------------------
+! Run Scope: Multiple BC climate zones
+!
+! Location characteristics:
+! - Kelowna: Cold interior, ~3000 HDD, dry climate
+! - Vancouver: Mild coastal, ~2400 HDD, wet climate
+! - Victoria: Mild coastal, ~2100 HDD, temperate
+! - Prince George: Very cold northern, ~4200 HDD
+! ----------------------------------------------------------------------------
+RunScope_START
+  archetypes = BC-base.h2k
+  locations = Kelowna, Vancouver, Victoria, Prince-George
+  rulesets =
+RunScope_END
+
+! ----------------------------------------------------------------------------
+! Upgrades: Focus on climate-sensitive options
+!
+! Total combinations = 4 (locations) × 2 (windows) = 8 runs
+!
+! We vary windows to see climate-specific impacts:
+! - Solar gain more important in cold climates?
+! - U-value more important in mild climates?
+! ----------------------------------------------------------------------------
+Upgrades_START
+  ! -------------------------------------------------------------------------
+  ! PARAMETRIC OPTIONS - Climate-sensitive upgrades
+  ! -------------------------------------------------------------------------
+
+  ! Windows: Test solar gain sensitivity across climates
+  Opt-Windows = NC_2g_HG_u1.65, NC_2g_LG_u1.80
+  ! NC_2g_HG_u1.65: High solar gain (better for cold climates?)
+  ! NC_2g_LG_u1.80: Low solar gain (better for mild climates?)
+  !
+  ! Analysis focus: Does optimal window choice vary by climate?
+  !                 Is solar heat gain more valuable in colder locations?
+
+  ! -------------------------------------------------------------------------
+  ! FIXED OPTIONS - Consistent across all locations
+  ! -------------------------------------------------------------------------
+
+  ! Airtightness: Fixed at good practice level
+  Opt-ACH = ACH_2_5
+  ! (Same airtightness to isolate climate effects)
+
+  ! Walls: Fixed at moderate upgrade
+  Opt-AboveGradeWall = RSI-4.4_R-25
+  ! (Consistent envelope to focus on climate differences)
+
+  ! Attic: Fixed at high-performance
+  Opt-AtticCeilings = RSI-8.8_R-50
+  ! (Same insulation level across climates)
+
+  ! Heating/Cooling: Fixed at heat pump
+  Opt-Heating-Cooling = CCASHP
+  ! (Same system - will see climate-specific performance)
+
+  ! DHW: Fixed at baseline
+  Opt-DHWSystem = elecWH
+
+  ! Ventilation: Fixed at efficient
+  Opt-VentSystem = HRV_60
+  ! (HRV effectiveness varies with climate - worth analyzing)
+
+  ! Foundation: Fixed at moderate
+  Opt-FoundationWallExtIns = RSI-2.1_R-12
+
+  ! Slab: Fixed at uninsulated
+  Opt-FoundationSlabOnGrade = Uninsulated
+Upgrades_END
+
+! ============================================================================
+! Climate Analysis Workflow:
+!
+! 1. Run simulation:
+!    ruby C:/HTAP/htap-prm.rb -r location_comparison.run -c -k -t 7
+!
+! 2. Analyze climate-specific results:
+!    - Heating degree days (HDD) correlation
+!    - Heating energy use by location
+!    - Cooling energy use by location
+!    - Solar heat gain benefits by climate
+!
+! 3. Compare performance metrics:
+!    - Total energy use (kWh/year) by location
+!    - Peak heating load (kW) by location
+!    - Heat pump performance (COP) by climate
+!    - HRV effectiveness by temperature differential
+!
+! 4. Evaluate upgrade cost-effectiveness by climate:
+!    - Are triple-glazed windows more valuable in cold climates?
+!    - Does low-gain glazing benefit mild climates?
+!    - Climate-specific payback periods
+!
+! Example Analysis Questions:
+! - How much more energy does the same house use in Prince George vs Victoria?
+! - Does high-gain glazing help or hurt in Vancouver's mild climate?
+! - What's the heat pump COP in each climate zone?
+! - Where are envelope upgrades most cost-effective?
+!
+! Expected Patterns:
+! - Prince George: Highest heating energy use
+! - Victoria: Lowest heating energy use
+! - Kelowna: High heating but also solar potential
+! - Vancouver: Moderate heating, cooling minimal
+!
+! Post-Processing Tips:
+! 1. Create location comparison chart (energy use vs HDD)
+! 2. Calculate climate-specific simple payback
+! 3. Map results to BC climate zones
+! 4. Identify optimal strategies per climate
+!
+! Climate Zone Reference:
+! - Zone 4 (Coastal): Vancouver, Victoria (mild)
+! - Zone 5 (Interior): Kelowna (cold)
+! - Zone 6+ (Northern): Prince George (very cold)
+!
+! To run this configuration:
+!   ruby C:/HTAP/htap-prm.rb -r location_comparison.run -c -k -t 7
+!
+! Expected runtime: ~3 minutes with 7 threads
+!                   (8 runs × ~20 sec/run ÷ 7 threads)
+!
+! Output files:
+! - HTAP-prm-output.csv: Results for all 8 location/window combinations
+! - Individual .h2k and browse files for each simulation (if -k used)
+! ============================================================================
