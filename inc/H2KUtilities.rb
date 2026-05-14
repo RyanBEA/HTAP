@@ -2951,9 +2951,9 @@ module H2KEdit
       x_path = base_path + "/Specifications/HeatingEfficiency"
       if ( isNonNa(heat_cop) && sys_type != "AirConditioning")
         debug_out ("TYPE 2 COP heating= |#{heat_cop}|")
-        h2k_contents[x_path].attributes["isCOP"] = "true"
-        h2k_contents[x_path].attributes["uiUnits"] = heat_cop
-      end 
+        h2k_contents[x_path].attributes["isCop"] = "true"
+        h2k_contents[x_path].attributes["value"] = heat_cop
+      end
 
       rating_temp = map["Opt-H2K-Type2RatingTemp"]
       x_path = base_path + "/Temperature/RatingType"
