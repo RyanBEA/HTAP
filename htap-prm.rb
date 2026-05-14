@@ -1440,7 +1440,7 @@ def run_these_cases(current_task_files)
       if ($gJSONize )
         update_run_status(action: "Writing JSON output" )
         stream_out("        -> Writing JSON output to HTAP-prm-output.json... ")
-        nextBatch = JSON.pretty_generate($gJSONAllData)
+        nextBatch = $gJSONAllData.to_json
         
         configStarted = false 
         # When we append data to the current file on subsequent batches, 
