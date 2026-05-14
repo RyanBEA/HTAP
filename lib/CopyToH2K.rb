@@ -3,9 +3,10 @@
 
 require 'fileutils'
 
-$gTargetArchDir = "C:\\H2K-CLI-Min\\User\\"
-$gTargetLibDir = "C:\\H2K-CLI-Min\\StdLibs\\"
-$gTargetCodDir = "C:\\H2K-CLI-Min\\StdLibs\\"
+$h2k_home = ENV.fetch("H2K_CLI_HOME", "C:\\H2K-CLI-Min")
+$gTargetArchDir = "#{$h2k_home}\\User\\"
+$gTargetLibDir  = "#{$h2k_home}\\StdLibs\\"
+$gTargetCodDir  = "#{$h2k_home}\\StdLibs\\"
 
 $gMasterPath = Dir.getwd()
 

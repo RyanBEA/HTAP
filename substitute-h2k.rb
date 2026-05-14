@@ -6675,7 +6675,7 @@ def ChangeWinCodeByOrient( winOrient, newValue, h2kCodeLibElements, h2kFileEleme
             fatalerror ("Cost estimation requested via `--auto-cost-options`, but unit cost database not set via `--unit-cost-db FILE`\n")
           end 
 
-          $h2k_src_path = "C:\\H2K-CLI-Min"
+          $h2k_src_path = ENV.fetch("H2K_CLI_HOME", "C:\\H2K-CLI-Min")
           $run_path = $gMasterPath + "\\H2K"
 
           stream_out ("\n Input files:  \n")
