@@ -3504,7 +3504,7 @@
         "h2kMap": {
           "base": {
             "<Opt-GenInsulLayerInboard-a>": "0.08748",
-            "OPT-H2K-EffRValue": "18.1"
+            "OPT-H2K-EffRValue": "3.19"
           }
         },
         "costs": {
@@ -4108,7 +4108,7 @@
         "h2kMap": {
           "base": {
             "<Opt-GenInsulLayerInboard-a>": "NBC_Wall_zone6_HRV",
-            "OPT-H2K-EffRValue": "16.86",
+            "OPT-H2K-EffRValue": "2.97",
             "HeaderExtInsRValue": 0.0
           }
         },
@@ -9193,10 +9193,10 @@
             "Opt-H2K-Type2CCaseH": "60",
             "Opt-H2K-Type2Func": "2",
             "Opt-H2K-Type2Type": "1",
-            "Opt-H2K-Type2CapOpt": "3",
+            "Opt-H2K-Type2CapOpt": "2",
             "Opt-H2K-Type2CapVal": "NA",
-            "Opt-H2K-Type2HeatCOP": "2.97",
-            "Opt-H2K-Type2RatingTemp": "-6.3",            
+            "Opt-H2K-Type2HeatCOP": "4.5391",
+            "Opt-H2K-Type2RatingTemp": "8.3",
             "Opt-H2K-CoolSpecType": "SEER",
             "Opt-H2K-Type2CoolCOP": "18",
             "Opt-H2K-Type2CutoffType": "2",
